@@ -8,17 +8,21 @@
     <script src="https://kit.fontawesome.com/5f2b001e16.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
-<body>
-    <header>
+<body class="order-confirmation">
+    <header class="order-confirmation__header">
         <img src="assets/logga_header.png" alt="logga">
     </header>
-    <main class="order-confirmation">
-        <img src="assets/boximg.png" alt="image of wontonbox">
-        <h2>Din betällning förbereds nu</h2>
-        <p id="orderConfirmationETA">ETA: </p>
-        <p id="orderConfirmationNum">ordernummer:</p>
-        <button>Gör en ny beställning</button>
-        <button>se kvitto</button>
+    <main class="order-confirmation__main">
+        <div class="order-confirmation__top">
+            <img src="assets/boximg.png" alt="image of wontonbox">
+            <h2>Din betällning förbereds nu</h2>
+            <p id="orderConfirmationETA">ETA: </p>
+            <p id="orderConfirmationNum">ordernummer:</p>
+        </div>
+        <div class="order-confirmation__bottom">
+            <button>Gör en ny beställning</button>
+            <button>se kvitto</button>
+        </div> 
     </main>
 </body>
 </html>
