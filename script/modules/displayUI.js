@@ -15,11 +15,11 @@ export function displayOrderConfirmation(){
 function getETA(){
     let estimatedTime = randomNum(10, 20);
     let etaRef = getElement("#orderConfirmationETA");
-    etaRef.textContent = `ETA: ${estimatedTime}`;
+    etaRef.textContent = `ETA ${estimatedTime} MIN`;
 }
 
 function getOrderNum(){
-    let orderNumber = randomString(8);
+    let orderNumber = randomString(11);
     let orderNumRef = getElement('#orderConfirmationNum');
-    orderNumRef.textContent = `Ordernummer: ${orderNumber}`;
+    orderNumRef.textContent = `#${orderNumber}`;
 }
