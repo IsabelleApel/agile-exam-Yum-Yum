@@ -13,3 +13,12 @@
     --mid-grey: #C2C1C1;
     --text-white: #F4F3F1;
 }
+
+.order-confirmation{
+    background-color: var(--dark-grey);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
