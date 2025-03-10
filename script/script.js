@@ -1,3 +1,7 @@
 import { displayOrderConfirmation } from "./modules/displayUI.js";
 
-displayOrderConfirmation();
+
+if(window.location.pathname === '/orderConfirmation.html'){
+    console.log('hello');
+    displayOrderConfirmation();
+}
