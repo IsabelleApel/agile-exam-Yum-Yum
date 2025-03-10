@@ -3,23 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/style.css">
-  <script type="module" src="script/script.js"></script>
+  <link rel="stylesheet" href="styles/index.css">
+  <script type="module" src="script/index.js"></script>
   <script src="https://kit.fontawesome.com/5f2b001e16.js" crossorigin="anonymous"></script>
   <title>Yum Yum Gimmie Sum</title>
 </head>
 <body class="index-page"> 
   <header>
-    <img src="assets/loggan.png" alt="Logo" class="header-logo">
+    <div class="header-container">
+      
+      <span class="menu-icon"><i class="fa-solid fa-bars"></i></span>
+      
+      <img src="assets/loggan.png" alt="Logo" class="header-logo">
+    </div>
   </header>
- 
+
+  
+  <nav class="menu">
+    <button class="menu-btn" onclick="location.href='menu.html'">Meny</button>
+    <button class="menu-btn" onclick="location.href='foodtrucks.html'">Våra Foodtrucks</button>
+    <button class="menu-btn" onclick="location.href='profile.html'">Profil / Logga in</button>
+    <button class="menu-btn" onclick="location.href='aboutUs.html'">Om oss</button>
+  </nav>
+
   <main>
     <div class="content">
       <img src="assets/boximg.png" alt="Box Image" class="box-img">
       <div class="button-container">
-        <button class="btn">see menu!</button>
-        <button class="btn">where is the foodtruck?</button>
-        <button class="btn">log in/ sign up</button>
+        <button class="btn">See Menu!</button>
+        <button class="btn">Where is the Foodtruck?</button>
+        <button class="btn">Log in/Sign up</button>
       </div>
     </div>
   </main>
