@@ -14,21 +14,78 @@
     --text-white: #F4F3F1;
 }
 
+/* styling för foodtrucks */
+
+.foodtrucks{
+    background-color: var(--dark-grey);
+    font-family: "Fira Sans", sans-serif;
+}
+
+.foodtrucks__header{
+    display: flex;
+    justify-content: center;
+}
+
+.foodtrucks__main{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    color: var(--text-white);
+}
+
+.foodtrucks__heading{
+    align-self: center;
+    padding: 1rem 0;
+}
+
+.foodtrucks__map-container{
+    width: 100%;
+    height: 400px;
+}
+
+.foodtrucks__list-heading{
+    padding: .8rem 0;
+}
+
+.foodtrucks__list{
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.3rem;
+    gap: 1rem;
+}
+
+.foodtrucks__list-item{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--darkest-grey);
+    padding-bottom: 0.5rem;
+}
+
+.foodtrucks__list-item-right{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-align: end;
+}
 
 /* styling för orderConfirmation */
 
 .order-confirmation{
     background-color: var(--dark-grey);
     height: 100vh;
+    width: 100%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .order-confirmation__header{
     height: max-content;
+    display: flex;
+    justify-content: center;
     width: 100%;
-
+}
 .order-confirmation__main{
     flex-grow: 1;
     width: 100%;
@@ -64,14 +121,7 @@
     padding: 20px;
   }
   
-/*   .order-confirmation {
-  background-color: var(--dark-grey);
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
+/* styling för index */
   
   .index-page {
     background: url("../assets/bakgrund.png") no-repeat center center fixed;
