@@ -1,6 +1,8 @@
 import { randomNum, randomString } from "../Utils/utils.js";
 import { getElement } from "../Utils/domUtils.js";
 import { buttonClick } from "./eventHandlers.js";
+import { oData } from "../data/data.js";
+import { createFoodtruckCard } from "../components/itemCard.js";
 
 export function displayOrderConfirmation(){
     getETA();
@@ -22,4 +24,12 @@ function getOrderNum(){
     let orderNumber = randomString(11);
     let orderNumRef = getElement('#orderConfirmationNum');
     orderNumRef.textContent = `#${orderNumber}`;
+}
+
+export function displayFoodtruckList(){
+    const listRef = getElement('#foodtrucksList');
+    for(let place of oData.foodtruckStops){
+        let card = createFoodtruckCard(place);
+        listRef.appendChild(card);
+    }
 }
