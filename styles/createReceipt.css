@@ -1,0 +1,179 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+/* Header */
+header {
+    width: 100%;
+    max-width: 375px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+header img {
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Vista del carrito */
+.cart-view {
+    background-color: #605858;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos del recibo */
+.cart-view__receipt {
+    background-color: #F4F3F1;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.cart-view__logo {
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cart-view__logo:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+
+}
+
+.receipt__item-text {
+    display: flex;
+    flex-direction: column
+}
+
+.receipt__title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.receipt__order-id {
+    font-size: 14px;
+    color: #555;
+}
+
+.receipt__items {
+    list-style: none;
+    padding: 0;
+}
+
+.receipt__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.receipt__total {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #C2C1C1;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.receipt__total:hover {
+    background-color: #a7a6a6;
+    transform: scale(1.02);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.receipt__total-label {
+    font-weight: bold;
+    font-size: 18px;
+    color: #353131;
+}
+
+.receipt__total-amount {
+    font-size: 22px;
+    font-weight: bold;
+    color: #353131;
+}
+
+.receipt__total-tax {
+    display: block;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Contenedor del botón */
+.button-cart-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+}
+
+/* Botón de pago */
+.pay-button {
+    background-color: #353131;
+    color: #F4F3F1;
+    font-weight: bold;
+    width: 350px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+}
+
+/* Botón para nueva orden */
+.receipt__new-order {
+    background-color: #353131;
+    color: #F4F3F1;
+    font-weight: bold;
+    width: 399px;
+    height: 80px;
+    border-radius: 5px;
+    font-size: 18px;
+    border: none;
+    margin-top: 60px;
+    padding: 25px;
+    margin: 10px;
+}
+
+.receipt__new-order:hover {
+    background-color: #555151;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.receipt__item-qty {
+    font-size: 14px;
+    color: #353131;
+    text-align: left;
+}
+
+.price-connector {
+    flex-grow: 1;
+    border-bottom: 2px dotted #353131;
+    margin: 0 15px;
+}
+
+.receipt__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+
+}
