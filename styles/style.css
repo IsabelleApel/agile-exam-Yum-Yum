@@ -144,15 +144,8 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-.order-confirmation__header{
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
 .order-confirmation__main{
     flex-grow: 1;
     width: 100%;

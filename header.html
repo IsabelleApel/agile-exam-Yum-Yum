@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/header.css">
+  <script type="module" src="script/index.js"></script>
+  <script src="https://kit.fontawesome.com/5f2b001e16.js" crossorigin="anonymous"></script>
+  <title>Yum Yum Gimmie Sum</title>
 </head>
-<body>
-    <header>
-        <div class="header-container">
-          
-          <span class="menu-icon"><i class="fa-solid fa-bars"></i></span>
-          
-          <img src="assets/loggan.png" alt="Logo" class="header-logo">
-          <img src="assets/shopping-bag.png" alt="shopping-bag">
-        </div>
-        <nav class="menu">
-            <button class="menu-btn" onclick="location.href='menu.html'">Meny</button>
-            <button class="menu-btn" onclick="location.href='foodtrucks.html'">Våra Foodtrucks</button>
-            <button class="menu-btn" onclick="location.href='profile.html'">Profil / Logga in</button>
-            <button class="menu-btn" onclick="location.href='aboutUs.html'">Om oss</button>
-        </nav>
-    </header>
+<body> 
+  <header class="header">
+    <div class="header-container">
+      <span class="menu-icon icon"><i class="fa-solid fa-bars fa-2xl"></i></span>
+      <a class="header-logo" href="index.html"><img src="assets/logga_header.png" alt="Logo" height="80px"></a>
+      <a class="header-shopping-bag icon" href="#"><i class="fa-solid fa-basket-shopping fa-2xl"></i></a>
+    </div>
+    <nav class="menu">
+        <button class="menu-btn" onclick="location.href='menu.html'">Meny</button>
+        <button class="menu-btn" onclick="location.href='foodtrucks.html'">Våra Foodtrucks</button>
+        <button class="menu-btn" onclick="location.href='profile.html'">Profil / Logga in</button>
+        <button class="menu-btn" onclick="location.href='aboutUs.html'">Om oss</button>
+      </nav>
+  </header>
 </body>
 </html>
