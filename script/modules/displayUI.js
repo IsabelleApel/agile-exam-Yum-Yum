@@ -1,6 +1,10 @@
-import { createMenu, createDipMenu, createDrinkMenu } from "../components/itemCard.js";
-import { fetchMenu } from "./api.js";
 
+import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard } from "../components/itemCard.js";
+import { fetchMenu } from "./api.js";
+import { randomNum, randomString } from "../Utils/utils.js";
+import { getElement } from "../Utils/domUtils.js";
+import { buttonClick } from "./eventHandlers.js";
+import { oData } from "../data/data.js";
 
 export async function displayMenu() {
     try {
@@ -41,5 +45,36 @@ export async function displayMenu() {
 
     } catch (error) {
         console.error("Fel vid hämtning av meny:", error);
+
+
+
+export function displayOrderConfirmation(){
+    getETA();
+    getOrderNum();
+    buttonClick('#newOrder', './menu.html');
+    // behöver veta namn på html-fil för kvittot(nedan)
+    buttonClick('#receipt', './receipt.html'); 
+}
+
+
+// vet inte riktigt vart det är passande att ha getETA() och getOrderNum()(vilken script-fil)
+function getETA(){
+    let estimatedTime = randomNum(10, 20);
+    let etaRef = getElement("#orderConfirmationETA");
+    etaRef.textContent = `ETA ${estimatedTime} MIN`;
+}
+
+function getOrderNum(){
+    let orderNumber = randomString(11);
+    let orderNumRef = getElement('#orderConfirmationNum');
+    orderNumRef.textContent = `#${orderNumber}`;
+}
+
+export function displayFoodtruckList(){
+    const listRef = getElement('#foodtrucksList');
+    for(let place of oData.foodtruckStops){
+        let card = createFoodtruckCard(place);
+        listRef.appendChild(card);
+
     }
 }

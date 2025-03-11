@@ -1,6 +1,5 @@
-// import { fetchMenu } from "./modules/api.js";
-// import { createMenu } from "./components/itemCard";
-import { displayMenu } from "./modules/displayUI.js";
+
+import { displayMenu, displayOrderConfirmation, displayFoodtruckList } from "./modules/displayUI.js";
 
 if(window.location.pathname === '/' || window.location.pathname === '/index.html') {
     console.log('index.html');
@@ -8,10 +7,13 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
 } else if(window.location.pathname === '/menu.html') {
     console.log('menu.html');
     displayMenu();
-}
-// } else if(window.location.pathname === '/movie.html') {
-//     console.log('movie.html');
 
-// } else if(window.location.pathname === '/search.html') {
-//     console.log('search.html');
-// }
+} else if(window.location.pathname === '/orderConfirmation.html'){
+    console.log('hello');
+    displayOrderConfirmation();
+}else if(window.location.pathname === '/foodtrucks.html'){
+    console.log('foodtruck');
+    displayFoodtruckList();
+    
+}
+
