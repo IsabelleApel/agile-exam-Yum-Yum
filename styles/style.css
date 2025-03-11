@@ -13,3 +13,69 @@
     --mid-grey: #C2C1C1;
     --text-white: #F4F3F1;
 }
+
+/* Bakgrundsbild */
+.background-img {
+    position: fixed;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    top: 0;
+}
+
+/* Meny */
+.menu-wrapper {
+    position: relative;
+    background-color: var(--dark-grey);
+    color: var(--text-white);
+    width: 350px;
+    margin: 0 auto;
+    font-family: "Fira Sans", sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border-radius: 5px;
+}
+
+.menu-title {
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.menu-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px dotted var(--mid-grey);
+}
+
+/* .menu-card:hover {
+    background-color: #837C7C;
+} */
+
+.menu-card--firstrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.menu-card__ingredients {
+    font-size: 0.8rem;
+}
+
+.dip-button, .drink-button {
+    font-family: "Fira Sans", sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #837C7C;
+    color: var(--text-white);
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem;
+    margin: 0.4rem;
+}
+
+.dip-button:hover, .drink-button:hover {
+    background-color: var(--darkest-grey);
+}
