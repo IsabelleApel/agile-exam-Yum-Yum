@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/createProfilePage.css" />
+    <script type="module" src="script/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/5f2b001e16.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <span><i class="fa-solid fa-bars"></i></span>
+      <img src="assets/logga_header.png" alt="logga" />
+      <span><i class="fa-regular fa-cart-shopping"></i></span>
+    </header>
+    <main class="profile__container">
+      <section class="profile__card">
+        <h2 class="profile__title">REDIGERA UPPGIFTER</h2>
+        <div class="profile__user-icon">
+          <img src="assets/avatar user.png" alt="User" />
+        </div>
+
+        <form class="profile__form">
+          <label class="profile__label" for="email">E-POSTADRESS</label>
+          <input class="profile__input" type="email" id="email" required />
+
+          <label class="profile__label" for="username">ANVÄNDARNAMN</label>
+          <input class="profile__input" type="text" id="username" required />
+
+          <label class="profile__label" for="password">LÖSENORD</label>
+          <input
+            class="profile__input"
+            type="password"
+            id="password"
+            required
+          />
+
+          <button class="profile__save-btn" type="submit">
+            SPARA UPPGIFTER
+          </button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
