@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow: hidden;
+}
+
+:root {
+  --dark-grey: #605858;
+  --darkest-grey: #353131;
+  --text-white: #F4F3F1;
+}
+
+body.login-page {
+  background-color: var(--dark-grey);
+  font-family: 'Fira Sans', sans-serif;
+  color: var(--text-white);
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.header-logo {
+  max-width: 300px;
+  height: auto;
+}
+
+.login-container {
+  width: 90%;
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.user-icon {
+  font-size: 6rem;
+  margin-bottom: 20px;
+}
+
+.login-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.input-container i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.input-container input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--text-white);
+  font-size: 1rem;
+  outline: none;
+  padding: 10px 0;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--darkest-grey);
+  color: var(--text-white);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: var(--darkest-grey);
+}
+
+
+.register-btn {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--darkest-grey);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.register-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 390px) {
+  .header-logo {
+    max-width: 150px;
+  }
+  
+  .login-container {
+    padding: 10px;
+  }
+  
+  .input-group label {
+    font-size: 0.9rem;
+  }
+  
+  .input-container {
+    padding: 8px;
+  }
+  
+  .input-container i {
+    font-size: 1rem;
+  }
+  
+  .input-container input {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+  
+  .login-btn, 
+  .register-btn {
+    padding: 12px;
+    font-size: 1rem;
+  }
+  
+  .user-icon {
+    font-size: 4rem;
+  }
+  
+  .login-title {
+    font-size: 1.5rem;
+  }
+}
