@@ -2,9 +2,10 @@ import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard } from 
 import { fetchMenu } from "./api.js";
 import { randomNum, randomString } from "../Utils/utils.js";
 import { getElement } from "../Utils/domUtils.js";
-import { buttonClick, menuToggle } from "./eventHandlers.js";
+import { buttonClick, menuToggle, cartButton } from "./eventHandlers.js";
 import { oData } from "../data/data.js";
 import { loadHeader } from "../components/header.js";
+import { displayCart, displayTotalPrice } from "./cart.js";
 
 export async function displayMenu() {
     try {
@@ -48,27 +49,21 @@ export async function displayMenu() {
     }
 }
 
+export function displayCartPage(){
+    displayCart();
+    displayTotalPrice();
+    displayHeader();
+    buttonClick('.pay-button', './orderConfirmation.html'); 
+}
+
 
 export function displayOrderConfirmation(){
     getETA();
     getOrderNum();
+    displayHeader();
     buttonClick('#newOrder', './menu.html');
     // behöver veta namn på html-fil för kvittot(nedan)
     buttonClick('#receipt', './receipt.html'); 
-}
-
-
-// vet inte riktigt vart det är passande att ha getETA() och getOrderNum()(vilken script-fil)
-function getETA(){
-    let estimatedTime = randomNum(10, 20);
-    let etaRef = getElement("#orderConfirmationETA");
-    etaRef.textContent = `ETA ${estimatedTime} MIN`;
-}
-
-function getOrderNum(){
-    let orderNumber = randomString(11);
-    let orderNumRef = getElement('#orderConfirmationNum');
-    orderNumRef.textContent = `#${orderNumber}`;
 }
 
 export function displayFoodtruckList(){
@@ -76,7 +71,6 @@ export function displayFoodtruckList(){
     for(let place of oData.foodtruckStops){
         let card = createFoodtruckCard(place);
         listRef.appendChild(card);
-
     }
 }
 
@@ -91,5 +85,19 @@ export function displayHeader(){
     loadHeader().then(headerHTML => {
         containerRef.innerHTML = headerHTML;
         menuToggle();
+        cartButton();
     });
+}
+
+// vet inte riktigt vart det är passande att ha getETA() och getOrderNum()(vilken script-fil)
+function getETA(){
+    let estimatedTime = randomNum(10, 20);
+    let etaRef = getElement("#orderConfirmationETA");
+    etaRef.textContent = `ETA ${estimatedTime} MIN`;
+}
+
+function getOrderNum(){
+    let orderNumber = randomString(11);
+    let orderNumRef = getElement('#orderConfirmationNum');
+    orderNumRef.textContent = `#${orderNumber}`;
 }

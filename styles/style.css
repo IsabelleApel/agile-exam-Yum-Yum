@@ -93,17 +93,14 @@
     border: none;
 }
 
-.d-none {
-    display: none;
-}
-.menu-header {
+/* .menu-header {
   display: flex;
   justify-content: flex-end;
   padding: 30px;
   font-size: 30px;
-}
+} */
 
-.cart-icon {
+/* .cart-icon {
   position: relative;
   display: inline-block;
 }
@@ -117,7 +114,7 @@
   border-radius: 50%;
   padding: 2px 6px;
   font-size: 16px;
-}
+} */
 
 /* styling för foodtrucks */
 
@@ -298,5 +295,9 @@
       font-size: 1em;
     }
   }   */
+
+  .d-none {
+    display: none;
+}
 
  

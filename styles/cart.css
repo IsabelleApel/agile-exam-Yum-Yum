@@ -4,9 +4,17 @@
     box-sizing: border-box;
 }
 
+:root{
+    --dark-grey: #605858;
+    --darkest-grey: #353131;
+    --light-grey: #EEEEEE;
+    --mid-grey: #C2C1C1;
+    --text-white: #F4F3F1;
+}
+
 /* CSS för cart.js */
 .cart-view {
-    background-color: #EEEEEE;
+    background-color: var(--dark-grey);
     width: 100vw;
     height: 100vh;
 }
@@ -53,7 +61,7 @@
     border-top: 2px dotted #C2C1C1;
 }
 
-.cart-header {
+/* .cart-header {
     display: flex;
     justify-content: flex-end;
     padding: 30px;
@@ -74,7 +82,7 @@
     border-radius: 50%;
     padding: 2px 6px;
     font-size: 16px;
-}
+} */
 
 .cart-items-container {
     display: flex;
