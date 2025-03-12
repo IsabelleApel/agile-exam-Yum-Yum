@@ -9,7 +9,6 @@ export function addToCart(dish) {
         localStorage.setItem('cart', JSON.stringify(cart));
 
         updateCartCount(cart.length);
-        console.log('mat tillagd: ', dish);
     } else {
         console.log('försökte lägga till ett null-värde i kundvagnen:', dish);
     }
@@ -23,6 +22,11 @@ export function updateCartCount(count) {
     }
 }
 
+export function initCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    updateCartCount(cart.length);
+}
+
 //displaya varukorgen
 export function displayCart() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -33,7 +37,6 @@ export function displayCart() {
     cartItemsContainer.textContent = '';
 
     cart.forEach(dish => {
-        console.log(dish);
 
         const showDish = document.createElement('div');
         showDish.classList.add('cart-item');
@@ -64,11 +67,15 @@ export function displayCart() {
 //ta bort från varukorgen
 function removeCartItem(dishId) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const updateCart = cart.filter(dish => dish.id !== dishId);
+    const index = cart.findIndex(dish => dish.id === dishId);
 
-    localStorage.setItem('cart', JSON.stringify(updateCart));
+    if (index !== -1) {
+        cart.splice(index, 1);
+    }
 
-    updateCartCount(updateCart.length);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    updateCartCount(cart.length);
     displayTotalPrice();
     console.log(`maträtt med id ${dishId} togs bort`)
 }
@@ -88,7 +95,7 @@ function totalPriceItem() {
 export function displayTotalPrice() {
     const totalPrice = totalPriceItem();
     const totalPriceElement = document.querySelector('.total-price .price');
-    totalPriceElement.textContent = totalPrice;
+    totalPriceElement.textContent = `${totalPrice} SEK`;
 }
 
 //eventlistener på betala-knappen

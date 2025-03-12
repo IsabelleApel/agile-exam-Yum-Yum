@@ -1,6 +1,6 @@
 
 
-import { displayCart, displayTotalPrice } from "./modules/cart.js";
+import { displayCart, displayTotalPrice, initCartCount } from "./modules/cart.js";
 import { cartButton } from "./modules/eventHandlers.js";
 import { displayOrderConfirmation, displayFoodtruckList, displayHeader, displayMenu } from "./modules/displayUI.js";
 
@@ -11,6 +11,7 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
     displayMenu();
     cartButton();
     displayHeader();
+    initCartCount();
 
 } else if(window.location.pathname === '/orderConfirmation.html'){
     console.log('hello');
