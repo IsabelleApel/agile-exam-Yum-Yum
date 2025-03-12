@@ -7,3 +7,17 @@ export function buttonClick(element, pathname){
         window.location.href = pathname;
     })
 }
+
+export function cartButton() {
+    const shoppingIcon = document.querySelector('.fa-cart-shopping');
+
+    shoppingIcon.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (window.location.pathname === '/cart.html') {
+            window.location.href = '/menu.html';
+        } else {
+            window.location.href = '/cart.html';
+        }
+    });
+}
