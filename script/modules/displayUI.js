@@ -2,8 +2,9 @@ import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard } from 
 import { fetchMenu } from "./api.js";
 import { randomNum, randomString } from "../Utils/utils.js";
 import { getElement } from "../Utils/domUtils.js";
-import { buttonClick } from "./eventHandlers.js";
+import { buttonClick, menuToggle } from "./eventHandlers.js";
 import { oData } from "../data/data.js";
+import { loadHeader } from "../components/header.js";
 
 export async function displayMenu() {
     try {
@@ -77,4 +78,18 @@ export function displayFoodtruckList(){
         listRef.appendChild(card);
 
     }
+}
+
+export function displayHeader(){
+    const containerRef = getElement('#headerContainer');
+
+    if(!containerRef){
+        console.error('header container not found');
+        return;
+    }
+
+    loadHeader().then(headerHTML => {
+        containerRef.innerHTML = headerHTML;
+        menuToggle();
+    });
 }

@@ -1,5 +1,5 @@
 
-import { displayOrderConfirmation, displayFoodtruckList, displayHeader } from "./modules/displayUI.js";
+import { displayOrderConfirmation, displayFoodtruckList, displayHeader, displayMenu } from "./modules/displayUI.js";
 
 if(window.location.pathname === '/' || window.location.pathname === '/index.html') {
     console.log('index.html');
