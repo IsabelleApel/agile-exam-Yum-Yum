@@ -10,7 +10,7 @@ import { getElement } from "../Utils/domUtils.js";
 import { buttonClick, menuToggle } from "./eventHandlers.js";
 import { oData } from "../data/data.js";
 import { loadHeader } from "../components/header.js";
-// import { createReceipt } from "../components/receipt.js";
+// import { receipt } from "../components/receipt.js";
 
 export async function displayMenu() {
   try {
@@ -59,9 +59,9 @@ export function displayOrderConfirmation() {
   const orderId = randomString(11);
   const totalPrice = orderItems.reduce((total, item) => total + item.price, 0);
   buttonClick("#newOrder", "./menu.html");
-  createReceipt(orderItems, totalPrice, orderId);
+  receipt(orderItems, totalPrice, orderId);
   // behöver veta namn på html-fil för kvittot(nedan)
-  buttonClick("#receipt", "./createReceipt.html");
+  buttonClick("#receipt", "./receipt.html");
 }
 
 // vet inte riktigt vart det är passande att ha getETA() och getOrderNum()(vilken script-fil)

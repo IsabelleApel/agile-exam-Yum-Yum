@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/receipt.css" />
+    <script type="module" src="script/script.js"></script>
+
+    <script type="module" src="script/components/receipt.js"></script>
+    <script
+      src="https://kit.fontawesome.com/5f2b001e16.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <header class="header-container">
+      <!-- Left: Hamburgermeny -->
+      <section class="header-left">
+        <span class="menu-icon"><i class="fa-solid fa-bars"></i></span>
+      </section>
+      <!-- Center: Logga -->
+      <section class="header-center">
+        <a class="header-logo" href="index.html">
+          <img src="assets/loggan.png" alt="Logo" />
+        </a>
+      </section>
+      <section class="header-right">
+        <span class="cart-icon"></span>
+      </section>
+    </header>
+    <nav class="menu">
+      <button class="menu-btn" onclick="location.href='menu.html'">Meny</button>
+      <button class="menu-btn" onclick="location.href='foodtrucks.html'">
+        Våra Foodtrucks
+      </button>
+      <button class="menu-btn" onclick="location.href='profile.html'">
+        Profil / Logga in
+      </button>
+      <button class="menu-btn" onclick="location.href='aboutUs.html'">
+        Om oss
+      </button>
+    </nav>
+    <section class="cart-view" id="receiptContainer"></section>
+    <!-- <footer class="receipt__footer">
+      <button class="receipt__new-order">GÖR EN NY BESTÄLLNING</button>
+    </footer> -->
+  </body>
+</html>

@@ -51,6 +51,7 @@ export async function createReceipt(orderItems, totalPrice, orderId) {
             <small class="receipt__total-tax">inkl 20% moms</small>
         </article>
         </article>
+        <button class="receipt__new-order">GÖR EN NY BESTÄLLNING</button>
     `;
 
   receiptContainer.innerHTML = receiptHTML;

@@ -8,17 +8,45 @@ body {
 
 
 /* Header */
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: #605858 !important;
+}
+
+.header-left,
+.header-right {
+    width: 60px;
+    /* Ajusta según el tamaño de tus íconos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-center {
+    flex: 1;
+    /* Hace que el centro crezca y ocupe el espacio disponible */
+    display: flex;
+    justify-content: center;
+}
+
+.header-logo img {
+    max-width: 150px;
+    /* Ajusta el tamaño si es necesario */
+}
+
 header {
     width: 100%;
-    max-width: 375px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     padding: 10px;
 }
 
 header img {
-    width: 30%;
     justify-content: center;
     align-items: center;
 }
@@ -32,6 +60,8 @@ header img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 80px;
+
 }
 
 /* Estilos del recibo */

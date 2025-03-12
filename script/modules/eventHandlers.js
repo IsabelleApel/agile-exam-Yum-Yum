@@ -11,7 +11,7 @@ export function buttonClick(element, pathname) {
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname === "/orderConfirmation.html") {
     buttonClick("#newOrder", "./menu.html");
-    buttonClick("#receipt", "./createReceipt.html");
+    buttonClick("#receipt", "./receipt.html");
   }
   if (window.location.pathname === "/menu.html") {
     let filterSelect = document.getElementById("filterSelect");

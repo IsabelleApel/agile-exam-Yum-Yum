@@ -1,7 +1,7 @@
 import { createReceipt } from "../Utils/domUtils.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-  if (window.location.pathname.includes("createReceipt.html")) {
+  if (window.location.pathname.includes("receipt.html")) {
     //Hämtar cart från local storage
     const cart = JSON.parse(localStorage.getItem("cart"));
     //Skapar en grupperad cart, där samma artikel läggs ihop
