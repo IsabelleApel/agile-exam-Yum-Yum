@@ -14,9 +14,8 @@
     --text-white: #F4F3F1;
 }
 
-
-/* Bakgrundsbild */
-.background-img {
+/* Styling för meny */
+.menu-background-img {
     position: fixed;
     object-fit: cover;
     width: 100vw;
@@ -25,7 +24,6 @@
     top: 0;
 }
 
-/* Meny */
 .menu-wrapper {
     position: relative;
     background-color: var(--dark-grey);
@@ -68,6 +66,7 @@
 
 .dip-button, .drink-button {
     font-family: "Fira Sans", sans-serif;
+    font-size: 0.8rem;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     background-color: #837C7C;
     color: var(--text-white);
@@ -79,6 +78,22 @@
 
 .dip-button:hover, .drink-button:hover {
     background-color: var(--darkest-grey);
+}
+
+/* Filterfunktion i meny */
+#filterSelect {
+    background-color: var(--light-grey);
+    color: var(--darkest-grey);
+    font-family: "Fira Sans", sans-serif;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    margin-left: 1.2rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.d-none {
+    display: none;
 }
 
 /* styling för foodtrucks */
