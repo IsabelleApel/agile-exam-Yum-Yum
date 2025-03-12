@@ -1,5 +1,5 @@
 import { createElement, addClass } from "../Utils/domUtils.js";
-
+import { addToCart } from "../modules/cart.js";
 
 //wontonContainer
 export function createMenu(product) {
@@ -16,7 +16,7 @@ export function createMenu(product) {
 
     menuCard.addEventListener('click', () => {
         console.log(`Du klickade på kortet för: ${product.name}`);
-        addToCart();
+        addToCart(product);
     });
 
     return menuCard;
@@ -46,7 +46,7 @@ export function createDipMenu(dips) {
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 console.log(`Du klickade på: ${button.textContent}`);
-                addToCart();
+                /* addToCart(); */
             });
         });
     }, 0);
@@ -78,7 +78,7 @@ export function createDrinkMenu(drinks) {
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 console.log(`Du klickade på: ${button.textContent}`);
-                addToCart();
+                /* addToCart(); */
             });
         });
     }, 0);
