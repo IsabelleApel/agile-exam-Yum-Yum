@@ -12,6 +12,7 @@
     --light-grey: #EEEEEE;
     --mid-grey: #C2C1C1;
     --text-white: #F4F3F1;
+    --mid-dark-grey: #837C7C;
 }
 
 /* Styling för meny */
@@ -49,10 +50,6 @@
     border-bottom: 1px dotted var(--mid-grey);
 }
 
-/* .menu-card:hover {
-    background-color: #837C7C;
-} */
-
 .menu-card--firstrow {
     display: flex;
     flex-direction: row;
@@ -68,7 +65,7 @@
     font-family: "Fira Sans", sans-serif;
     font-size: 0.8rem;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    background-color: #837C7C;
+    background-color: var(--mid-dark-grey);
     color: var(--text-white);
     border-radius: 5px;
     border: none;
@@ -91,11 +88,14 @@
     margin-left: 1.2rem;
     border-radius: 5px;
     border: none;
+    margin-bottom: 0.5rem;
 }
 
 .d-none {
     display: none;
 }
+
+/* Syling för header */
 .menu-header {
   display: flex;
   justify-content: flex-end;

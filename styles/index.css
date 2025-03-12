@@ -103,6 +103,7 @@ header {
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .btn:hover {
