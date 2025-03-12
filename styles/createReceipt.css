@@ -2,7 +2,10 @@
 body {
     margin: 0;
     font-family: 'Fira Sans', sans-serif;
+    background: #605858 !important;
 }
+
+
 
 /* Header */
 header {
@@ -57,6 +60,12 @@ header img {
 .receipt__item-text {
     display: flex;
     flex-direction: column
+}
+
+.receipt__item-name,
+.receipt__item-price {
+    font-size: 18px;
+    color: #353131;
 }
 
 .receipt__title {
@@ -173,7 +182,5 @@ header img {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    margin: 10px;
-
+    background-color: #605858;
 }

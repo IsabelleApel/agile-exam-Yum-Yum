@@ -1,20 +1,18 @@
 import { createReceipt } from "../Utils/domUtils.js";
+
 document.addEventListener("DOMContentLoaded", async () => {
   if (window.location.pathname.includes("createReceipt.html")) {
-    // Hämta kvittot från local storage
+    //Hämtar cart från local storage
     const cart = JSON.parse(localStorage.getItem("cart"));
-
-    const groupedCart = cart.reduce((acc, item) => {
-      // Buscar si ya existe en el acumulador
-      const existingItem = acc.find((i) => i.id === item.id);
+    //Skapar en grupperad cart, där samma artikel läggs ihop
+    const groupedCart = cart.reduce((articles, item) => {
+      const existingItem = articles.find((i) => i.id === item.id);
 
       if (existingItem) {
-        // Si ya existe, sumamos 1 a la cantidad
         existingItem.qty += 1;
         existingItem.totalPrice = existingItem.qty * existingItem.unitPrice;
       } else {
-        // Si no existe, lo agregamos con qty inicial 1
-        acc.push({
+        articles.push({
           ...item,
           qty: 1,
           unitPrice: item.price,
@@ -22,12 +20,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
       }
 
-      return acc;
+      return articles;
     }, []);
-    const orderItems = cart;
-    let totalPrice = orderItems.reduce((total, item) => total + item.price, 0);
-
-    console.log(groupedCart);
+    //Räknar ut totalpriset
+    let totalPrice = cart.reduce((total, item) => total + item.price, 0);
+    //Skapar kvitto
     createReceipt(groupedCart, totalPrice, "111");
   }
 });
@@ -53,3 +50,19 @@ async function saveOrderToProfile(receipt) {
     console.error("Fel vid sparande av kvitto:", error);
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.querySelector(".menu-icon");
+  const menu = document.querySelector(".menu");
+
+  menuIcon.addEventListener("click", function (e) {
+    e.stopPropagation();
+    menu.classList.toggle("open");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!menu.contains(e.target) && !menuIcon.contains(e.target)) {
+      menu.classList.remove("open");
+    }
+  });
+});

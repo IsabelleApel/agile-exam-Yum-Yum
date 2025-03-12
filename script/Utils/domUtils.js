@@ -19,11 +19,13 @@ export function removeClass(element, className) {
 }
 
 export async function createReceipt(orderItems, totalPrice, orderId) {
-  console.log("createreceipt");
+  //Hämtar html elementet där kvittot ska visas
   const receiptContainer = getElement("#receiptContainer");
+  //Rensar innehållet först
   receiptContainer.innerHTML = "";
-
+  //Skapar kvittot
   const receiptHTML = `
+   <article class="cart-view__receipt">
         <img class="cart-view__logo" src="assets/logga_kvitto.png" alt="Yum Yum Gimmie Sum Logo" />
         <h2 class="receipt__title">KVITTO</h2>
         <p class="receipt__order-id">#${orderId}</p>
@@ -47,6 +49,7 @@ export async function createReceipt(orderItems, totalPrice, orderId) {
             <span class="receipt__total-label">TOTALT</span>
             <strong class="receipt__total-amount">${totalPrice} SEK</strong>
             <small class="receipt__total-tax">inkl 20% moms</small>
+        </article>
         </article>
     `;
 
