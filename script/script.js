@@ -19,16 +19,15 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
 }else if(window.location.pathname === '/foodtrucks.html'){
     console.log('foodtruck');
     displayFoodtruckList();
-
+    displayHeader();
     
 } else if(window.location.pathname === '/cart.html') {
     displayCart();
     displayTotalPrice();
     cartButton();
-} 
-
     displayHeader();
-}else if(window.location.pathname === '/aboutUs.html'){
+    
+} else if(window.location.pathname === '/aboutUs.html'){
     displayHeader();
 }
 
