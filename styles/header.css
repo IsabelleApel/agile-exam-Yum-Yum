@@ -39,7 +39,7 @@
   left: -250px; 
   width: 250px;
   height: 100%;
-  background-color: var(--mid-grey);
+  background-color: var(--dark-grey);  
   display: flex;
   flex-direction: column;
   padding-top: 60px;
