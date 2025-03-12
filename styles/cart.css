@@ -97,7 +97,7 @@
     font-family: Fira Sans;
     font-weight: bold;
     font-size: 24px;
-    color: #353131;
+    color: var(--text-white);
 }
 
 .cart-item h2 {
@@ -106,7 +106,7 @@
 }
 
 .cart-item span {
-    color: #353131;
+    color: var(--text-white);
     margin-right: 10px;
 }
 

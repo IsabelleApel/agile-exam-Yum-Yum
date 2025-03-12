@@ -7,6 +7,14 @@ import { oData } from "../data/data.js";
 import { loadHeader } from "../components/header.js";
 import { displayCart, displayTotalPrice } from "./cart.js";
 
+export function displayLandingPage(){
+    buttonClick('#menuBtn', '/menu.html');
+    buttonClick('#foodTruckBtn', '/foodtrucks.html');
+    //behöver veta namn på html-fil för login-sida
+    buttonClick('#loginBtn', '/login.html');
+    displayHeader();
+}
+
 export async function displayMenu() {
     try {
         let products = await fetchMenu();

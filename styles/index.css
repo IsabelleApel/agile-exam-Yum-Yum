@@ -22,7 +22,7 @@ body {
   min-height: 100vh;
 }
 
-
+/* 
 .header-container {
   display: flex;
   align-items: center;
@@ -50,7 +50,7 @@ header {
 .header-logo {
   max-width: 300px;
   height: auto;
-}
+} */
 
 .content {
   display: flex;
@@ -90,7 +90,7 @@ header {
 
 
 
-.menu {
+/* .menu {
   position: fixed;
   top: 0;
   left: -250px; 
@@ -154,4 +154,4 @@ header {
     padding: 10px;
     font-size: 1em;
   }
-}
+} */
