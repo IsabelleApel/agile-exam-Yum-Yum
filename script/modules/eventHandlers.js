@@ -8,6 +8,20 @@ export function buttonClick(element, pathname){
     })
 }
 
+export function cartButton() {
+    const shoppingIcon = document.querySelector('.fa-cart-shopping');
+
+    shoppingIcon.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (window.location.pathname === '/cart.html') {
+            window.location.href = '/menu.html';
+        } else {
+            window.location.href = '/cart.html';
+        }
+    });
+}
+
 export function menuToggle(){
     const menuIconRef = getElement('.menu-icon');
     const menuRef = getElement('.menu');
@@ -23,5 +37,3 @@ export function menuToggle(){
         }
       });
 }
-
-
