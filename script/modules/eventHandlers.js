@@ -9,36 +9,42 @@ export function buttonClick(element, pathname) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  let filterSelect = document.getElementById("filterSelect");
+  if (window.location.pathname === "/orderConfirmation.html") {
+    buttonClick("#newOrder", "./menu.html");
+    buttonClick("#receipt", "./createReceipt.html");
+  }
+  if (window.location.pathname === "/menu.html") {
+    let filterSelect = document.getElementById("filterSelect");
 
-  // Lyssnar efter en change (när man väljer nytt alternativ i dropdown)
-  filterSelect.addEventListener("change", (event) => {
-    let filterValue = event.target.value;
+    // Lyssnar efter en change (när man väljer nytt alternativ i dropdown)
+    filterSelect.addEventListener("change", (event) => {
+      let filterValue = event.target.value;
 
-    // Hämta alla containers
-    let wontonContainer = document.getElementById("wontonContainer");
-    let dipContainer = document.getElementById("dipContainer");
-    let drinkContainer = document.getElementById("drinkContainer");
+      // Hämta alla containers
+      let wontonContainer = document.getElementById("wontonContainer");
+      let dipContainer = document.getElementById("dipContainer");
+      let drinkContainer = document.getElementById("drinkContainer");
 
-    // Visa/dölj beroende på filtervärde (type)
-    if (filterValue === "all") {
-      removeClass(wontonContainer, "d-none");
-      removeClass(dipContainer, "d-none");
-      removeClass(drinkContainer, "d-none");
-    } else if (filterValue === "wonton") {
-      removeClass(wontonContainer, "d-none");
-      addClass(dipContainer, "d-none");
-      addClass(drinkContainer, "d-none");
-    } else if (filterValue === "dip") {
-      addClass(wontonContainer, "d-none");
-      removeClass(dipContainer, "d-none");
-      addClass(drinkContainer, "d-none");
-    } else if (filterValue === "drink") {
-      addClass(wontonContainer, "d-none");
-      addClass(dipContainer, "d-none");
-      removeClass(drinkContainer, "d-none");
-    }
-  });
+      // Visa/dölj beroende på filtervärde (type)
+      if (filterValue === "all") {
+        removeClass(wontonContainer, "d-none");
+        removeClass(dipContainer, "d-none");
+        removeClass(drinkContainer, "d-none");
+      } else if (filterValue === "wonton") {
+        removeClass(wontonContainer, "d-none");
+        addClass(dipContainer, "d-none");
+        addClass(drinkContainer, "d-none");
+      } else if (filterValue === "dip") {
+        addClass(wontonContainer, "d-none");
+        removeClass(dipContainer, "d-none");
+        addClass(drinkContainer, "d-none");
+      } else if (filterValue === "drink") {
+        addClass(wontonContainer, "d-none");
+        addClass(dipContainer, "d-none");
+        removeClass(drinkContainer, "d-none");
+      }
+    });
+  }
 });
 
 export function cartButton() {
@@ -71,7 +77,7 @@ export function menuToggle() {
   });
 }
 
-const saveButton = getElement("#saveOrder");
-saveButton.addEventListener("click", async () => {
-  await saveOrderToProfile({ orderId, orderItems, totalPrice });
-});
+// const saveButton = getElement("#saveOrder");
+// saveButton.addEventListener("click", async () => {
+//   await saveOrderToProfile({ orderId, orderItems, totalPrice });
+// });

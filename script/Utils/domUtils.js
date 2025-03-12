@@ -19,6 +19,7 @@ export function removeClass(element, className) {
 }
 
 export async function createReceipt(orderItems, totalPrice, orderId) {
+  console.log("createreceipt");
   const receiptContainer = getElement("#receiptContainer");
   receiptContainer.innerHTML = "";
 
@@ -36,7 +37,7 @@ export async function createReceipt(orderItems, totalPrice, orderId) {
                         <em class="receipt__item-qty">${item.qty} stycken</em>
                     </section>
                     <span class="price-connector"></span>
-                    <span class="receipt__item-price">${item.price} SEK</span>
+                    <span class="receipt__item-price">${item.totalPrice} SEK</span>
                 </li>
             `
               )
