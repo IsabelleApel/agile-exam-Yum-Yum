@@ -86,3 +86,7 @@
   color: var(--text-white);
 }
 
+.d-none{
+  visibility: hidden;
+}
+
