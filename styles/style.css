@@ -211,11 +211,38 @@
 }
 
 .order-confirmation__bottom{
-    display: flex;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    /* display: flex;
     flex-direction: column;
     gap: 1rem;
     margin-bottom: 1rem;
-    padding: 20px;
+    padding: 20px; */
+  }
+
+  .order-confirmation__btn{
+    font-family: Fira Sans;
+    font-weight: bold;
+    width: 350px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    color: var(--text-white);
+  }
+
+  .order-confirmation__btn--new-order{
+    margin-bottom: 1rem;
+    background-color: var(--darkest-grey);
+    
+  }
+
+  .order-confirmation__btn--receipt{
+    background-color: var(--dark-grey);
+    border: 2px solid var(--light-grey);
   }
 
 /* styling för index */
