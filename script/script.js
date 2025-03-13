@@ -20,5 +20,9 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
 } else if(window.location.pathname === '/aboutUs.html'){
     displayHeader();
 } else if(window.location.pathname === '/receipt.html'){
-    displayHeader()
+    // displayReceipt();
+    displayHeader().then(() => {
+        hideHeaderElement('.menu-icon');
+        hideHeaderElement('.header-shopping-bag');
+    })
 }
