@@ -16,10 +16,10 @@ export function addToCart(dish) {
 
 //notisen uppdateras när mat läggs till
 export function updateCartCount(count) {
-    const cartCountElement = document.querySelector('.cart-count');
-    if(cartCountElement) {
-        cartCountElement.textContent = count;
-    }
+  const cartCountElement = document.querySelector(".cart-count");
+  if (cartCountElement) {
+    cartCountElement.textContent = count;
+  }
 }
 
 export function initCartCount() {
@@ -29,39 +29,38 @@ export function initCartCount() {
 
 //displaya varukorgen
 export function displayCart() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartItemsContainer = document.querySelector('.cart-items-container');
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartItemsContainer = document.querySelector(".cart-items-container");
 
-    updateCartCount(cart.length);
+  updateCartCount(cart.length);
 
-    cartItemsContainer.textContent = '';
+  cartItemsContainer.textContent = "";
 
-    cart.forEach(dish => {
+  cart.forEach((dish) => {
 
-        const showDish = document.createElement('div');
-        showDish.classList.add('cart-item');
+    const showDish = document.createElement("div");
+    showDish.classList.add("cart-item");
 
-        const dishName = document.createElement('h2');
-        showDish.textContent = dish.name;
+    const dishName = document.createElement("h2");
+    showDish.textContent = dish.name;
 
-        const showPrice = document.createElement('span');
-        showPrice.textContent = `${dish.price} SEK`;
+    const showPrice = document.createElement("span");
+    showPrice.textContent = `${dish.price} SEK`;
 
-        const removeIcon = document.createElement('i');
-        removeIcon.classList.add('fa-solid', 'fa-xmark');
+    const removeIcon = document.createElement("i");
+    removeIcon.classList.add("fa-solid", "fa-xmark");
 
-        removeIcon.addEventListener('click', (e) => {
-            e.preventDefault();
-            removeCartItem(dish.id);
-            displayCart();
-        });
-
-        showDish.appendChild(dishName);
-        showDish.appendChild(showPrice);
-        showDish.appendChild(removeIcon);
-        cartItemsContainer.appendChild(showDish);
-
+    removeIcon.addEventListener("click", (e) => {
+      e.preventDefault();
+      removeCartItem(dish.id);
+      displayCart();
     });
+
+    showDish.appendChild(dishName);
+    showDish.appendChild(showPrice);
+    showDish.appendChild(removeIcon);
+    cartItemsContainer.appendChild(showDish);
+  });
 }
 
 //ta bort från varukorgen
@@ -77,31 +76,30 @@ function removeCartItem(dishId) {
 
     updateCartCount(cart.length);
     displayTotalPrice();
-    console.log(`maträtt med id ${dishId} togs bort`)
 }
 
 //räknar ut totalt pris
 function totalPriceItem() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let totalPrice = 0;
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let totalPrice = 0;
 
-    cart.forEach(dish => {
-        totalPrice += dish.price;
-    });
-    return totalPrice;
+  cart.forEach((dish) => {
+    totalPrice += dish.price;
+  });
+  return totalPrice;
 }
 
 //visa totalt pris
 export function displayTotalPrice() {
-    const totalPrice = totalPriceItem();
-    const totalPriceElement = document.querySelector('.total-price .price');
-    totalPriceElement.textContent = `${totalPrice} SEK`;
+  const totalPrice = totalPriceItem();
+  const totalPriceElement = document.querySelector(".total-price .price");
+  totalPriceElement.textContent = `${totalPrice} SEK`;
 }
 
 //eventlistener på betala-knappen
-// export function paymentButton() {
-//     document.querySelector('.pay-button').addEventListener('click', (e) => {
-//         e.preventDefault();
-//         window.location.href = '/orderConfirmation.html'; //ÄNDRA URL SEN!!!
-//     });
-// }
+function paymentButton() {
+  document.querySelector(".pay-button").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "http://127.0.0.1:5500/receipt.html"; //ÄNDRA URL SEN!!!
+  });
+}

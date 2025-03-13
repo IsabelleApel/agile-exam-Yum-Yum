@@ -5,6 +5,9 @@ import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
 import { buttonClick, menuToggle, cartButton } from "./eventHandlers.js";
 import { oData } from "../data/data.js";
 import { loadHeader } from "../components/header.js";
+
+// import { receipt } from "../components/receipt.js";
+
 import { displayCart, displayTotalPrice } from "./cart.js";
 
 export function displayLandingPage(){
@@ -16,45 +19,64 @@ export function displayLandingPage(){
 }
 
 export async function displayMenu() {
-    try {
-        let products = await fetchMenu();
+  try {
+    let products = await fetchMenu();
 
-        // Hittar rätt container
-        let wontonContainer = document.getElementById('wontonContainer');
-        let dipContainer = document.getElementById('dipContainer');
-        let drinkContainer = document.getElementById('drinkContainer');
+    // Hittar rätt container
+    let wontonContainer = document.getElementById("wontonContainer");
+    let dipContainer = document.getElementById("dipContainer");
+    let drinkContainer = document.getElementById("drinkContainer");
 
-        // Rensa innehållet först
-        wontonContainer.innerHTML = "";
-        dipContainer.innerHTML = "";
-        drinkContainer.innerHTML = "";
+    // Rensa innehållet först
+    wontonContainer.innerHTML = "";
+    dipContainer.innerHTML = "";
+    drinkContainer.innerHTML = "";
 
-        // Filtrera produkter
-        let wontons = products.filter(product => product.type === 'wonton');
-        let dips = products.filter(product => product.type === 'dip');
-        let drinks = products.filter(product => product.type === 'drink');
+    // Filtrera produkter
+    let wontons = products.filter((product) => product.type === "wonton");
+    let dips = products.filter((product) => product.type === "dip");
+    let drinks = products.filter((product) => product.type === "drink");
 
-        // Lägg till wontons som individuella kort
-        wontons.forEach(product => {
-            let menuCard = createMenu(product);
-            wontonContainer.appendChild(menuCard);
-        });
+    // Lägg till wontons som individuella kort
+    wontons.forEach((product) => {
+      let menuCard = createMenu(product);
+      wontonContainer.appendChild(menuCard);
+    });
 
-        // Lägg till dips (alla i ett kort)
-        let dipMenuCard = createDipMenu(dips);
-        if (dipMenuCard) {
-            dipContainer.appendChild(dipMenuCard);
-        }
-
-        // Lägg till drycker (alla i ett kort)
-        let drinkMenuCard = createDrinkMenu(drinks);
-        if (drinkMenuCard) {
-            drinkContainer.appendChild(drinkMenuCard);
-        }
-
-    } catch (error) {
-        console.error("Fel vid hämtning av meny:", error);
+    // Lägg till dips (alla i ett kort)
+    let dipMenuCard = createDipMenu(dips);
+    if (dipMenuCard) {
+      dipContainer.appendChild(dipMenuCard);
     }
+
+    // Lägg till drycker (alla i ett kort)
+    let drinkMenuCard = createDrinkMenu(drinks);
+    if (drinkMenuCard) {
+      drinkContainer.appendChild(drinkMenuCard);
+    }
+  } catch (error) {
+    console.error("Fel vid hämtning av meny:", error);
+  }
+}
+
+
+export function displayOrderConfirmation() {
+  getETA();
+  getOrderNum();
+  const orderId = randomString(11);
+  const totalPrice = orderItems.reduce((total, item) => total + item.price, 0);
+  buttonClick("#newOrder", "./menu.html");
+  receipt(orderItems, totalPrice, orderId);
+  // behöver veta namn på html-fil för kvittot(nedan)
+  buttonClick("#receipt", "./receipt.html");
+}
+
+export function displayFoodtruckList() {
+  const listRef = getElement("#foodtrucksList");
+  for (let place of oData.foodtruckStops) {
+    let card = createFoodtruckCard(place);
+    listRef.appendChild(card);
+  }
 }
 
 export function displayCartPage(){
@@ -64,27 +86,6 @@ export function displayCartPage(){
         hideHeaderElement('.menu-icon');
     })
     buttonClick('.pay-button', './orderConfirmation.html'); 
-}
-
-
-export function displayOrderConfirmation(){
-    getETA();
-    getOrderNum();
-    displayHeader().then(() => {
-        hideHeaderElement('.menu-icon');
-        hideHeaderElement('.header-shopping-bag');
-    })
-    buttonClick('#newOrder', './menu.html');
-    // behöver veta namn på html-fil för kvittot(nedan)
-    buttonClick('#receipt', './receipt.html'); 
-}
-
-export function displayFoodtruckList(){
-    const listRef = getElement('#foodtrucksList');
-    for(let place of oData.foodtruckStops){
-        let card = createFoodtruckCard(place);
-        listRef.appendChild(card);
-    }
 }
 
 export async function displayHeader(){
@@ -100,7 +101,6 @@ export async function displayHeader(){
         menuToggle();
         cartButton();
     });
-
   
 }
 
@@ -122,5 +122,5 @@ export function hideHeaderElement(element){
     addClass(elemRef, 'd-none');
     
     
-    
 }
+
