@@ -8,7 +8,7 @@ import { loadHeader } from "../components/header.js";
 
 // import { receipt } from "../components/receipt.js";
 
-import { displayCart, displayTotalPrice } from "./cart.js";
+import { displayCart, displayTotalPrice, initCartCount } from "./cart.js";
 
 export function displayLandingPage(){
     buttonClick('#menuBtn', '/menu.html');
@@ -107,6 +107,7 @@ export async function displayHeader(){
         containerRef.innerHTML = headerHTML;
         menuToggle();
         cartButton();
+        initCartCount();
     });
   
 }

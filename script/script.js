@@ -9,7 +9,6 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
 } else if(window.location.pathname === '/menu.html') {
     displayMenu();
     displayHeader();
-    initCartCount();
 } else if(window.location.pathname === '/orderConfirmation.html'){
     displayOrderConfirmation();
 }else if(window.location.pathname === '/foodtrucks.html'){
