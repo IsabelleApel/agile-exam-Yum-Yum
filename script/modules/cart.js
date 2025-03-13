@@ -99,9 +99,9 @@ export function displayTotalPrice() {
 }
 
 //eventlistener på betala-knappen
-function paymentButton() {
-    document.querySelector('.pay-button').addEventListener('click', (e) => {
-        e.preventDefault();
-        window.location.href = 'http://127.0.0.1:5500/kvitto.html'; //ÄNDRA URL SEN!!!
-    });
-}
+// export function paymentButton() {
+//     document.querySelector('.pay-button').addEventListener('click', (e) => {
+//         e.preventDefault();
+//         window.location.href = '/orderConfirmation.html'; //ÄNDRA URL SEN!!!
+//     });
+// }

@@ -1,10 +1,19 @@
 import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard } from "../components/itemCard.js";
 import { fetchMenu } from "./api.js";
 import { randomNum, randomString } from "../Utils/utils.js";
-import { getElement } from "../Utils/domUtils.js";
-import { buttonClick, menuToggle } from "./eventHandlers.js";
+import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
+import { buttonClick, menuToggle, cartButton } from "./eventHandlers.js";
 import { oData } from "../data/data.js";
 import { loadHeader } from "../components/header.js";
+import { displayCart, displayTotalPrice } from "./cart.js";
+
+export function displayLandingPage(){
+    buttonClick('#menuBtn', '/menu.html');
+    buttonClick('#foodTruckBtn', '/foodtrucks.html');
+    //behöver veta namn på html-fil för login-sida
+    buttonClick('#loginBtn', '/login.html');
+    displayHeader();
+}
 
 export async function displayMenu() {
     try {
@@ -48,15 +57,52 @@ export async function displayMenu() {
     }
 }
 
+export function displayCartPage(){
+    displayCart();
+    displayTotalPrice();
+    displayHeader().then(() => {
+        hideHeaderElement('.menu-icon');
+    })
+    buttonClick('.pay-button', './orderConfirmation.html'); 
+}
+
 
 export function displayOrderConfirmation(){
     getETA();
     getOrderNum();
+    displayHeader().then(() => {
+        hideHeaderElement('.menu-icon');
+        hideHeaderElement('.header-shopping-bag');
+    })
     buttonClick('#newOrder', './menu.html');
     // behöver veta namn på html-fil för kvittot(nedan)
     buttonClick('#receipt', './receipt.html'); 
 }
 
+export function displayFoodtruckList(){
+    const listRef = getElement('#foodtrucksList');
+    for(let place of oData.foodtruckStops){
+        let card = createFoodtruckCard(place);
+        listRef.appendChild(card);
+    }
+}
+
+export async function displayHeader(){
+    const containerRef = getElement('#headerContainer');
+
+    if(!containerRef){
+        console.error('header container not found');
+        return Promise.reject('header container not found');
+    }
+
+    return loadHeader().then(headerHTML => {
+        containerRef.innerHTML = headerHTML;
+        menuToggle();
+        cartButton();
+    });
+
+  
+}
 
 // vet inte riktigt vart det är passande att ha getETA() och getOrderNum()(vilken script-fil)
 function getETA(){
@@ -71,25 +117,10 @@ function getOrderNum(){
     orderNumRef.textContent = `#${orderNumber}`;
 }
 
-export function displayFoodtruckList(){
-    const listRef = getElement('#foodtrucksList');
-    for(let place of oData.foodtruckStops){
-        let card = createFoodtruckCard(place);
-        listRef.appendChild(card);
-
-    }
-}
-
-export function displayHeader(){
-    const containerRef = getElement('#headerContainer');
-
-    if(!containerRef){
-        console.error('header container not found');
-        return;
-    }
-
-    loadHeader().then(headerHTML => {
-        containerRef.innerHTML = headerHTML;
-        menuToggle();
-    });
+export function hideHeaderElement(element){
+    const elemRef = getElement(element);
+    addClass(elemRef, 'd-none');
+    
+    
+    
 }
