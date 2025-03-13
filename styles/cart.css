@@ -4,9 +4,17 @@
     box-sizing: border-box;
 }
 
+:root{
+    --dark-grey: #605858;
+    --darkest-grey: #353131;
+    --light-grey: #EEEEEE;
+    --mid-grey: #C2C1C1;
+    --text-white: #F4F3F1;
+}
+
 /* CSS för cart.js */
 .cart-view {
-    background-color: #EEEEEE;
+    background-color: var(--dark-grey);
     width: 100vw;
     height: 100vh;
 }
@@ -37,7 +45,7 @@
 .total-price {
     display: flex;
     justify-content: space-between;
-    background-color: #C2C1C1;
+    background-color: var(--text-white);
     color: #353131;
     padding-left: 10px;
     line-height: 70px;
@@ -47,13 +55,7 @@
     padding-right: 20px;
 }
 
-.line {
-    width: 90%;
-    margin: 10px auto;
-    border-top: 2px dotted #C2C1C1;
-}
-
-.cart-header {
+/* .cart-header {
     display: flex;
     justify-content: flex-end;
     padding: 30px;
@@ -74,22 +76,29 @@
     border-radius: 50%;
     padding: 2px 6px;
     font-size: 16px;
-}
+} */
 
 .cart-items-container {
     display: flex;
     flex-direction: column;
+    border-top: 1px solid var(--text-white);
+    border-bottom: 1px solid var(--text-white);
+    margin-left: 20px;
+    margin-right: 20px;
+    max-height: calc(100vh - 270px);
+    overflow-y: scroll;
 }
 
 .cart-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
     font-family: Fira Sans;
     font-weight: bold;
     font-size: 24px;
-    color: #353131;
+    color: var(--text-white);
+    text-transform: uppercase;
 }
 
 .cart-item h2 {
@@ -98,7 +107,7 @@
 }
 
 .cart-item span {
-    color: #353131;
+    color: var(--text-white);
     margin-right: 10px;
 }
 

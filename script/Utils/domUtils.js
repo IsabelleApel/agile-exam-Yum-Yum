@@ -10,6 +10,7 @@ export function createElement(tagname) {
   return document.createElement(tagname);
 }
 
+
 export function addClass(element, className) {
   return element.classList.add(className);
 }
@@ -56,3 +57,4 @@ export async function createReceipt(orderItems, totalPrice, orderId) {
 
   receiptContainer.innerHTML = receiptHTML;
 }
+

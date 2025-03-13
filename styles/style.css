@@ -91,19 +91,23 @@
     margin-bottom: 0.5rem;
 }
 
+
+/* .menu-header {
+
 .d-none {
     display: none;
 }
 
 /* Syling för header */
 .menu-header {
+
   display: flex;
   justify-content: flex-end;
   padding: 30px;
   font-size: 30px;
-}
+} */
 
-.cart-icon {
+/* .cart-icon {
   position: relative;
   display: inline-block;
 }
@@ -117,7 +121,7 @@
   border-radius: 50%;
   padding: 2px 6px;
   font-size: 16px;
-}
+} */
 
 /* styling för foodtrucks */
 
@@ -207,11 +211,38 @@
 }
 
 .order-confirmation__bottom{
-    display: flex;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    /* display: flex;
     flex-direction: column;
     gap: 1rem;
     margin-bottom: 1rem;
-    padding: 20px;
+    padding: 20px; */
+  }
+
+  .order-confirmation__btn{
+    font-family: Fira Sans;
+    font-weight: bold;
+    width: 350px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    color: var(--text-white);
+  }
+
+  .order-confirmation__btn--new-order{
+    margin-bottom: 1rem;
+    background-color: var(--darkest-grey);
+    
+  }
+
+  .order-confirmation__btn--receipt{
+    background-color: var(--dark-grey);
+    border: 2px solid var(--light-grey);
   }
 
 /* styling för index */
@@ -298,5 +329,9 @@
       font-size: 1em;
     }
   }   */
+
+  .d-none {
+    display: none;
+}
 
  

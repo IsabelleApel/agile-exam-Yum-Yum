@@ -1,16 +1,22 @@
-import {
-  createMenu,
-  createDipMenu,
-  createDrinkMenu,
-  createFoodtruckCard,
-} from "../components/itemCard.js";
+import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard } from "../components/itemCard.js";
 import { fetchMenu } from "./api.js";
 import { randomNum, randomString } from "../Utils/utils.js";
-import { getElement } from "../Utils/domUtils.js";
-import { buttonClick, menuToggle } from "./eventHandlers.js";
+import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
+import { buttonClick, menuToggle, cartButton } from "./eventHandlers.js";
 import { oData } from "../data/data.js";
 import { loadHeader } from "../components/header.js";
+
 // import { receipt } from "../components/receipt.js";
+
+import { displayCart, displayTotalPrice } from "./cart.js";
+
+export function displayLandingPage(){
+    buttonClick('#menuBtn', '/menu.html');
+    buttonClick('#foodTruckBtn', '/foodtrucks.html');
+    //behöver veta namn på html-fil för login-sida
+    buttonClick('#loginBtn', '/login.html');
+    displayHeader();
+}
 
 export async function displayMenu() {
   try {
@@ -53,6 +59,7 @@ export async function displayMenu() {
   }
 }
 
+
 export function displayOrderConfirmation() {
   getETA();
   getOrderNum();
@@ -64,19 +71,6 @@ export function displayOrderConfirmation() {
   buttonClick("#receipt", "./receipt.html");
 }
 
-// vet inte riktigt vart det är passande att ha getETA() och getOrderNum()(vilken script-fil)
-function getETA() {
-  let estimatedTime = randomNum(10, 20);
-  let etaRef = getElement("#orderConfirmationETA");
-  etaRef.textContent = `ETA ${estimatedTime} MIN`;
-}
-
-function getOrderNum() {
-  let orderNumber = randomString(11);
-  let orderNumRef = getElement("#orderConfirmationNum");
-  orderNumRef.textContent = `#${orderNumber}`;
-}
-
 export function displayFoodtruckList() {
   const listRef = getElement("#foodtrucksList");
   for (let place of oData.foodtruckStops) {
@@ -85,16 +79,48 @@ export function displayFoodtruckList() {
   }
 }
 
-export function displayHeader() {
-  const containerRef = getElement("#headerContainer");
-
-  if (!containerRef) {
-    console.error("header container not found");
-    return;
-  }
-
-  loadHeader().then((headerHTML) => {
-    containerRef.innerHTML = headerHTML;
-    menuToggle();
-  });
+export function displayCartPage(){
+    displayCart();
+    displayTotalPrice();
+    displayHeader().then(() => {
+        hideHeaderElement('.menu-icon');
+    })
+    buttonClick('.pay-button', './orderConfirmation.html'); 
 }
+
+export async function displayHeader(){
+    const containerRef = getElement('#headerContainer');
+
+    if(!containerRef){
+        console.error('header container not found');
+        return Promise.reject('header container not found');
+    }
+
+    return loadHeader().then(headerHTML => {
+        containerRef.innerHTML = headerHTML;
+        menuToggle();
+        cartButton();
+    });
+  
+}
+
+// vet inte riktigt vart det är passande att ha getETA() och getOrderNum()(vilken script-fil)
+function getETA(){
+    let estimatedTime = randomNum(10, 20);
+    let etaRef = getElement("#orderConfirmationETA");
+    etaRef.textContent = `ETA ${estimatedTime} MIN`;
+}
+
+function getOrderNum(){
+    let orderNumber = randomString(11);
+    let orderNumRef = getElement('#orderConfirmationNum');
+    orderNumRef.textContent = `#${orderNumber}`;
+}
+
+export function hideHeaderElement(element){
+    const elemRef = getElement(element);
+    addClass(elemRef, 'd-none');
+    
+    
+}
+

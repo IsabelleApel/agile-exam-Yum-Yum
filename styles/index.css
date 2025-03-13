@@ -22,6 +22,8 @@ body {
   min-height: 100vh;
 }
 
+
+/* 
 .header-container {
   display: flex;
   align-items: center;
@@ -66,7 +68,7 @@ body {
 .header-logo img {
   max-width: 300px;
   height: auto;
-}
+} */
 
 header {
   text-align: center;
@@ -110,8 +112,14 @@ header {
   background-color: var(--darkest-grey);
 }
 
+
+
+
+/* .menu {
+
 /* Hamburger Meny */
 .menu {
+
   position: fixed;
   top: 0;
   left: -250px;
@@ -187,4 +195,4 @@ header {
     padding: 10px;
     font-size: 1em;
   }
-}
+} */
