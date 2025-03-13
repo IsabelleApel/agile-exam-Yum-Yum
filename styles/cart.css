@@ -45,7 +45,7 @@
 .total-price {
     display: flex;
     justify-content: space-between;
-    background-color: #C2C1C1;
+    background-color: var(--text-white);
     color: #353131;
     padding-left: 10px;
     line-height: 70px;
@@ -53,12 +53,6 @@
 
 .price {
     padding-right: 20px;
-}
-
-.line {
-    width: 90%;
-    margin: 10px auto;
-    border-top: 2px dotted #C2C1C1;
 }
 
 /* .cart-header {
@@ -87,17 +81,24 @@
 .cart-items-container {
     display: flex;
     flex-direction: column;
+    border-top: 1px solid var(--text-white);
+    border-bottom: 1px solid var(--text-white);
+    margin-left: 20px;
+    margin-right: 20px;
+    max-height: calc(100vh - 270px);
+    overflow-y: scroll;
 }
 
 .cart-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
     font-family: Fira Sans;
     font-weight: bold;
     font-size: 24px;
     color: var(--text-white);
+    text-transform: uppercase;
 }
 
 .cart-item h2 {
