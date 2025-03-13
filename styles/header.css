@@ -86,7 +86,7 @@
   color: var(--text-white);
 }
 
-.d-none{
+.v-hidden{
   visibility: hidden;
 }
 

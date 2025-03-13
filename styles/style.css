@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root{
@@ -91,21 +91,14 @@
     margin-bottom: 0.5rem;
 }
 
-
-/* .menu-header {
-
-.d-none {
-    display: none;
-}
-
 /* Syling för header */
-.menu-header {
+/* .menu-header {
 
   display: flex;
   justify-content: flex-end;
   padding: 30px;
   font-size: 30px;
-} */
+}  */
 
 /* .cart-icon {
   position: relative;
@@ -139,7 +132,8 @@
 
 .foodtrucks__heading{
     align-self: center;
-    padding: 1rem 0;
+    padding: 0 0 1rem 0;
+    font-size: 2.2rem;
 }
 
 .foodtrucks__map-container{
@@ -148,7 +142,7 @@
 }
 
 .foodtrucks__list-heading{
-    padding: .8rem 0;
+    padding: 1.5rem 0;
 }
 
 .foodtrucks__list{
@@ -166,10 +160,10 @@
 }
 
 .foodtrucks__list-item-right{
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  text-align: end;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: end;
 }
 
 /* styling för orderConfirmation */
@@ -221,9 +215,9 @@
     gap: 1rem;
     margin-bottom: 1rem;
     padding: 20px; */
-  }
+}
 
-  .order-confirmation__btn{
+.order-confirmation__btn{
     font-family: Fira Sans;
     font-weight: bold;
     width: 350px;
@@ -232,18 +226,17 @@
     font-size: 20px;
     border: none;
     color: var(--text-white);
-  }
+}
 
-  .order-confirmation__btn--new-order{
+.order-confirmation__btn--new-order{
     margin-bottom: 1rem;
-    background-color: var(--darkest-grey);
-    
-  }
+    background-color: var(--darkest-grey); 
+}
 
-  .order-confirmation__btn--receipt{
+.order-confirmation__btn--receipt{
     background-color: var(--dark-grey);
     border: 2px solid var(--light-grey);
-  }
+}
 
 /* styling för index */
 /*   
@@ -330,8 +323,12 @@
     }
   }   */
 
-  .d-none {
+.d-none {
     display: none;
+}
+
+.v-hidden{
+    visibility: hidden;
 }
 
  

@@ -1,15 +1,29 @@
 /* Estilos generales */
-body {
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root{
+      --dark-grey: #605858;
+      --darkest-grey: #353131;
+      --light-grey: #EEEEEE;
+      --mid-grey: #C2C1C1;
+      --text-white: #F4F3F1;
+      --mid-dark-grey: #837C7C;
+  }
+body {
     font-family: 'Fira Sans', sans-serif;
-    background: #605858 !important;
+    background-color: var(--dark-grey);
 }
 
 
 
 /* Header */
 
-.header-container {
+/* .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,7 +34,7 @@ body {
 .header-left,
 .header-right {
     width: 60px;
-    /* Ajusta según el tamaño de tus íconos */
+    Ajusta según el tamaño de tus íconos
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,14 +42,14 @@ body {
 
 .header-center {
     flex: 1;
-    /* Hace que el centro crezca y ocupe el espacio disponible */
+    Hace que el centro crezca y ocupe el espacio disponible
     display: flex;
     justify-content: center;
 }
 
 .header-logo img {
     max-width: 150px;
-    /* Ajusta el tamaño si es necesario */
+    Ajusta el tamaño si es necesario
 }
 
 header {
@@ -49,24 +63,22 @@ header {
 header img {
     justify-content: center;
     align-items: center;
-}
+} */
 
 /* Vista del carrito */
-.cart-view {
-    background-color: #605858;
+.cart-view { 
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-top: 80px;
-
+    /* justify-content: center; */
 }
 
 /* Estilos del recibo */
 .cart-view__receipt {
-    background-color: #F4F3F1;
+    background-color: var(--text-white);
+    margin-top: 50px;
     padding: 20px;
     border-radius: 10px;
     width: 90%;
@@ -176,7 +188,21 @@ header img {
 
 /* Botón para nueva orden */
 .receipt__new-order {
-    background-color: #353131;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    font-family: Fira Sans;
+    font-weight: bold;
+    width: 350px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    color: var(--text-white);
+    background-color: var(--darkest-grey);
+    /* background-color: #353131;
     color: #F4F3F1;
     font-weight: bold;
     width: 399px;
@@ -186,7 +212,7 @@ header img {
     border: none;
     margin-top: 60px;
     padding: 25px;
-    margin: 10px;
+    margin: 10px; */
 }
 
 .receipt__new-order:hover {
