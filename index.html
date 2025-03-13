@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/index.css">
-  <script type="module" src="script/index.js"></script>
+  <script type="module" src="script/script.js"></script>
   <script src="https://kit.fontawesome.com/5f2b001e16.js" crossorigin="anonymous"></script>
   <title>Yum Yum Gimmie Sum</title>
 </head>
 <body class="index-page"> 
-  <header>
+  <header class="index-page__header">
+    <div id="headerContainer"></div>
+</header>
+  <!-- <header>
     <div class="header-container">
       <!-- Left: Hamburgermeny -->
       <div class="header-left">
@@ -36,15 +39,15 @@
     <button class="menu-btn" onclick="location.href='foodtrucks.html'">Våra Foodtrucks</button>
     <button class="menu-btn" onclick="location.href='profile.html'">Profil / Logga in</button>
     <button class="menu-btn" onclick="location.href='aboutUs.html'">Om oss</button>
-  </nav>
+  </nav> -->
 
   <main>
     <div class="content">
       <img src="assets/boximg.png" alt="Box Image" class="box-img">
       <div class="button-container">
-        <button class="btn">See Menu!</button>
-        <button class="btn">Where is the Foodtruck?</button>
-        <button class="btn">Log in/Sign up</button>
+        <button class="btn" id="menuBtn">See Menu!</button>
+        <button class="btn" id="foodTruckBtn">Where is the Foodtruck?</button>
+        <button class="btn" id="loginBtn">Log in/Sign up</button>
       </div>
     </div>
   </main>
