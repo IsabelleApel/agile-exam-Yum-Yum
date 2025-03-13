@@ -19,4 +19,6 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
     displayCartPage();
 } else if(window.location.pathname === '/aboutUs.html'){
     displayHeader();
+} else if(window.location.pathname === '/receipt.html'){
+    displayHeader()
 }
