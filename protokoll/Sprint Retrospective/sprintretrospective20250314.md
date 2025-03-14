@@ -29,9 +29,9 @@ Var och en svarar på frågorna nedan, 1 person antecknar
 * Fortsätta kommunicera på ett bra sätt, gillar sättet vi arbetat på i sprinter och kommer fortsätta göra det i framtiden 
 
 ### Carolina
-*
-*
-*
+* Försöka förstå koden från mina kollegor och projektets helhetsbild. Engagera mig mer i kodgranskningar och tekniska diskussioner med teamet.
+* Vara för försiktig när jag tar på mig nya uppgifter.
+* Fortsätta ha kameran på, ha en positiv attityd och samarbeta effektivt med teamet.
 
 ### Isabel
 * Bli bättre på att hålla koll på user stories samt bli bättre på att läsa och sätta mig in i andras kod 
