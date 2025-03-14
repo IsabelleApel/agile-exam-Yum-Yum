@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
     <script type="module" src="script/script.js"></script>
-    <script src="https://kit.fontawesome.com/5f2b001e16.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/5f2b001e16.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Order Confirmation</title>
-</head>
-<body class="order-confirmation">
+  </head>
+  <body class="order-confirmation">
     <header class="order-confirmation__header">
-        <img src="assets/logga_header.png" alt="logga">
+      <div id="headerContainer"></div>
     </header>
     <main class="order-confirmation__main">
         <div class="order-confirmation__top">
@@ -20,9 +23,10 @@
             <p id="orderConfirmationNum">ordernummer:</p>
         </div>
         <div class="order-confirmation__bottom">
-            <button id="newOrder">Gör en ny beställning</button>
-            <button id="receipt">se kvitto</button>
+            <button class="order-confirmation__btn order-confirmation__btn--new-order" id="newOrder"> GÖR EN NY BESTÄLLNING</button>
+            <button class="order-confirmation__btn order-confirmation__btn--receipt" id="receipt">SE KVITTO</button>
         </div> 
+
     </main>
-</body>
+  </body>
 </html>

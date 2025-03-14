@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-grey: #605858;
+  --darkest-grey: #353131;
+  --light-grey: #EEEEEE;
+  --mid-grey: #C2C1C1;
+  --text-white: #F4F3F1;
+}
+
+.header-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 1rem;
+}
+
+.icon{
+  color: var(--darkest-grey);
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-grey);
+  border-radius: 5px;
+  /* position: relative; */
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: -250px; 
+  width: 250px;
+  height: 100%;
+  background-color: var(--dark-grey);  
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  border-right: 1px solid var(--darkest-grey);
+  z-index: 1;
+}
+
+
+.menu-btn {
+  background: none;
+  color: var(--text-white);
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1.4rem; 
+  padding: 15px;
+  border: none;
+  text-align: center; 
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.menu-btn:hover {
+  background: var(--darkest-grey);
+}
+
+.menu.open {
+  left: 0;
+}
+
+.cart-count{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1rem;
+  right: 0.5rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: red;
+  color: var(--text-white);
+}
+
+.v-hidden{
+  visibility: hidden;
+}
+

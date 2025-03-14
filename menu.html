@@ -9,10 +9,36 @@
     <title>Meny</title>
 </head>
 <body>
-    <img src="assets/bakgrund.png" alt="grön bakgrundsbild med blad" class="background-img">
+
+    <img src="assets/bakgrund.png" alt="grön bakgrundsbild med blad" class="menu-background-img">
+
+
+    <!-- <header class="menu-header">
+        <span>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span> 
+        </span>
+    </header> -->
+
+
+    <header class="menu__header">
+        <div id="headerContainer"></div>
+    </header>
+
     <section>
         <div class="menu-wrapper">
             <h2 class="menu-title">MENY</h2>
+
+            <div class="filter-container" id="filterContainer">
+                <label for="filterSelect"></label>
+                <select id="filterSelect">
+                    <option value="all">Alla</option>
+                    <option value="wonton">Wonton</option>
+                    <option value="dip">Dipsås</option>
+                    <option value="drink">Dryck</option>
+                </select>
+            </div>
+            
             <section class="wonton-container" id="wontonContainer"></section>
             <section class="dip-container" id="dipContainer"></section>
             <section class="drink-container" id="drinkContainer"></section>
@@ -20,4 +46,3 @@
       </section>
 </body>
 </html>
-
