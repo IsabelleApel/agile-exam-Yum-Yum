@@ -35,8 +35,8 @@ Var och en svarar på frågorna nedan, 1 person antecknar
 
 ### Isabel
 * Bli bättre på att hålla koll på user stories samt bli bättre på att läsa och sätta mig in i andras kod 
-* 
-* Fortsätta kommunicera på ett bra sätt, fortsätta ha hand om möten 
+* Sluta endast fokusera på min egen kod och även sätta mig in i andras för att få bättre förståelse för hela projektet
+* Fortsätta kommunicera på ett bra sätt och fortsätta ha hand om möten som jag gjort hittills 
 
 ### Övrig diskussion
 Har ni diskuterat någonting mer?
