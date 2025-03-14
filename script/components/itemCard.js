@@ -28,8 +28,8 @@ export function createDipMenu(dips) {
     let menuCard = createElement('div');
     addClass(menuCard, 'menu-card');
 
-    let dipNames = dips.map(dip => 
-        `<button class="dip-button">${dip.name.toLowerCase()}</button>`).join('');
+    let dipNames = dips.map((dip, index) => 
+        `<button class="dip-button" data-index="${index}">${dip.name.toLowerCase()}</button>`).join('');
     let dipPrice = dips[0].price // Priset utgår från den första dippen i listan
 
     menuCard.innerHTML = `
@@ -46,7 +46,9 @@ export function createDipMenu(dips) {
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 console.log(`Du klickade på: ${button.textContent}`);
-                /* addToCart(); */
+                const index = button.getAttribute('data-index');
+                const selectedDip = dips[index];
+                addToCart(selectedDip);
             });
         });
     }, 0);
@@ -60,8 +62,8 @@ export function createDrinkMenu(drinks) {
     let menuCard = createElement('div');
     addClass(menuCard, 'menu-card');
 
-    let drinkNames = drinks.map(drink => 
-        `<button class="drink-button">${drink.name.toLowerCase()}</button>`).join('');
+    let drinkNames = drinks.map((drink, index) => 
+        `<button class="drink-button" data-index="${index}">${drink.name.toLowerCase()}</button>`).join('');
     let drinkPrice = drinks[0].price // Priset utgår från den första drycken i listan
 
     menuCard.innerHTML = `
@@ -78,7 +80,9 @@ export function createDrinkMenu(drinks) {
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 console.log(`Du klickade på: ${button.textContent}`);
-                /* addToCart(); */
+                const index = button.getAttribute('data-index');
+                const selectedDrink = drinks[index];
+                addToCart(selectedDrink);
             });
         });
     }, 0);
