@@ -1,14 +1,10 @@
-/* Estilos generales */
 body {
     margin: 0;
     font-family: 'Fira Sans', sans-serif;
     background: #605858 !important;
 }
 
-
-
 /* Header */
-
 .header-container {
     display: flex;
     align-items: center;
@@ -20,7 +16,6 @@ body {
 .header-left,
 .header-right {
     width: 60px;
-    /* Ajusta según el tamaño de tus íconos */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,14 +23,13 @@ body {
 
 .header-center {
     flex: 1;
-    /* Hace que el centro crezca y ocupe el espacio disponible */
     display: flex;
     justify-content: center;
 }
 
 .header-logo img {
     max-width: 150px;
-    /* Ajusta el tamaño si es necesario */
+
 }
 
 header {
@@ -51,7 +45,7 @@ header img {
     align-items: center;
 }
 
-/* Vista del carrito */
+
 .cart-view {
     background-color: #605858;
     width: 100vw;
@@ -64,7 +58,7 @@ header img {
 
 }
 
-/* Estilos del recibo */
+
 .cart-view__receipt {
     background-color: #F4F3F1;
     padding: 20px;
@@ -153,7 +147,7 @@ header img {
     color: #555;
 }
 
-/* Contenedor del botón */
+
 .button-cart-container {
     position: fixed;
     bottom: 20px;
@@ -162,7 +156,7 @@ header img {
     width: auto;
 }
 
-/* Botón de pago */
+
 .pay-button {
     background-color: #353131;
     color: #F4F3F1;
@@ -174,7 +168,7 @@ header img {
     border: none;
 }
 
-/* Botón para nueva orden */
+
 .receipt__new-order {
     background-color: #353131;
     color: #F4F3F1;
@@ -213,4 +207,41 @@ header img {
     align-items: center;
     justify-content: center;
     background-color: #605858;
+}
+
+@media (max-width: 390px) {
+    .cart-view {
+        padding-top: 40px;
+    }
+
+    .cart-view__receipt {
+        margin: 20px;
+    }
+
+    .header-logo,
+    .menu-icon {
+        margin-top: 15px;
+    }
+
+    .price-connector {
+        flex-grow: 1;
+        border-bottom: 2px dotted #353131;
+        margin: 0 10px;
+    }
+
+    .receipt__item-price {
+        text-align: right;
+        font-size: 16px;
+    }
+
+    .receipt__total {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .receipt__new-order {
+        width: 90%;
+        height: auto;
+        font-size: 16px;
+    }
 }
