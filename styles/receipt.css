@@ -1,29 +1,25 @@
-/* Estilos generales */
-
-* {
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  :root{
-      --dark-grey: #605858;
-      --darkest-grey: #353131;
-      --light-grey: #EEEEEE;
-      --mid-grey: #C2C1C1;
-      --text-white: #F4F3F1;
-      --mid-dark-grey: #837C7C;
-  }
+}
+
+:root {
+    --dark-grey: #605858;
+    --darkest-grey: #353131;
+    --light-grey: #EEEEEE;
+    --mid-grey: #C2C1C1;
+    --text-white: #F4F3F1;
+    --mid-dark-grey: #837C7C;
+}
+
 body {
     font-family: 'Fira Sans', sans-serif;
     background-color: var(--dark-grey);
 }
 
-
-
 /* Header */
-
-/* .header-container {
+.header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,7 +30,6 @@ body {
 .header-left,
 .header-right {
     width: 60px;
-    Ajusta según el tamaño de tus íconos
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,14 +37,26 @@ body {
 
 .header-center {
     flex: 1;
-    Hace que el centro crezca y ocupe el espacio disponible
     display: flex;
     justify-content: center;
 }
 
 .header-logo img {
     max-width: 150px;
-    Ajusta el tamaño si es necesario
+
+}
+
+.menu-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--dark-grey);
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 header {
@@ -63,10 +70,10 @@ header {
 header img {
     justify-content: center;
     align-items: center;
-} */
+}
 
-/* Vista del carrito */
-.cart-view { 
+*/ .cart-view {
+    background-color: #605858;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -75,7 +82,7 @@ header img {
     /* justify-content: center; */
 }
 
-/* Estilos del recibo */
+
 .cart-view__receipt {
     background-color: var(--text-white);
     margin-top: 50px;
@@ -165,7 +172,7 @@ header img {
     color: #555;
 }
 
-/* Contenedor del botón */
+
 .button-cart-container {
     position: fixed;
     bottom: 20px;
@@ -174,7 +181,7 @@ header img {
     width: auto;
 }
 
-/* Botón de pago */
+
 .pay-button {
     background-color: #353131;
     color: #F4F3F1;
@@ -186,7 +193,7 @@ header img {
     border: none;
 }
 
-/* Botón para nueva orden */
+
 .receipt__new-order {
     position: fixed;
     bottom: 20px;
@@ -239,4 +246,41 @@ header img {
     align-items: center;
     justify-content: center;
     background-color: #605858;
+}
+
+@media (max-width: 390px) {
+    .cart-view {
+        padding-top: 40px;
+    }
+
+    .cart-view__receipt {
+        margin: 20px;
+    }
+
+    .header-logo,
+    .menu-icon {
+        margin-top: 15px;
+    }
+
+    .price-connector {
+        flex-grow: 1;
+        border-bottom: 2px dotted #353131;
+        margin: 0 10px;
+    }
+
+    .receipt__item-price {
+        text-align: right;
+        font-size: 16px;
+    }
+
+    .receipt__total {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .receipt__new-order {
+        width: 90%;
+        height: auto;
+        font-size: 16px;
+    }
 }
