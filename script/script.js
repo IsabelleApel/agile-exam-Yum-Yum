@@ -24,4 +24,9 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
         hideHeaderElement('.menu-icon');
         hideHeaderElement('.header-shopping-bag');
     })
-}
+}else if(window.location.pathname === '/registerNewUser.html'){
+    console.log('register new user');
+    displayHeader().then(() => {
+        hideHeaderElement('.header-shopping-bag');
+    })
+} 

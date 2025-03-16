@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css"/>
+    <script type="module" src="script/script.js"></script>
+    <script src="https://kit.fontawesome.com/5f2b001e16.js" crossorigin="anonymous"></script>
+    <title>Register new user</title>
+</head>
+<body class="registration">
+    <header class="registration__header">
+        <div id="headerContainer"></div>
+      </header>
+    <main class="registration__main">
+        <section class="registration__top">
+            <span class="user-icon">
+                <i class="fa-regular fa-circle-user"></i>
+              </span>
+              <h1 class="login-title">REGISTRERA DIG!</h1>
+        </section>
+        <form class="registration-form" id="registrationForm">
+            <div class="input-wrapper">
+                <label for="username">Användarnamn</label>
+                <input type="text" id="username" placeholder="Ange användarnamn" class="input">
+                <i class="fa-regular fa-user fa-xl register__icon"></i>
+            </div>
+            
+            <div class="input-wrapper">
+                <label for="password">Lösenord</label>
+                <input type="password" id="password" placeholder="Ange lösenord" class="input">
+                <i class="fa-solid fa-lock fa-xl register__icon"></i>
+            </div>
+            
+            <div class="input-wrapper">
+                <label for="passwordAgain">Lösenord igen</label>
+                <input type="password" id="passwordAgain" placeholder="Ange lösenord igen" class="input">
+                <i class="fa-solid fa-lock fa-xl register__icon"></i>
+            </div>
+        </form>
+        <button type="submit" class="registration__btn">SKAPA KONTO</button>
+    </main>
+</body>
+</html>
