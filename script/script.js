@@ -1,7 +1,7 @@
 import { displayCart, displayTotalPrice, initCartCount } from "./modules/cart.js";
 import { cartButton } from "./modules/eventHandlers.js";
-import { displayOrderConfirmation, displayFoodtruckList, displayHeader, displayMenu, displayCartPage, displayLandingPage, hideHeaderElement } from "./modules/displayUI.js";
-
+import { displayRegistration, displayOrderConfirmation, displayFoodtruckList, displayHeader, displayMenu, displayCartPage, displayLandingPage, hideHeaderElement } from "./modules/displayUI.js";
+import { importUsers } from "./modules/validation.js";
 
 if(window.location.pathname === '/' || window.location.pathname === '/index.html') {
     console.log('index.html');
@@ -26,7 +26,6 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
     })
 }else if(window.location.pathname === '/registerNewUser.html'){
     console.log('register new user');
-    displayHeader().then(() => {
-        hideHeaderElement('.header-shopping-bag');
-    })
+    importUsers();
+    displayRegistration();
 } 

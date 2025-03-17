@@ -263,11 +263,11 @@
   color: var(--text-white);
   font-family: Fira Sans;
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .user-icon {
-  font-size: 6rem;
+  font-size: 5rem;
   margin-bottom: .6rem;
 }
 
@@ -304,16 +304,34 @@
   color: var(--darkest-grey);
 }
 
+.registration__error-msg{
+  font-family: Fira Sans;
+  font-weight: bold;
+  color: red;
+}
+
 .registration__btn{
     font-family: Fira Sans;
     font-weight: bold;
     width: 350px;
     height: 70px;
+    margin-top: 3rem;
     border-radius: 5px;
     font-size: 20px;
     border: none;
     color: var(--text-white);
     background-color: var(--darkest-grey); 
+}
+
+.registration__login-link{
+  font-family: Fira Sans;
+  font-weight: bold;
+  color: var(--text-white);
+  margin-bottom: 2rem;
+}
+
+.registration__login-link a{
+  color: var(--text-white);
 }
 
 /* styling för index */
