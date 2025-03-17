@@ -35,5 +35,12 @@ export const oData = {
             "day" : "Fredag",
             "time" : "11-15"
         },
+    ],
+    profileImages : [ 
+        '1.png',
+        '2.png',
+        '3.png',
+        '4.png',
+        '5.png',
     ]
 }
