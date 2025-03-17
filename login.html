@@ -10,17 +10,35 @@
 <body class="login-page">
   <header>
     <div class="header-container">
-      <img src="assets/loggan.png" alt="Logo" class="header-logo">
+      <div class="header-left">
+        <span class="menu-icon"><i class="fa-solid fa-bars"></i></span>
+      </div>
+      <div class="header-center">
+        <a class="header-logo" href="index.html">
+          <img src="assets/loggan.png" alt="Logo">
+        </a>
+      </div>
+      
     </div>
   </header>
+
+  <!-- Hamburgermeny  -->
+  <nav class="menu">
+    <button class="menu-btn" onclick="location.href='menu.html'">Meny</button>
+    <button class="menu-btn" onclick="location.href='foodtrucks.html'">Våra Foodtrucks</button>
+    <button class="menu-btn" onclick="location.href='login.html'">Profil / Logga in</button>
+    <button class="menu-btn" onclick="location.href='aboutUs.html'">Om oss</button>
+  </nav>
 
   <main>
     <div class="login-container">
       <div class="user-icon">
         <i class="fa-regular fa-circle-user"></i>
       </div>
+      <!-- LOGGA IN rubrik -->
       <h1 class="login-title">LOGGA IN</h1>
       
+      <!-- Användarnamn -->
       <div class="input-group">
         <label for="username">användarnamn</label>
         <div class="input-container">
@@ -29,7 +47,7 @@
         </div>
       </div>
       
-      
+      <!-- Lösenord -->
       <div class="input-group">
         <label for="password">lösenord</label>
         <div class="input-container">
@@ -38,15 +56,14 @@
         </div>
       </div>
       
+      <!-- Logga in knapp -->
+      <button class="login-btn" id="loginBtn">logga in</button>
       
-      <button class="login-btn">logga in</button>
-      
-      
-      <button class="register-btn">registrera dig</button>
+      <!-- Registrera dig knapp -->
+<button class="register-btn" id="registerBtn" onclick="location.href='registernewuser.html'">registrera dig</button>
     </div>
   </main>
   
-  <!-- finns ej någon JS än -->
   <script src="script/login.js"></script>
 </body>
 </html>
