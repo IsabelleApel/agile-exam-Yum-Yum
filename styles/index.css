@@ -170,13 +170,13 @@ header {
     margin-bottom: 15px;
   }
 
-  .button-container {
+  /* .button-container {
     gap: 10px;
     max-width: 250px;
-  }
+  } */
 
-  .btn {
+  /* .btn {
     padding: 10px;
     font-size: 1em;
-  }
+  } */
 }
