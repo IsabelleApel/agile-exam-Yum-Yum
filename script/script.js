@@ -9,7 +9,6 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
 } else if(window.location.pathname === '/menu.html') {
     displayMenu();
     displayHeader();
-    initCartCount();
 } else if(window.location.pathname === '/orderConfirmation.html'){
     displayOrderConfirmation();
 }else if(window.location.pathname === '/foodtrucks.html'){
@@ -19,4 +18,10 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
     displayCartPage();
 } else if(window.location.pathname === '/aboutUs.html'){
     displayHeader();
+} else if(window.location.pathname === '/receipt.html'){
+    // displayReceipt();
+    displayHeader().then(() => {
+        hideHeaderElement('.menu-icon');
+        hideHeaderElement('.header-shopping-bag');
+    })
 }

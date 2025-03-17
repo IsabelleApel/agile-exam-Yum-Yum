@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/index.css" />
     <link rel="stylesheet" href="styles/receipt.css" />
     <script type="module" src="script/script.js"></script>
-
     <script type="module" src="script/components/receipt.js"></script>
     <script
       src="https://kit.fontawesome.com/5f2b001e16.js"
@@ -16,13 +14,16 @@
   </head>
 
   <body>
-    <header class="header-container">
+    <header class="receipt__header">
+      <div id="headerContainer"></div>
+  </header>
+    <!-- <header class="header-container"> -->
       <!-- Left: Hamburgermeny -->
-      <section class="header-left">
+      <!-- <section class="header-left">
         <span class="menu-icon"><i class="fa-solid fa-bars"></i></span>
-      </section>
+      </section> -->
       <!-- Center: Logga -->
-      <section class="header-center">
+      <!-- <section class="header-center">
         <a class="header-logo" href="index.html">
           <img src="assets/loggan.png" alt="Logo" />
         </a>
@@ -42,7 +43,7 @@
       <button class="menu-btn" onclick="location.href='aboutUs.html'">
         Om oss
       </button>
-    </nav>
+    </nav> -->
     <section class="cart-view" id="receiptContainer"></section>
     <!-- <footer class="receipt__footer">
       <button class="receipt__new-order">GÖR EN NY BESTÄLLNING</button>

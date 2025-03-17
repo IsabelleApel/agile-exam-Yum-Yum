@@ -8,7 +8,7 @@ import { loadHeader } from "../components/header.js";
 
 // import { receipt } from "../components/receipt.js";
 
-import { displayCart, displayTotalPrice } from "./cart.js";
+import { displayCart, displayTotalPrice, initCartCount } from "./cart.js";
 
 export function displayLandingPage(){
     buttonClick('#menuBtn', '/menu.html');
@@ -63,13 +63,20 @@ export async function displayMenu() {
 export function displayOrderConfirmation() {
   getETA();
   getOrderNum();
-  const orderId = randomString(11);
-  const totalPrice = orderItems.reduce((total, item) => total + item.price, 0);
   buttonClick("#newOrder", "./menu.html");
-  receipt(orderItems, totalPrice, orderId);
   // behöver veta namn på html-fil för kvittot(nedan)
   buttonClick("#receipt", "./receipt.html");
+  displayHeader().then(() => {
+    hideHeaderElement('.menu-icon');
+    hideHeaderElement('.header-shopping-bag');
+})
 }
+
+// export function displayReceipt(){
+//   const orderId = randomString(11);
+//   const totalPrice = orderItems.reduce((total, item) => total + item.price, 0);  
+//   receipt(orderItems, totalPrice, orderId);
+// }
 
 export function displayFoodtruckList() {
   const listRef = getElement("#foodtrucksList");
@@ -100,6 +107,7 @@ export async function displayHeader(){
         containerRef.innerHTML = headerHTML;
         menuToggle();
         cartButton();
+        initCartCount();
     });
   
 }
@@ -119,7 +127,7 @@ function getOrderNum(){
 
 export function hideHeaderElement(element){
     const elemRef = getElement(element);
-    addClass(elemRef, 'd-none');
+    addClass(elemRef, 'v-hidden');
     
     
 }
