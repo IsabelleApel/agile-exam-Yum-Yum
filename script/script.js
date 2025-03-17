@@ -33,9 +33,7 @@ if (
 } else if (window.location.pathname === "/aboutUs.html") {
   displayHeader();
 } else if (window.location.pathname === "/receipt.html") {
-  // displayReceipt();
   displayHeader().then(() => {
-    hideHeaderElement(".menu-icon");
     hideHeaderElement(".header-shopping-bag");
   });
 } else if (window.location.pathname === "/profile.html") {
