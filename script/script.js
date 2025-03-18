@@ -14,6 +14,7 @@ import {
   displayCartPage,
   displayLandingPage,
   hideHeaderElement,
+  displayOrderHistory,
 } from "./modules/displayUI.js";
 import { importUsers } from "./modules/validation.js";
 import { addClass, getElement, removeClass } from "./Utils/domUtils.js";
@@ -33,7 +34,9 @@ if (
   displayOrderConfirmation();
 } else if (window.location.pathname === "/foodtrucks.html") {
   displayFoodtruckList();
-  displayHeader();
+  displayHeader().then(() => {
+    isLoggedIn();
+  });
 } else if (window.location.pathname === "/cart.html") {
   displayCartPage();
 } else if (window.location.pathname === "/aboutUs.html") {
