@@ -101,6 +101,9 @@ export function displayCartPage(){
     displayTotalPrice();
     displayHeader().then(() => {
         hideHeaderElement('.menu-icon');
+        const shoppingIcon = getElement('#cartIcon');
+        addClass(shoppingIcon, 'fa-bowl-food');
+        removeClass(shoppingIcon, 'fa-basket-shopping');
         isLoggedIn();
     })
     buttonClick('.pay-button', './orderConfirmation.html'); 
