@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((data) => {
       data.users.forEach((user) => {
+        console.log(user);
         if (!localStorage.getItem(user.username)) {
-          localStorage.setItem(user.username, user.password);
+          localStorage.setItem(user.username, JSON.stringify(user));
         }
       });
     })
@@ -37,13 +38,17 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       const username = document.getElementById("username").value.trim();
       const password = document.getElementById("password").value.trim();
-      const storedPassword = localStorage.getItem(username);
-      if (!storedPassword) {
+      const storedUser = localStorage.getItem(username);
+      const user = storedUser ? JSON.parse(storedUser) : null;
+
+      console.log(user.password);
+      if (!user.password) {
         alert("användaren finns inte");
-      } else if (storedPassword !== password) {
+      } else if (user.password !== password) {
         alert("lösenordet stämmer inte");
       } else {
         alert("Inloggning lyckades!");
+        localStorage.setItem("loggedInUser", JSON.stringify(user));
         localStorage.setItem("loggedIn", "true");
         window.location.href = "profile.html";
       }

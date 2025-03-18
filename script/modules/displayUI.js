@@ -189,4 +189,5 @@ export function isLoggedIn() {
 }
 export function logOut() {
   localStorage.setItem("loggedIn", "false");
+  localStorage.setItem("loggedInUser", null);
 }
