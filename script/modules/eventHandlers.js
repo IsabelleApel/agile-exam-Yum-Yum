@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 export function cartButton() {
-  const shoppingIcon = document.querySelector('#cartIcon');
-
+  const shoppingIcon = document.querySelector("#cartIcon");
+  console.log(shoppingIcon);
   shoppingIcon.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -62,15 +62,15 @@ export function cartButton() {
   });
 }
 
-export function submitRegistration(){
-  const formRef = getElement('#registrationForm')
+export function submitRegistration() {
+  const formRef = getElement("#registrationForm");
 
-  formRef.addEventListener('submit', (event) =>{
+  formRef.addEventListener("submit", (event) => {
     event.preventDefault();
-    if(validateForm()){
-      window.location.href = '/menu.html';
+    if (validateForm()) {
+      window.location.href = "/menu.html";
     }
-  })
+  });
 }
 
 export function menuToggle() {

@@ -25,15 +25,9 @@ export function displayLandingPage() {
   buttonClick("#foodTruckBtn", "/foodtrucks.html");
   //behöver veta namn på html-fil för login-sida
   buttonClick("#loginBtn", "/login.html");
-  displayHeader();
-export function displayLandingPage(){
-    buttonClick('#menuBtn', '/menu.html');
-    buttonClick('#foodTruckBtn', '/foodtrucks.html');
-    //behöver veta namn på html-fil för login-sida
-    buttonClick('#loginBtn', '/login.html');
-    displayHeader().then(() => {
-        isLoggedIn();
-    })
+  displayHeader().then(() => {
+    isLoggedIn();
+  });
 }
 
 export async function displayMenu() {
@@ -83,10 +77,10 @@ export function displayOrderConfirmation() {
   buttonClick("#newOrder", "./menu.html");
   buttonClick("#receipt", "./receipt.html");
   displayHeader().then(() => {
-    hideHeaderElement('.menu-icon');
-    hideHeaderElement('.header-shopping-bag');
+    hideHeaderElement(".menu-icon");
+    hideHeaderElement(".header-shopping-bag");
     isLoggedIn();
-})
+  });
 }
 
 // export function displayReceipt(){
@@ -110,17 +104,17 @@ export function displayRegistration() {
   submitRegistration();
 }
 
-export function displayCartPage(){
-    displayCart();
-    displayTotalPrice();
-    displayHeader().then(() => {
-        hideHeaderElement('.menu-icon');
-        const shoppingIcon = getElement('#cartIcon');
-        addClass(shoppingIcon, 'fa-bowl-food');
-        removeClass(shoppingIcon, 'fa-basket-shopping');
-        isLoggedIn();
-    })
-    buttonClick('.pay-button', './orderConfirmation.html'); 
+export function displayCartPage() {
+  displayCart();
+  displayTotalPrice();
+  displayHeader().then(() => {
+    hideHeaderElement(".menu-icon");
+    const shoppingIcon = getElement("#cartIcon");
+    addClass(shoppingIcon, "fa-bowl-food");
+    removeClass(shoppingIcon, "fa-basket-shopping");
+    isLoggedIn();
+  });
+  buttonClick(".pay-button", "./orderConfirmation.html");
 }
 
 export async function displayHeader() {
@@ -154,22 +148,22 @@ function getOrderNum() {
 
 export function hideHeaderElement(element) {
   const elemRef = getElement(element);
+  console.log(elemRef);
   addClass(elemRef, "v-hidden");
 }
 
-export function isLoggedIn(){
-  const menuBtnProfileRef = getElement('.menu-btn--profile');
-  const menuBtnLoginRef = getElement('.menu-btn--login');
+export function isLoggedIn() {
+  const menuBtnProfileRef = getElement(".menu-btn--profile");
+  const menuBtnLoginRef = getElement(".menu-btn--login");
 
-  let loggedIn = localStorage.getItem('loggedIn') === 'true';
+  let loggedIn = localStorage.getItem("loggedIn") === "true";
   console.log(loggedIn);
 
-  if(loggedIn){
-      removeClass(menuBtnProfileRef, 'd-none');
-      addClass(menuBtnLoginRef, 'd-none');
-  }else{
-      addClass(menuBtnProfileRef, 'd-none');
-      removeClass(menuBtnLoginRef, 'd-none');
+  if (loggedIn) {
+    removeClass(menuBtnProfileRef, "d-none");
+    addClass(menuBtnLoginRef, "d-none");
+  } else {
+    addClass(menuBtnProfileRef, "d-none");
+    removeClass(menuBtnLoginRef, "d-none");
   }
 }
-

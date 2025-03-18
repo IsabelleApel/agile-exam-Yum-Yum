@@ -5,16 +5,6 @@ import {
 } from "./modules/cart.js";
 import { cartButton } from "./modules/eventHandlers.js";
 import {
-  displayRegistration,
-  displayOrderConfirmation,
-  displayFoodtruckList,
-  displayHeader,
-  displayMenu,
-  displayCartPage,
-  displayLandingPage,
-  hideHeaderElement,
-} from "./modules/displayUI.js";
-import {
   isLoggedIn,
   displayRegistration,
   displayOrderConfirmation,
