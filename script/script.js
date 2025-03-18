@@ -14,7 +14,19 @@ import {
   displayLandingPage,
   hideHeaderElement,
 } from "./modules/displayUI.js";
+import {
+  isLoggedIn,
+  displayRegistration,
+  displayOrderConfirmation,
+  displayFoodtruckList,
+  displayHeader,
+  displayMenu,
+  displayCartPage,
+  displayLandingPage,
+  hideHeaderElement,
+} from "./modules/displayUI.js";
 import { importUsers } from "./modules/validation.js";
+import { addClass, getElement, removeClass } from "./Utils/domUtils.js";
 
 if (
   window.location.pathname === "/" ||
@@ -24,7 +36,9 @@ if (
   displayLandingPage();
 } else if (window.location.pathname === "/menu.html") {
   displayMenu();
-  displayHeader();
+  displayHeader().then(() => {
+    isLoggedIn();
+  });
 } else if (window.location.pathname === "/orderConfirmation.html") {
   displayOrderConfirmation();
 } else if (window.location.pathname === "/foodtrucks.html") {
@@ -34,22 +48,27 @@ if (
   displayCartPage();
 } else if (window.location.pathname === "/aboutUs.html") {
   displayHeader().then(() => {
-    hideHeaderElement(".header-shopping-bag");
+    isLoggedIn();
   });
 } else if (window.location.pathname === "/receipt.html") {
+  // displayReceipt();
   displayHeader().then(() => {
+    hideHeaderElement(".menu-icon");
     hideHeaderElement(".header-shopping-bag");
-  });
-} else if (window.location.pathname === "/profile.html") {
-  displayHeader().then(() => {
-    hideHeaderElement(".header-shopping-bag");
-  });
-} else if (window.location.pathname === "/editProfile.html") {
-  displayHeader().then(() => {
-    hideHeaderElement(".header-shopping-bag");
+    isLoggedIn();
   });
 } else if (window.location.pathname === "/registerNewUser.html") {
   console.log("register new user");
   importUsers();
   displayRegistration();
+} else if (window.location.pathname === "/profile.html") {
+  displayHeader().then(() => {
+    hideHeaderElement(".header-shopping-bag");
+    isLoggedIn();
+  });
+} else if (window.location.pathname === "/editProfile.html") {
+  displayHeader().then(() => {
+    hideHeaderElement(".header-shopping-bag");
+    isLoggedIn();
+  });
 }
