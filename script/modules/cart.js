@@ -17,6 +17,14 @@ export function addToCart(dish) {
     }
 }
 
+export function emptyCart(){
+  const cart = JSON.parse(localStorage.getItem('cart'));
+
+  if(cart){
+    localStorage.removeItem('cart');
+  }
+}
+
 //notisen uppdateras när mat läggs till
 export function updateCartCount(count) {
   const cartCountElement = document.querySelector(".cart-count");
@@ -118,7 +126,7 @@ export function paymentButton() {
 
     saveOrder(order);
 
-    window.location.href = "http://127.0.0.1:5500/receipt.html"; //ÄNDRA URL SEN!!!
+    window.location.href = "/orderConfirmation.html"; //ÄNDRA URL SEN!!!
   });
 }
 
