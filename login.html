@@ -13,32 +13,8 @@
   </head>
   <body class="login-page">
     <header>
-      <div class="header-container">
-        <div class="header-left">
-          <span class="menu-icon"><i class="fa-solid fa-bars"></i></span>
-        </div>
-        <div class="header-center">
-          <a class="header-logo" href="index.html">
-            <img src="assets/loggan.png" alt="Logo" />
-          </a>
-        </div>
-      </div>
+      <div id="headerContainer"></div>
     </header>
-
-    <!-- Hamburgermeny  -->
-    <nav class="menu">
-      <button class="menu-btn" onclick="location.href='menu.html'">Meny</button>
-      <button class="menu-btn" onclick="location.href='foodtrucks.html'">
-        Våra Foodtrucks
-      </button>
-      <button class="menu-btn" onclick="location.href='login.html'">
-        Profil / Logga in
-      </button>
-      <button class="menu-btn" onclick="location.href='aboutUs.html'">
-        Om oss
-      </button>
-    </nav>
-
     <main>
       <div class="login-container">
         <div class="user-icon">
@@ -46,7 +22,7 @@
         </div>
         <!-- LOGGA IN rubrik -->
         <h1 class="login-title">LOGGA IN</h1>
-
+        <p id="errorMsg" class="registration__error-msg"></p>
         <!-- Användarnamn -->
         <div class="input-group">
           <label for="username">användarnamn</label>
@@ -78,7 +54,5 @@
         </button>
       </div>
     </main>
-
-    <script src="script/login.js"></script>
   </body>
 </html>

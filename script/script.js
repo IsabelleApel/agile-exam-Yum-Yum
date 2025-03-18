@@ -5,6 +5,7 @@ import {
 } from "./modules/cart.js";
 import { cartButton } from "./modules/eventHandlers.js";
 import {
+  displayLogin,
   isLoggedIn,
   displayRegistration,
   displayOrderConfirmation,
@@ -54,6 +55,9 @@ if (
   console.log("register new user");
   importUsers();
   displayRegistration();
+} else if (window.location.pathname === "/orderHistory.html") {
+  displayHeader();
+  displayOrderHistory();
 } else if (window.location.pathname === "/profile.html") {
   displayHeader().then(() => {
     hideHeaderElement(".header-shopping-bag");
@@ -62,7 +66,7 @@ if (
 } else if (window.location.pathname === "/editProfile.html") {
   importUsers();
   displayHeader().then(() => {
-    hideHeaderElement(".header-shopping-bag");
+    hideHeaderElement(".header - shopping - bag");
     isLoggedIn();
   });
 }

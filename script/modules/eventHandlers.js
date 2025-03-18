@@ -1,10 +1,20 @@
 import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
-import { validateForm } from "./validation.js";
+import { validateLogin, validateForm } from "./validation.js";
+import { emptyCart } from "./cart.js";
 
 export function buttonClick(element, pathname) {
   const btnRef = getElement(element);
   btnRef.addEventListener("click", (event) => {
     event.preventDefault();
+    window.location.href = pathname;
+  });
+}
+
+export function resetButtonClick(element, pathname){
+  const btnRef = getElement(element);
+  btnRef.addEventListener("click", (event) => {
+    event.preventDefault();
+    emptyCart();
     window.location.href = pathname;
   });
 }
@@ -71,6 +81,18 @@ export function submitRegistration() {
       window.location.href = "/menu.html";
     }
   });
+}
+
+export function submitLogin(){
+  const loginBtnRef = getElement('#loginBtn')
+
+  loginBtnRef.addEventListener('click', (event) =>{
+    event.preventDefault();
+    if(validateLogin()){
+      window.location.href = '/menu.html';
+    }
+    
+  })
 }
 
 export function menuToggle() {
