@@ -177,7 +177,7 @@ export function isLoggedIn() {
   const menuBtnLoginRef = getElement(".menu-btn--login");
 
   let loggedIn = localStorage.getItem("loggedIn") === "true";
-  console.log(loggedIn);
+  console.log("is loggied in ", loggedIn);
 
   if (loggedIn) {
     removeClass(menuBtnProfileRef, "d-none");
@@ -186,4 +186,7 @@ export function isLoggedIn() {
     addClass(menuBtnProfileRef, "d-none");
     removeClass(menuBtnLoginRef, "d-none");
   }
+}
+export function logOut() {
+  localStorage.setItem("loggedIn", "false");
 }

@@ -60,6 +60,7 @@ if (
     isLoggedIn();
   });
 } else if (window.location.pathname === "/editProfile.html") {
+  importUsers();
   displayHeader().then(() => {
     hideHeaderElement(".header-shopping-bag");
     isLoggedIn();
