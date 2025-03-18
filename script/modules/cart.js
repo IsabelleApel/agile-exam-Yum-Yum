@@ -1,5 +1,8 @@
 /* localStorage.clear(); */
 
+import { getElement } from "../Utils/domUtils.js";
+import { getOrderNum } from "./displayUI.js";
+
 //lägga till i localstorage
 export function addToCart(dish) {
 
@@ -96,59 +99,33 @@ export function displayTotalPrice() {
   totalPriceElement.textContent = `${totalPrice} SEK`;
 }
 
-//eventlistener på betala-knappen
-// function paymentButton() {
-//   document.querySelector(".pay-button").addEventListener("click", (e) => {
-//     e.preventDefault();
-//     window.location.href = "http://127.0.0.1:5500/receipt.html"; //ÄNDRA URL SEN!!!
-//   });
-// }
-
-
-
-function paymentButton() {
-  document.querySelector(".pay-button").addEventListener("click", (e) => {
+// eventlistener på betala-knappen
+export function paymentButton() {
+  getElement(".pay-button").addEventListener("click", (e) => {
     e.preventDefault();
 
-    // Hämta kundvagnens innehåll och totalpris
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const orderNumber = getOrderNum();
     const totalPrice = totalPriceItem();
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    if (cart.length === 0) {
-      alert("Din kundvagn är tom!");
-      return;
-    }
-
-    // Skapa orderobjekt
+    // Skapar orderobjekt
     const order = {
-      id: new Date().getTime(), // Unik order-ID
+      id: orderNumber,
       items: cart,
       total: totalPrice,
       date: new Date().toLocaleString(),
     };
 
-    // Spara ordern i orderhistoriken
     saveOrder(order);
 
-    // Töm varukorgen efter betalning
-    localStorage.removeItem("cart");
-    updateCartCount(0);
-
-    // Skicka användaren till kvittosidan
-    window.location.href = "receipt.html"; // ÄNDRA URL SEN!!!
+    window.location.href = "http://127.0.0.1:5500/receipt.html"; //ÄNDRA URL SEN!!!
   });
 }
 
 
-export function saveOrder(order) {
+function saveOrder(order) {
   let orderHistory = JSON.parse(localStorage.getItem("orderHistory")) || [];
 
-  console.log("Orderhistorik innan ny order:", orderHistory); // Debugging
-
-  orderHistory.push(order); // Lägg till ny order
+  orderHistory.unshift(order); // Lägger den senaste ordern högst upp
   localStorage.setItem("orderHistory", JSON.stringify(orderHistory));
-
-  console.log("Orderhistorik efter ny order:", orderHistory); // Debugging
-
-  alert("Din order har sparats!");
 }

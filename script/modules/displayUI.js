@@ -2,13 +2,13 @@ import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard, create
 import { fetchMenu } from "./api.js";
 import { randomNum, randomString } from "../Utils/utils.js";
 import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
-import { buttonClick, menuToggle, cartButton } from "./eventHandlers.js";
+import { buttonClick, menuToggle, cartButton, submitRegistration } from "./eventHandlers.js";
 import { oData } from "../data/data.js";
 import { loadHeader } from "../components/header.js";
 
 // import { receipt } from "../components/receipt.js";
 
-import { displayCart, displayTotalPrice, initCartCount } from "./cart.js";
+import { displayCart, displayTotalPrice, initCartCount, paymentButton } from "./cart.js";
 
 export function displayLandingPage(){
     buttonClick('#menuBtn', '/menu.html');
@@ -64,7 +64,6 @@ export function displayOrderConfirmation() {
   getETA();
   getOrderNum();
   buttonClick("#newOrder", "./menu.html");
-  // behöver veta namn på html-fil för kvittot(nedan)
   buttonClick("#receipt", "./receipt.html");
   displayHeader().then(() => {
     hideHeaderElement('.menu-icon');
@@ -86,6 +85,13 @@ export function displayFoodtruckList() {
   }
 }
 
+export function displayRegistration(){
+  displayHeader().then(() => {
+    hideHeaderElement('.header-shopping-bag');
+});
+  submitRegistration();
+}
+
 export function displayCartPage(){
     displayCart();
     displayTotalPrice();
@@ -93,6 +99,7 @@ export function displayCartPage(){
         hideHeaderElement('.menu-icon');
     })
     buttonClick('.pay-button', './orderConfirmation.html'); 
+    paymentButton();
 }
 
 export async function displayHeader(){
@@ -119,17 +126,21 @@ function getETA(){
     etaRef.textContent = `ETA ${estimatedTime} MIN`;
 }
 
-function getOrderNum(){
-    let orderNumber = randomString(11);
-    let orderNumRef = getElement('#orderConfirmationNum');
-    orderNumRef.textContent = `#${orderNumber}`;
+export function getOrderNum() {
+  let orderNumber = randomString(11); 
+  let orderNumRef = document.querySelector('#orderConfirmationNum'); 
+
+  if (orderNumRef) { 
+      orderNumRef.textContent = `#${orderNumber}`; 
+  }
+
+  return orderNumber; 
 }
+
 
 export function hideHeaderElement(element){
     const elemRef = getElement(element);
-    addClass(elemRef, 'v-hidden');
-    
-    
+    addClass(elemRef, 'v-hidden');   
 }
 
 
