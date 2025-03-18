@@ -43,8 +43,6 @@ body {
     height: 60px;
     object-fit: contain;
     position: absolute;
-    ;
-
 }
 
 .view-profile-page__button {
@@ -57,6 +55,13 @@ body {
     color: white;
     background-color: #353131;
     border-radius: 5px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.view-profile-page__button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
 
 }
 
@@ -71,11 +76,19 @@ body {
     background-color: white;
     border-radius: 5px;
     margin-top: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.view-profile-page__logout:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 20px rgba(253, 253, 253, 0.3);
+    opacity: 0.9;
+
 }
 
 .profile__user-icon {
-    width: 100px;
-    height: 100px;
+    width: 160px;
+    height: 160px;
     background: white;
     border-radius: 50%;
     display: flex;

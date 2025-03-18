@@ -31,12 +31,18 @@ if (
 } else if (window.location.pathname === "/cart.html") {
   displayCartPage();
 } else if (window.location.pathname === "/aboutUs.html") {
-  displayHeader();
+  displayHeader().then(() => {
+    hideHeaderElement(".header-shopping-bag");
+  });
 } else if (window.location.pathname === "/receipt.html") {
   displayHeader().then(() => {
     hideHeaderElement(".header-shopping-bag");
   });
 } else if (window.location.pathname === "/profile.html") {
+  displayHeader().then(() => {
+    hideHeaderElement(".header-shopping-bag");
+  });
+} else if (window.location.pathname === "/editProfile.html") {
   displayHeader().then(() => {
     hideHeaderElement(".header-shopping-bag");
   });

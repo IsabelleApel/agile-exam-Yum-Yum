@@ -1,34 +1,20 @@
 body {
-    font-family: Arial, sans-serif;
     background: url('../assets/bakgrund.png') repeat;
-    display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
     margin: 0;
 }
 
-/* Header */
-header {
-    width: 100%;
-    max-width: 375px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-header img {
-    width: 70px;
-}
-
 /* Conteiner */
 .profile__container {
-    width: 100%;
-    max-width: 375px;
+    max-width: 475px;
     display: flex;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: 20px;
+    margin: 40px auto 0;
 }
 
 /* user card  */
@@ -50,8 +36,8 @@ header img {
 
 /* Icono of user */
 .profile__user-icon {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background: white;
     border-radius: 50%;
     display: flex;
@@ -146,41 +132,5 @@ header img {
         font-size: 14px;
         padding: 20px;
 
-
-    }
-}
-
-
-@media only screen and (min-width: 391px) and (max-width: 768px) {
-    header {
-        padding: 15px;
-    }
-
-    .profile__title {
-        font-size: 18px;
-    }
-
-    .profile__input {
-        font-size: 16px;
-    }
-
-    .profile__save-btn {
-        font-size: 16px;
-        padding: 14px;
-    }
-}
-
-@media only screen and (min-width: 769px) {
-    .profile__title {
-        font-size: 20px;
-    }
-
-    .profile__input {
-        font-size: 18px;
-    }
-
-    .profile__save-btn {
-        font-size: 18px;
-        padding: 16px;
     }
 }
