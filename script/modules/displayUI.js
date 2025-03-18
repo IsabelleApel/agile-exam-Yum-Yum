@@ -15,7 +15,9 @@ export function displayLandingPage(){
     buttonClick('#foodTruckBtn', '/foodtrucks.html');
     //behöver veta namn på html-fil för login-sida
     buttonClick('#loginBtn', '/login.html');
-    displayHeader();
+    displayHeader().then(() => {
+        isLoggedIn();
+    })
 }
 
 export async function displayMenu() {
@@ -68,6 +70,7 @@ export function displayOrderConfirmation() {
   displayHeader().then(() => {
     hideHeaderElement('.menu-icon');
     hideHeaderElement('.header-shopping-bag');
+    isLoggedIn();
 })
 }
 
@@ -88,6 +91,7 @@ export function displayFoodtruckList() {
 export function displayRegistration(){
   displayHeader().then(() => {
     hideHeaderElement('.header-shopping-bag');
+    isLoggedIn();
 });
   submitRegistration();
 }
@@ -97,6 +101,10 @@ export function displayCartPage(){
     displayTotalPrice();
     displayHeader().then(() => {
         hideHeaderElement('.menu-icon');
+        const shoppingIcon = getElement('#cartIcon');
+        addClass(shoppingIcon, 'fa-bowl-food');
+        removeClass(shoppingIcon, 'fa-basket-shopping');
+        isLoggedIn();
     })
     buttonClick('.pay-button', './orderConfirmation.html'); 
     paymentButton();
@@ -155,3 +163,20 @@ export function displayOrderHistory() {
       orderHistoryContainer.appendChild(orderCard);
     });
 }
+
+export function isLoggedIn(){
+  const menuBtnProfileRef = getElement('.menu-btn--profile');
+  const menuBtnLoginRef = getElement('.menu-btn--login');
+
+  let loggedIn = localStorage.getItem('loggedIn') === 'true';
+  console.log(loggedIn);
+
+  if(loggedIn){
+      removeClass(menuBtnProfileRef, 'd-none');
+      addClass(menuBtnLoginRef, 'd-none');
+  }else{
+      addClass(menuBtnProfileRef, 'd-none');
+      removeClass(menuBtnLoginRef, 'd-none');
+  }
+}
+
