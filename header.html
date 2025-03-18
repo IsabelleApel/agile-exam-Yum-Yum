@@ -13,12 +13,13 @@
     <div class="header-container">
       <span class="menu-icon icon"><i class="fa-solid fa-bars fa-2xl"></i></span>
       <a class="header-logo" href="index.html"><img src="assets/logga_header.png" alt="Logo" height="80px"></a>
-      <span class="header-shopping-bag icon"><i class="fa-solid fa-basket-shopping fa-2xl"><span class="cart-count">0</span></i></span>
+      <span class="header-shopping-bag icon"><i id="cartIcon" class="fa-solid fa-basket-shopping fa-2xl"><span class="cart-count">0</span></i></span>
     </div>
     <nav class="menu">
         <button class="menu-btn" onclick="location.href='menu.html'">Meny</button>
         <button class="menu-btn" onclick="location.href='foodtrucks.html'">Våra Foodtrucks</button>
-        <button class="menu-btn" onclick="location.href='profile.html'">Profil / Logga in</button>
+        <button class="menu-btn menu-btn--profile" onclick="location.href='profile.html'">Profil</button>
+        <button class="menu-btn menu-btn--login" onclick="location.href='login.html'">Logga in</button>
         <button class="menu-btn" onclick="location.href='aboutUs.html'">Om oss</button>
       </nav>
   </header>

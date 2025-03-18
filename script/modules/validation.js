@@ -64,9 +64,16 @@ export function validateForm(){
             }
         }
         errorMsg.textContent = '';
-        let newUser = {username : usernameRef.value, password : passwordRef.value, role : 'user', email : emailRef.value, profile_image : `../../assets/profile-img/${randomImg()}`};
+        let newUser = {
+            username : usernameRef.value, 
+            password : passwordRef.value, 
+            role : 'user', 
+            email : emailRef.value, 
+            profile_image : `../../assets/profile-img/${randomImg()}`
+        };
         users.push(newUser);
         localStorage.setItem('users', JSON.stringify(users));
+        localStorage.setItem('loggedIn', 'true');
         window.location.href = "/menu.html";
     } catch (error) {
         errorMsg.textContent = error.message;
