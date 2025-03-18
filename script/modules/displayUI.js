@@ -1,8 +1,18 @@
-import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard } from "../components/itemCard.js";
+import {
+  createMenu,
+  createDipMenu,
+  createDrinkMenu,
+  createFoodtruckCard,
+} from "../components/itemCard.js";
 import { fetchMenu } from "./api.js";
 import { randomNum, randomString } from "../Utils/utils.js";
 import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
-import { buttonClick, menuToggle, cartButton, submitRegistration } from "./eventHandlers.js";
+import {
+  buttonClick,
+  menuToggle,
+  cartButton,
+  submitRegistration,
+} from "./eventHandlers.js";
 import { oData } from "../data/data.js";
 import { loadHeader } from "../components/header.js";
 
@@ -10,12 +20,12 @@ import { loadHeader } from "../components/header.js";
 
 import { displayCart, displayTotalPrice, initCartCount } from "./cart.js";
 
-export function displayLandingPage(){
-    buttonClick('#menuBtn', '/menu.html');
-    buttonClick('#foodTruckBtn', '/foodtrucks.html');
-    //behöver veta namn på html-fil för login-sida
-    buttonClick('#loginBtn', '/login.html');
-    displayHeader();
+export function displayLandingPage() {
+  buttonClick("#menuBtn", "/menu.html");
+  buttonClick("#foodTruckBtn", "/foodtrucks.html");
+  //behöver veta namn på html-fil för login-sida
+  buttonClick("#loginBtn", "/login.html");
+  displayHeader();
 }
 
 export async function displayMenu() {
@@ -59,21 +69,20 @@ export async function displayMenu() {
   }
 }
 
-
 export function displayOrderConfirmation() {
   getETA();
   getOrderNum();
   buttonClick("#newOrder", "./menu.html");
   buttonClick("#receipt", "./receipt.html");
   displayHeader().then(() => {
-    hideHeaderElement('.menu-icon');
-    hideHeaderElement('.header-shopping-bag');
-})
+    hideHeaderElement(".menu-icon");
+    hideHeaderElement(".header-shopping-bag");
+  });
 }
 
 // export function displayReceipt(){
 //   const orderId = randomString(11);
-//   const totalPrice = orderItems.reduce((total, item) => total + item.price, 0);  
+//   const totalPrice = orderItems.reduce((total, item) => total + item.price, 0);
 //   receipt(orderItems, totalPrice, orderId);
 // }
 
@@ -85,54 +94,52 @@ export function displayFoodtruckList() {
   }
 }
 
-export function displayRegistration(){
+export function displayRegistration() {
   displayHeader().then(() => {
-    hideHeaderElement('.header-shopping-bag');
-});
+    hideHeaderElement(".header-shopping-bag");
+  });
   submitRegistration();
 }
 
-export function displayCartPage(){
-    displayCart();
-    displayTotalPrice();
-    displayHeader().then(() => {
-        hideHeaderElement('.menu-icon');
-    })
-    buttonClick('.pay-button', './orderConfirmation.html'); 
+export function displayCartPage() {
+  displayCart();
+  displayTotalPrice();
+  displayHeader().then(() => {
+    hideHeaderElement(".menu-icon");
+  });
+  buttonClick(".pay-button", "./orderConfirmation.html");
 }
 
-export async function displayHeader(){
-    const containerRef = getElement('#headerContainer');
+export async function displayHeader() {
+  const containerRef = getElement("#headerContainer");
 
-    if(!containerRef){
-        console.error('header container not found');
-        return Promise.reject('header container not found');
-    }
+  if (!containerRef) {
+    console.error("header container not found");
+    return Promise.reject("header container not found");
+  }
 
-    return loadHeader().then(headerHTML => {
-        containerRef.innerHTML = headerHTML;
-        menuToggle();
-        cartButton();
-        initCartCount();
-    });
-  
+  return loadHeader().then((headerHTML) => {
+    containerRef.innerHTML = headerHTML;
+    menuToggle();
+    cartButton();
+    initCartCount();
+  });
 }
 
 // vet inte riktigt vart det är passande att ha getETA() och getOrderNum()(vilken script-fil)
-function getETA(){
-    let estimatedTime = randomNum(10, 20);
-    let etaRef = getElement("#orderConfirmationETA");
-    etaRef.textContent = `ETA ${estimatedTime} MIN`;
+function getETA() {
+  let estimatedTime = randomNum(10, 20);
+  let etaRef = getElement("#orderConfirmationETA");
+  etaRef.textContent = `ETA ${estimatedTime} MIN`;
 }
 
-function getOrderNum(){
-    let orderNumber = randomString(11);
-    let orderNumRef = getElement('#orderConfirmationNum');
-    orderNumRef.textContent = `#${orderNumber}`;
+function getOrderNum() {
+  let orderNumber = randomString(11);
+  let orderNumRef = getElement("#orderConfirmationNum");
+  orderNumRef.textContent = `#${orderNumber}`;
 }
 
-export function hideHeaderElement(element){
-    const elemRef = getElement(element);
-    addClass(elemRef, 'v-hidden');   
+export function hideHeaderElement(element) {
+  const elemRef = getElement(element);
+  addClass(elemRef, "v-hidden");
 }
-

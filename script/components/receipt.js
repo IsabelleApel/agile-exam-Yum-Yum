@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     createReceipt(groupedCart, totalPrice, "111");
   }
 });
-// Función asíncrona para guardar la orden en el perfil del usuario
 async function saveOrderToProfile(receipt) {
   try {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));

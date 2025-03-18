@@ -6,6 +6,7 @@
     <title>Profile Page</title>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/profile.css" />
+    <script type="module" src="script/components/profile.js"></script>
     <script type="module" src="script/script.js"></script>
     <script
       src="https://kit.fontawesome.com/5f2b001e16.js"
@@ -20,13 +21,20 @@
       <section class="profile__user-icon">
         <img src="assets/avatar user.png" alt="User" />
       </section>
-      <button class="view-profile-page__button view-profile-page__button--info">
+      <button
+        id="view-info"
+        class="view-profile-page__button view-profile-page__button--info"
+      >
         Mina Uppgifter
       </button>
-      <button class="view-profile-page__button view-profile-page__button--edit">
+      <button
+        id="edit-info"
+        class="view-profile-page__button view-profile-page__button--edit"
+      >
         Ändra Mina Uppgifter
       </button>
       <button
+        id="view-orders"
         class="view-profile-page__button view-profile-page__button--orders"
       >
         Mina Beställningar
@@ -34,7 +42,7 @@
     </main>
 
     <footer class="view-profile-page__footer">
-      <button class="view-profile-page__logout">Logga Ut</button>
+      <button id="logout" class="view-profile-page__logout">Logga Ut</button>
     </footer>
   </body>
 </html>
