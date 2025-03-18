@@ -13,6 +13,17 @@ import {
   displayLandingPage,
   hideHeaderElement,
 } from "./modules/displayUI.js";
+import {
+  displayRegistration,
+  displayOrderConfirmation,
+  displayFoodtruckList,
+  displayHeader,
+  displayMenu,
+  displayCartPage,
+  displayLandingPage,
+  hideHeaderElement,
+} from "./modules/displayUI.js";
+import { importUsers } from "./modules/validation.js";
 
 if (
   window.location.pathname === "/" ||
@@ -46,4 +57,8 @@ if (
   displayHeader().then(() => {
     hideHeaderElement(".header-shopping-bag");
   });
+} else if (window.location.pathname === "/registerNewUser.html") {
+  console.log("register new user");
+  importUsers();
+  displayRegistration();
 }

@@ -1,4 +1,5 @@
 import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
+import { validateForm } from "./validation.js";
 
 export function buttonClick(element, pathname) {
   const btnRef = getElement(element);
@@ -59,6 +60,17 @@ export function cartButton() {
       window.location.href = "/cart.html";
     }
   });
+}
+
+export function submitRegistration(){
+  const formRef = getElement('#registrationForm')
+
+  formRef.addEventListener('submit', (event) =>{
+    event.preventDefault();
+    if(validateForm()){
+      window.location.href = '/menu.html';
+    }
+  })
 }
 
 export function menuToggle() {

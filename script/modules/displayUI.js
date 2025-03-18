@@ -2,7 +2,7 @@ import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard } from 
 import { fetchMenu } from "./api.js";
 import { randomNum, randomString } from "../Utils/utils.js";
 import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
-import { buttonClick, menuToggle, cartButton } from "./eventHandlers.js";
+import { buttonClick, menuToggle, cartButton, submitRegistration } from "./eventHandlers.js";
 import { oData } from "../data/data.js";
 import { loadHeader } from "../components/header.js";
 
@@ -64,7 +64,6 @@ export function displayOrderConfirmation() {
   getETA();
   getOrderNum();
   buttonClick("#newOrder", "./menu.html");
-  // behöver veta namn på html-fil för kvittot(nedan)
   buttonClick("#receipt", "./receipt.html");
   displayHeader().then(() => {
     hideHeaderElement('.menu-icon');
@@ -84,6 +83,13 @@ export function displayFoodtruckList() {
     let card = createFoodtruckCard(place);
     listRef.appendChild(card);
   }
+}
+
+export function displayRegistration(){
+  displayHeader().then(() => {
+    hideHeaderElement('.header-shopping-bag');
+});
+  submitRegistration();
 }
 
 export function displayCartPage(){
@@ -127,8 +133,6 @@ function getOrderNum(){
 
 export function hideHeaderElement(element){
     const elemRef = getElement(element);
-    addClass(elemRef, 'v-hidden');
-    
-    
+    addClass(elemRef, 'v-hidden');   
 }
 
