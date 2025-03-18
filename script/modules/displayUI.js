@@ -124,7 +124,7 @@ export async function displayHeader(){
         cartButton();
         initCartCount();
     });
-  
+
 }
 
 // vet inte riktigt vart det är passande att ha getETA(), getOrderNum() och isLoggedIn(vilken script-fil)
