@@ -108,4 +108,19 @@ return cardRef;
 }
 
 
+// orderHistoryContainer
+export function createOrderHistory(order) {
+    let orderHistoryCard = createElement('div');
+    addClass(orderHistoryCard, 'order-history-card');
+    
+    orderHistoryCard.innerHTML = `
+    <div class="order-history-card--first-row">
+        <h3 class="order-history-card__id">#${order.id}</h3>
+        <h3 class="order-history-card__total">${order.total} SEK</h3>
+    </div>
+    <p class="order-history-card__items">${order.items.map(item => item.name).join(", ")}</p>
+    <p class="order-history-card__date">${order.date}</h3>
+    `
 
+    return orderHistoryCard;
+}

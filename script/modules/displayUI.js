@@ -1,4 +1,4 @@
-import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard } from "../components/itemCard.js";
+import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard, createOrderHistory } from "../components/itemCard.js";
 import { fetchMenu } from "./api.js";
 import { randomNum, randomString } from "../Utils/utils.js";
 import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
@@ -8,7 +8,7 @@ import { loadHeader } from "../components/header.js";
 
 // import { receipt } from "../components/receipt.js";
 
-import { displayCart, displayTotalPrice, initCartCount } from "./cart.js";
+import { displayCart, displayTotalPrice, initCartCount, paymentButton } from "./cart.js";
 
 export function displayLandingPage(){
     buttonClick('#menuBtn', '/menu.html');
@@ -107,6 +107,7 @@ export function displayCartPage(){
         isLoggedIn();
     })
     buttonClick('.pay-button', './orderConfirmation.html'); 
+    paymentButton();
 }
 
 export async function displayHeader(){
@@ -133,15 +134,34 @@ function getETA(){
     etaRef.textContent = `ETA ${estimatedTime} MIN`;
 }
 
-function getOrderNum(){
-    let orderNumber = randomString(11);
-    let orderNumRef = getElement('#orderConfirmationNum');
-    orderNumRef.textContent = `#${orderNumber}`;
+export function getOrderNum() {
+  let orderNumber = randomString(11); 
+  let orderNumRef = document.querySelector('#orderConfirmationNum'); 
+
+  if (orderNumRef) { 
+      orderNumRef.textContent = `#${orderNumber}`; 
+  }
+
+  return orderNumber; 
 }
+
 
 export function hideHeaderElement(element){
     const elemRef = getElement(element);
     addClass(elemRef, 'v-hidden');   
+}
+
+
+export function displayOrderHistory() {
+    let orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+    let orderHistoryContainer = getElement('#orderHistoryContainer');
+
+    orderHistoryContainer.innerHTML = "";
+
+    orderHistory.forEach(order => {
+      let orderCard = createOrderHistory(order);
+      orderHistoryContainer.appendChild(orderCard);
+    });
 }
 
 export function isLoggedIn(){
