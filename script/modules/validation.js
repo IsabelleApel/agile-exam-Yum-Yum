@@ -24,6 +24,44 @@ export async function importUsers(){
     }
 }
 
+export function validateLogin(){
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const usernameRef = getElement('#username');
+    const passwordRef = getElement('#password');
+    const errorMsg = getElement('#errorMsg');
+
+    const user = users.find(user => user.username === usernameRef.value);
+
+    try {
+        if(!usernameRef.value){
+            throw{
+                message : 'Skriv in ditt användarnamn',
+                nodeRef : usernameRef,
+            }
+        }else if(!user){
+            throw{
+                message : 'Användarnamnet finns inte',
+                nodeRef : usernameRef,
+            }
+        }else if(!passwordRef.value){
+            throw{
+                message : 'Skriv in ditt lösenord',
+                nodeRef : passwordRef,
+            }
+        }else if(user.password !== passwordRef.value){
+            throw{
+                message : 'Fel lösenord',
+                nodeRef : passwordRef,
+            }
+        }
+        localStorage.setItem('loggedIn', JSON.stringify(user));
+        window.location.href = "/menu.html";
+    } catch (error) {
+        errorMsg.textContent = error.message;
+        error.nodeRef.focus();
+    }
+}
+
 export function validateForm(){
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const usernameRef = getElement('#username');
@@ -80,7 +118,6 @@ export function validateForm(){
         error.nodeRef.focus();
     }
 }
-
 
 function randomImg(){
     const randomIndex = Math.floor(Math.random() * oData.profileImages.length);

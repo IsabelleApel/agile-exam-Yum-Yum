@@ -1,6 +1,6 @@
 import { displayCart, displayTotalPrice, initCartCount } from "./modules/cart.js";
 import { cartButton } from "./modules/eventHandlers.js";
-import { isLoggedIn, displayRegistration, displayOrderConfirmation, displayFoodtruckList, displayHeader, displayMenu, displayCartPage, displayLandingPage, hideHeaderElement, displayOrderHistory } from "./modules/displayUI.js";
+import { displayLogin, isLoggedIn, displayRegistration, displayOrderConfirmation, displayFoodtruckList, displayHeader, displayMenu, displayCartPage, displayLandingPage, hideHeaderElement, displayOrderHistory } from "./modules/displayUI.js";
 import { importUsers } from "./modules/validation.js";
 import { addClass, getElement, removeClass } from "./Utils/domUtils.js";
 
@@ -32,6 +32,9 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
         hideHeaderElement('.header-shopping-bag');
         isLoggedIn();
     })
+}else if(window.location.pathname === '/login.html'){
+    importUsers();
+    displayLogin();
 }else if(window.location.pathname === '/registerNewUser.html'){
     console.log('register new user');
     importUsers();
