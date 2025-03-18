@@ -127,7 +127,7 @@ export async function displayHeader(){
   
 }
 
-// vet inte riktigt vart det är passande att ha getETA() och getOrderNum()(vilken script-fil)
+// vet inte riktigt vart det är passande att ha getETA(), getOrderNum() och isLoggedIn(vilken script-fil)
 function getETA(){
     let estimatedTime = randomNum(10, 20);
     let etaRef = getElement("#orderConfirmationETA");
