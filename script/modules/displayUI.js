@@ -1,4 +1,4 @@
-import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard } from "../components/itemCard.js";
+import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard, createOrderHistory } from "../components/itemCard.js";
 import { fetchMenu } from "./api.js";
 import { randomNum, randomString } from "../Utils/utils.js";
 import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
@@ -132,3 +132,15 @@ export function hideHeaderElement(element){
     
 }
 
+
+export function displayOrderHistory() {
+    let orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+    let orderHistoryContainer = getElement('#orderHistoryContainer');
+
+    orderHistoryContainer.innerHTML = "";
+
+    orderHistory.forEach(order => {
+      let orderCard = createOrderHistory(order);
+      orderHistoryContainer.appendChild(orderCard);
+    });
+}
