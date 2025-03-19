@@ -10,7 +10,7 @@ export function buttonClick(element, pathname) {
   });
 }
 
-export function resetButtonClick(element, pathname){
+export function resetButtonClick(element, pathname) {
   const btnRef = getElement(element);
   btnRef.addEventListener("click", (event) => {
     event.preventDefault();
@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 export function cartButton() {
-  const shoppingIcon = document.querySelector('#cartIcon');
-
+  const shoppingIcon = document.querySelector("#cartIcon");
+  console.log(shoppingIcon);
   shoppingIcon.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -72,27 +72,33 @@ export function cartButton() {
   });
 }
 
-export function submitRegistration(){
-  const formRef = getElement('#registrationForm')
+export function submitRegistration() {
+  const formRef = getElement("#registrationForm");
 
-  formRef.addEventListener('submit', (event) =>{
+  formRef.addEventListener("submit", (event) => {
     event.preventDefault();
-    if(validateForm()){
-      window.location.href = '/menu.html';
+    if (validateForm()) {
+      window.location.href = "/menu.html";
     }
-  })
+  });
 }
 
-export function submitLogin(){
-  const loginBtnRef = getElement('#loginBtn')
-
-  loginBtnRef.addEventListener('click', (event) =>{
+export function submitLogin() {
+  const loginBtnRef = getElement("#loginBtn");
+  loginBtnRef.addEventListener("click", (event) => {
     event.preventDefault();
-    if(validateLogin()){
-      window.location.href = '/menu.html';
+    if (validateLogin()) {
+      const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+      // Kolla om användaren är admin eller vanlig user
+      if (loggedInUser?.role === 'admin') {
+        window.location.href = '/adminPage.html';
+      } else {
+        window.location.href = '/menu.html';
+      }
     }
     
-  })
+  });
 }
 
 export function menuToggle() {

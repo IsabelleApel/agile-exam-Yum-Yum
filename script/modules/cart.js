@@ -1,6 +1,7 @@
 /* localStorage.clear(); */
 
 import { getElement } from "../Utils/domUtils.js";
+import { fetchUsers } from "./api.js";
 import { getOrderNum } from "./displayUI.js";
 
 //lägga till i localstorage
@@ -115,12 +116,14 @@ export function paymentButton() {
     const orderNumber = getOrderNum();
     const totalPrice = totalPriceItem();
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedIn")); 
 
     // Skapar orderobjekt
     const order = {
       id: orderNumber,
       items: cart,
       total: totalPrice,
+      user: loggedInUser ? loggedInUser.username : "okänd",
       date: new Date().toLocaleString(),
     };
 

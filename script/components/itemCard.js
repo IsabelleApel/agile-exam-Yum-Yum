@@ -119,8 +119,27 @@ export function createOrderHistory(order) {
         <h3 class="order-history-card__total">${order.total} SEK</h3>
     </div>
     <p class="order-history-card__items">${order.items.map(item => item.name).join(", ")}</p>
-    <p class="order-history-card__date">${order.date}</h3>
+    <p class="order-history-card__date">${order.date}</p>
     `
 
     return orderHistoryCard;
+}
+
+
+// adminPageContainer
+export function createAdminPage(order) {
+    let adminPageCard = createElement('div');
+    addClass(adminPageCard, 'admin-page-card');
+    
+    adminPageCard.innerHTML = `
+    <div class="admin-page-card--first-row">
+        <h3 class="admin-page-card__total">#${order.id}</h3>
+        <h3 class="admin-page-card__total">${order.total} SEK</h3>
+    </div>
+    <h3 class="admin-page-card__user">Användare: ${order.user}</h3>
+    <p class="admin-page-card__items">${order.items.map(item => item.name).join(", ")}</p>
+    <p class="admin-page-card__date">${order.date}</p>
+    `
+
+    return adminPageCard;
 }

@@ -1,23 +1,42 @@
-import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard, createOrderHistory } from "../components/itemCard.js";
+import {
+  createMenu,
+  createDipMenu,
+  createDrinkMenu,
+  createFoodtruckCard,
+  createOrderHistory,
+  createAdminPage,
+} from "../components/itemCard.js";
 import { fetchMenu } from "./api.js";
 import { randomNum, randomString } from "../Utils/utils.js";
 import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
-import { resetButtonClick, buttonClick, menuToggle, cartButton, submitRegistration, submitLogin } from "./eventHandlers.js";
+import {
+  resetButtonClick,
+  buttonClick,
+  menuToggle,
+  cartButton,
+  submitRegistration,
+  submitLogin,
+} from "./eventHandlers.js";
 import { oData } from "../data/data.js";
 import { loadHeader } from "../components/header.js";
 
 // import { receipt } from "../components/receipt.js";
 
-import { displayCart, displayTotalPrice, initCartCount, paymentButton } from "./cart.js";
+import {
+  displayCart,
+  displayTotalPrice,
+  initCartCount,
+  paymentButton,
+} from "./cart.js";
 
-export function displayLandingPage(){
-    buttonClick('#menuBtn', '/menu.html');
-    buttonClick('#foodTruckBtn', '/foodtrucks.html');
-    //behöver veta namn på html-fil för login-sida
-    buttonClick('#loginBtn', '/login.html');
-    displayHeader().then(() => {
-        isLoggedIn();
-    })
+export function displayLandingPage() {
+  buttonClick("#menuBtn", "/menu.html");
+  buttonClick("#foodTruckBtn", "/foodtrucks.html");
+  //behöver veta namn på html-fil för login-sida
+  buttonClick("#loginBtn", "/login.html");
+  displayHeader().then(() => {
+    isLoggedIn();
+  });
 }
 
 export async function displayMenu() {
@@ -61,31 +80,30 @@ export async function displayMenu() {
   }
 }
 
-
 export function displayOrderConfirmation() {
   getETA();
   displayOrderNum();
   resetButtonClick("#newOrder", "./menu.html");
   buttonClick("#receipt", "./receipt.html");
   displayHeader().then(() => {
-    hideHeaderElement('.menu-icon');
-    hideHeaderElement('.header-shopping-bag');
+    hideHeaderElement(".menu-icon");
+    hideHeaderElement(".header-shopping-bag");
     isLoggedIn();
-})
+  });
 }
 
-function displayOrderNum(){
-  let ordersRef = JSON.parse(localStorage.getItem('orderHistory'));
-  let orderNumRef = getElement('#orderConfirmationNum'); 
+function displayOrderNum() {
+  let ordersRef = JSON.parse(localStorage.getItem("orderHistory"));
+  let orderNumRef = getElement("#orderConfirmationNum");
 
-  if (orderNumRef) { 
-      orderNumRef.textContent = `#${ordersRef[0].id}`; 
+  if (orderNumRef) {
+    orderNumRef.textContent = `#${ordersRef[0].id}`;
   }
 }
 
 // export function displayReceipt(){
 //   const orderId = randomString(11);
-//   const totalPrice = orderItems.reduce((total, item) => total + item.price, 0);  
+//   const totalPrice = orderItems.reduce((total, item) => total + item.price, 0);
 //   receipt(orderItems, totalPrice, orderId);
 // }
 
@@ -97,97 +115,105 @@ export function displayFoodtruckList() {
   }
 }
 
-export function displayRegistration(){
+export function displayRegistration() {
   displayHeader().then(() => {
-    hideHeaderElement('.header-shopping-bag');
-    isLoggedIn();
-});
+    hideHeaderElement(".header-shopping-bag");
+  });
   submitRegistration();
 }
 
-export function displayLogin(){
+export function displayLogin() {
   displayHeader().then(() => {
-    hideHeaderElement('.header-shopping-bag');
+    hideHeaderElement(".header-shopping-bag");
     isLoggedIn();
-});
+  });
   submitLogin();
 }
 
-export function displayCartPage(){
-    displayCart();
-    displayTotalPrice();
-    displayHeader().then(() => {
-        hideHeaderElement('.menu-icon');
-        const shoppingIcon = getElement('#cartIcon');
-        addClass(shoppingIcon, 'fa-bowl-food');
-        removeClass(shoppingIcon, 'fa-basket-shopping');
-        isLoggedIn();
-    })
-    // buttonClick('.pay-button', './orderConfirmation.html'); 
-    paymentButton();
+export function displayCartPage() {
+  displayCart();
+  displayTotalPrice();
+  displayHeader().then(() => {
+    hideHeaderElement(".menu-icon");
+    const shoppingIcon = getElement("#cartIcon");
+    addClass(shoppingIcon, "fa-bowl-food");
+    removeClass(shoppingIcon, "fa-basket-shopping");
+    isLoggedIn();
+  });
+  // buttonClick('.pay-button', './orderConfirmation.html');
+  paymentButton();
 }
 
-export async function displayHeader(){
-    const containerRef = getElement('#headerContainer');
+export async function displayHeader() {
+  const containerRef = getElement("#headerContainer");
 
-    if(!containerRef){
-        console.error('header container not found');
-        return Promise.reject('header container not found');
-    }
+  if (!containerRef) {
+    console.error("header container not found");
+    return Promise.reject("header container not found");
+  }
 
-    return loadHeader().then(headerHTML => {
-        containerRef.innerHTML = headerHTML;
-        menuToggle();
-        cartButton();
-        initCartCount();
-    });
-
+  return loadHeader().then((headerHTML) => {
+    containerRef.innerHTML = headerHTML;
+    menuToggle();
+    cartButton();
+    initCartCount();
+  });
 }
 
 // vet inte riktigt vart det är passande att ha getETA(), getOrderNum() och isLoggedIn(vilken script-fil)
-function getETA(){
-    let estimatedTime = randomNum(10, 20);
-    let etaRef = getElement("#orderConfirmationETA");
-    etaRef.textContent = `ETA ${estimatedTime} MIN`;
+function getETA() {
+  let estimatedTime = randomNum(10, 20);
+  let etaRef = getElement("#orderConfirmationETA");
+  etaRef.textContent = `ETA ${estimatedTime} MIN`;
 }
 
 export function getOrderNum() {
-  let orderNumber = randomString(11); 
-  return orderNumber; 
+  let orderNumber = randomString(11);
+  return orderNumber;
 }
-
-
-export function hideHeaderElement(element){
-    const elemRef = getElement(element);
-    addClass(elemRef, 'v-hidden');   
+export function hideHeaderElement(element) {
+  const elemRef = getElement(element);
+  addClass(elemRef, "v-hidden");
 }
-
 
 export function displayOrderHistory() {
-    let orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
-    let orderHistoryContainer = getElement('#orderHistoryContainer');
+  let orderHistory = JSON.parse(localStorage.getItem("orderHistory")) || [];
+  let orderHistoryContainer = getElement("#orderHistoryContainer");
 
-    orderHistoryContainer.innerHTML = "";
+  orderHistoryContainer.innerHTML = "";
 
-    orderHistory.forEach(order => {
-      let orderCard = createOrderHistory(order);
-      orderHistoryContainer.appendChild(orderCard);
-    });
+  orderHistory.forEach((order) => {
+    let orderCard = createOrderHistory(order);
+    orderHistoryContainer.appendChild(orderCard);
+  });
 }
 
-export function isLoggedIn(){
-  const menuBtnProfileRef = getElement('.menu-btn--profile');
-  const menuBtnLoginRef = getElement('.menu-btn--login');
+export function isLoggedIn() {
+  const menuBtnProfileRef = getElement(".menu-btn--profile");
+  const menuBtnLoginRef = getElement(".menu-btn--login");
 
-  let loggedIn = localStorage.getItem('loggedIn') !== null;
-  console.log(loggedIn);
+  let loggedIn = localStorage.getItem("loggedIn") !== null;
 
-  if(loggedIn){
-      removeClass(menuBtnProfileRef, 'd-none');
-      addClass(menuBtnLoginRef, 'd-none');
-  }else{
-      addClass(menuBtnProfileRef, 'd-none');
-      removeClass(menuBtnLoginRef, 'd-none');
+  if (loggedIn) {
+    removeClass(menuBtnProfileRef, "d-none");
+    addClass(menuBtnLoginRef, "d-none");
+  } else {
+    addClass(menuBtnProfileRef, "d-none");
+    removeClass(menuBtnLoginRef, "d-none");
   }
 }
+export function logOut() {
+  localStorage.setItem("loggedIn", null);
+}
 
+export function displayAdminPage() {
+  let orderHistory = JSON.parse(localStorage.getItem("orderHistory")) || [];
+  let adminPageContainer = getElement("#adminPageContainer");
+
+  adminPageContainer.innerHTML = "";
+
+  orderHistory.forEach((order) => {
+    let adminPageCard = createAdminPage(order);
+    adminPageContainer.appendChild(adminPageCard);
+  });
+}

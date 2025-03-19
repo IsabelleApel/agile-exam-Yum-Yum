@@ -1,15 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Hämta startanvändare från JSON-fil
-  fetch('https://santosnr6.github.io/Data/yumyumusers.json')
-    .then(response => response.json())
-    .then(data => {
-      data.users.forEach(user => {
+  fetch("https://santosnr6.github.io/Data/yumyumusers.json")
+    .then((response) => response.json())
+    .then((data) => {
+      data.users.forEach((user) => {
+        console.log(user);
         if (!localStorage.getItem(user.username)) {
           localStorage.setItem(user.username, user.password);
         }
       });
     })
-    .catch(error => console.error('Fel vid hämtning av användardata:', error));
+    .catch((error) =>
+      console.error("Fel vid hämtning av användardata:", error)
+    );
 
   // Hamburgermeny-funktionalitet
   const menuIcon = document.querySelector(".menu-icon");
@@ -37,11 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const password = document.getElementById("password").value.trim();
       const storedPassword = localStorage.getItem(username);
       if (!storedPassword) {
-        alert("användaren finns inte");
       } else if (storedPassword !== password) {
-        alert("lösenordet stämmer inte");
       } else {
-        alert("Inloggning lyckades!");
+        localStorage.setItem("loggedIn", "true");
+        window.location.href = "profile.html";
       }
     });
   }

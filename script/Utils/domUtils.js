@@ -10,7 +10,6 @@ export function createElement(tagname) {
   return document.createElement(tagname);
 }
 
-
 export function addClass(element, className) {
   return element.classList.add(className);
 }
@@ -52,9 +51,9 @@ export async function createReceipt(orderItems, totalPrice, orderId) {
             <small class="receipt__total-tax">inkl 20% moms</small>
         </article>
         </article>
-        <button class="receipt__new-order" onclick="location.href='menu.html'">GÖR EN NY BESTÄLLNING</button>
+        <button class="receipt__new-order" onclick="location.href='menu.html'">GÖR EN NY BESTÄLLNING</button> 
+ 
     `;
 
   receiptContainer.innerHTML = receiptHTML;
 }
-
