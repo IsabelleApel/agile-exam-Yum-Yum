@@ -3,11 +3,9 @@ import { cartButton } from "./modules/eventHandlers.js";
 import { displayLogin, isLoggedIn, displayRegistration, displayOrderConfirmation, displayFoodtruckList, displayHeader, displayMenu, displayCartPage, displayLandingPage, hideHeaderElement, displayOrderHistory, displayAdminPage } from "./modules/displayUI.js";
 import { importUsers } from "./modules/validation.js";
 import { addClass, getElement, removeClass } from "./Utils/domUtils.js";
+import { initKarusell } from "./modules/karusell.js";
 
-if (
-  window.location.pathname === "/" ||
-  window.location.pathname === "/index.html"
-) {
+if (window.location.pathname === "/" || window.location.pathname === "/index.html') {
   console.log("index.html");
   displayLandingPage();
 } else if (window.location.pathname === "/menu.html") {
@@ -28,6 +26,7 @@ if (
   displayHeader().then(() => {
     isLoggedIn();
   });
+  initKarusell();
 } else if (window.location.pathname === "/receipt.html") {
   // displayReceipt();
   displayHeader().then(() => {
