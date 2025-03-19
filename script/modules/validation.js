@@ -56,7 +56,7 @@ export function validateLogin() {
       };
     }
     localStorage.setItem("loggedIn", JSON.stringify(user));
-    window.location.href = "/menu.html";
+    window.location.href = "/profile.html";
   } catch (error) {
     errorMsg.textContent = error.message;
     error.nodeRef.focus();

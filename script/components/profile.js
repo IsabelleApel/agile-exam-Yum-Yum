@@ -30,10 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function checkUserAuth() {
-  let loggedIn = localStorage.getItem("loggedIn") === "true";
-  console.log(loggedIn);
-  if (!loggedIn) {
-    alert(loggedIn);
+  let loggedIn = localStorage.getItem("loggedIn");
+  alert("loggedIn: " + loggedIn);
+  if (localStorage.getItem("loggedIn") === "null") {
+    alert("Du är inte inloggad");
     window.location.href = "login.html";
     return;
   }

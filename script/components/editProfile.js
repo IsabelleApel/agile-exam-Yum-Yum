@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let user = JSON.parse(localStorage.getItem("loggedInUser"));
+  let user = JSON.parse(localStorage.getItem("loggedIn"));
   console.log(user);
   let userName = document.querySelector("#username");
   userName.value = user.username;

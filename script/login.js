@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("login2Btn");
   // Hämta startanvändare från JSON-fil
   fetch("https://santosnr6.github.io/Data/yumyumusers.json")
     .then((response) => response.json())
@@ -34,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Inloggningsfunktionalitet
   const loginBtn = document.getElementById("loginBtn");
-  console.log(loginBtn);
   if (loginBtn) {
     loginBtn.addEventListener("click", function (e) {
       e.preventDefault();

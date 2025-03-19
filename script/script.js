@@ -51,6 +51,9 @@ if (
     hideHeaderElement(".header-shopping-bag");
     isLoggedIn();
   });
+} else if (window.location.pathname === "/login.html") {
+  importUsers();
+  displayLogin();
 } else if (window.location.pathname === "/registerNewUser.html") {
   console.log("register new user");
   importUsers();
