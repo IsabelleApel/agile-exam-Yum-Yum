@@ -84,13 +84,12 @@ export function submitRegistration() {
 }
 
 export function submitLogin() {
-  alert("submit login");
   const loginBtnRef = getElement("#loginBtn");
   alert(loginBtnRef);
   loginBtnRef.addEventListener("click", (event) => {
     event.preventDefault();
     if (validateLogin()) {
-      window.location.href = "/menu.html";
+      window.location.href = "/profile.html";
     }
   });
 }
