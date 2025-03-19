@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   let user = JSON.parse(localStorage.getItem("loggedIn"));
-  console.log(user);
   let userName = document.querySelector("#username");
   userName.value = user.username;
 
@@ -21,7 +20,9 @@ function updateUser() {
   let password = document.querySelector("#password").value.trim();
 
   let storedUsers = JSON.parse(localStorage.getItem("users")) || [];
-  let currentUser = JSON.parse(localStorage.getItem("loggedIn"));
+
+  let currentUser = localStorage.getItem("loggedIn");
+
   if (!currentUser) {
     return;
   }
@@ -38,7 +39,6 @@ function updateUser() {
     localStorage.setItem("users", JSON.stringify(storedUsers));
 
     let updatedUser = {
-      ...currentUser,
       email: email,
       password: password,
     };

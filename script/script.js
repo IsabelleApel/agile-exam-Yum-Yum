@@ -69,7 +69,7 @@ if (
   });
 } else if (window.location.pathname === "/editProfile.html") {
   displayHeader().then(() => {
-    hideHeaderElement(".header - shopping - bag");
+    hideHeaderElement(".header-shopping-bag");
     isLoggedIn();
   });
 } else if (window.location.pathname === "/adminPage.html") {

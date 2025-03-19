@@ -85,7 +85,6 @@ export function submitRegistration() {
 
 export function submitLogin() {
   const loginBtnRef = getElement("#loginBtn");
-  alert(loginBtnRef);
   loginBtnRef.addEventListener("click", (event) => {
     event.preventDefault();
     if (validateLogin()) {

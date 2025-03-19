@@ -25,7 +25,6 @@ export async function importUsers() {
 }
 
 export function validateLogin() {
-  console.log("validation");
   const users = JSON.parse(localStorage.getItem("users")) || [];
   const usernameRef = getElement("#username");
   const passwordRef = getElement("#password");
@@ -64,7 +63,6 @@ export function validateLogin() {
 }
 
 export function validateForm() {
-  console.log("validateform");
   const users = JSON.parse(localStorage.getItem("users")) || [];
   const usernameRef = getElement("#username");
   const emailRef = getElement("#email");

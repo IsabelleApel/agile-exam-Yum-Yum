@@ -193,7 +193,6 @@ export function isLoggedIn() {
   const menuBtnLoginRef = getElement(".menu-btn--login");
 
   let loggedIn = localStorage.getItem("loggedIn") !== null;
-  console.log(loggedIn);
 
   if (loggedIn) {
     removeClass(menuBtnProfileRef, "d-none");
@@ -205,18 +204,6 @@ export function isLoggedIn() {
 }
 export function logOut() {
   localStorage.setItem("loggedIn", null);
-}
-
-export function displayAdminPage() {
-  let orderHistory = JSON.parse(localStorage.getItem("orderHistory")) || [];
-  let adminPageContainer = getElement("#adminPageContainer");
-
-  adminPageContainer.innerHTML = "";
-
-  orderHistory.forEach((order) => {
-    let adminPageCard = createAdminPage(order);
-    adminPageContainer.appendChild(adminPageCard);
-  });
 }
 
 export function displayAdminPage() {
