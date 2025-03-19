@@ -88,11 +88,18 @@ export function submitLogin(){
 
   loginBtnRef.addEventListener('click', (event) =>{
     event.preventDefault();
-    if(validateLogin()){
-      window.location.href = '/menu.html';
+    if (validateLogin()) {
+      const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+      // Kolla om användaren är admin eller vanlig user
+      if (loggedInUser?.role === 'admin') {
+        window.location.href = '/adminPage.html';
+      } else {
+        window.location.href = '/menu.html';
+      }
     }
     
-  })
+  });
 }
 
 export function menuToggle() {

@@ -136,6 +136,7 @@ export function createAdminPage(order) {
         <h3 class="admin-page-card__total">#${order.id}</h3>
         <h3 class="admin-page-card__total">${order.total} SEK</h3>
     </div>
+    <h3 class="admin-page-card__user">Användare: ${order.user}</h3>
     <p class="admin-page-card__items">${order.items.map(item => item.name).join(", ")}</p>
     <p class="admin-page-card__date">${order.date}</p>
     `
