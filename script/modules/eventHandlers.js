@@ -89,7 +89,7 @@ export function submitLogin() {
   loginBtnRef.addEventListener("click", (event) => {
     event.preventDefault();
     if (validateLogin()) {
-      window.location.href = "/profile.html";
+      window.location.href = "/menu.html";
     }
   });
 }
