@@ -40,11 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const password = document.getElementById("password").value.trim();
       const storedPassword = localStorage.getItem(username);
       if (!storedPassword) {
-        alert("användaren finns inte");
       } else if (storedPassword !== password) {
-        alert("lösenordet stämmer inte");
       } else {
-        alert("Inloggning lyckades!");
         localStorage.setItem("loggedIn", "true");
         window.location.href = "profile.html";
       }

@@ -32,7 +32,6 @@ async function saveOrderToProfile(receipt) {
   try {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     if (!currentUser) {
-      alert("Du måste logga in för att spara kvittot.");
       return;
     }
 
@@ -41,8 +40,6 @@ async function saveOrderToProfile(receipt) {
     userReceipts[currentUser.id].push(receipt);
 
     localStorage.setItem("userReceipts", JSON.stringify(userReceipts));
-
-    alert("Kvittot har sparats!");
   } catch (error) {
     console.error("Fel vid sparande av kvitto:", error);
   }

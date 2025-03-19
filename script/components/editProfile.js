@@ -17,12 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function updateUser() {
-  let userName = document.querySelector("#username").value.trim();
   let email = document.querySelector("#email").value.trim();
   let password = document.querySelector("#password").value.trim();
 
   let storedUsers = JSON.parse(localStorage.getItem("users")) || [];
-  let currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  let currentUser = JSON.parse(localStorage.getItem("loggedIn"));
+  if (!currentUser) {
+    return;
+  }
 
   let userIndex = storedUsers.findIndex(
     (user) => user.username === currentUser.username
@@ -30,18 +32,17 @@ function updateUser() {
 
   if (userIndex !== -1) {
     storedUsers[userIndex] = {
-      username: userName,
       email: email,
       password: password,
     };
     localStorage.setItem("users", JSON.stringify(storedUsers));
-    localStorage.setItem(
-      "loggedInUser",
-      JSON.stringify(storedUsers[userIndex])
-    );
 
-    alert("Informationen är korrekt uppdaterad.");
-  } else {
-    alert("Fel: Användaren hittades inte i databasen.");
+    // Uppdatera användaren i localStorage
+    let updatedUser = {
+      ...currentUser,
+      email: email,
+      password: password,
+    };
+    localStorage.setItem("loggedIn", JSON.stringify(updatedUser));
   }
 }
