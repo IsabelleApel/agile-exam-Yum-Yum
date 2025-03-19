@@ -10,7 +10,7 @@ export function buttonClick(element, pathname) {
   });
 }
 
-export function resetButtonClick(element, pathname){
+export function resetButtonClick(element, pathname) {
   const btnRef = getElement(element);
   btnRef.addEventListener("click", (event) => {
     event.preventDefault();
@@ -83,16 +83,16 @@ export function submitRegistration() {
   });
 }
 
-export function submitLogin(){
-  const loginBtnRef = getElement('#loginBtn')
-
-  loginBtnRef.addEventListener('click', (event) =>{
+export function submitLogin() {
+  alert("submit login");
+  const loginBtnRef = getElement("#loginBtn");
+  alert(loginBtnRef);
+  loginBtnRef.addEventListener("click", (event) => {
     event.preventDefault();
-    if(validateLogin()){
-      window.location.href = '/menu.html';
+    if (validateLogin()) {
+      window.location.href = "/menu.html";
     }
-    
-  })
+  });
 }
 
 export function menuToggle() {

@@ -25,7 +25,7 @@ function updateUser() {
   let currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
   let userIndex = storedUsers.findIndex(
-    (u) => u.username === currentUser.username
+    (user) => user.username === currentUser.username
   );
 
   if (userIndex !== -1) {

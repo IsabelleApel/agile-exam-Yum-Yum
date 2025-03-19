@@ -100,15 +100,6 @@ function displayOrderNum() {
   }
 }
 
-function displayOrderNum() {
-  let ordersRef = JSON.parse(localStorage.getItem("orderHistory"));
-  let orderNumRef = getElement("#orderConfirmationNum");
-
-  if (orderNumRef) {
-    orderNumRef.textContent = `#${ordersRef[0].id}`;
-  }
-}
-
 // export function displayReceipt(){
 //   const orderId = randomString(11);
 //   const totalPrice = orderItems.reduce((total, item) => total + item.price, 0);
@@ -128,14 +119,6 @@ export function displayRegistration() {
     hideHeaderElement(".header-shopping-bag");
   });
   submitRegistration();
-}
-
-export function displayLogin() {
-  displayHeader().then(() => {
-    hideHeaderElement(".header-shopping-bag");
-    isLoggedIn();
-  });
-  submitLogin();
 }
 
 export function displayLogin() {
