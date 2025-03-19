@@ -37,7 +37,6 @@ function updateUser() {
     };
     localStorage.setItem("users", JSON.stringify(storedUsers));
 
-    // Uppdatera användaren i localStorage
     let updatedUser = {
       ...currentUser,
       email: email,
