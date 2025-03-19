@@ -3,6 +3,7 @@ import { cartButton } from "./modules/eventHandlers.js";
 import { displayLogin, isLoggedIn, displayRegistration, displayOrderConfirmation, displayFoodtruckList, displayHeader, displayMenu, displayCartPage, displayLandingPage, hideHeaderElement, displayOrderHistory } from "./modules/displayUI.js";
 import { importUsers } from "./modules/validation.js";
 import { addClass, getElement, removeClass } from "./Utils/domUtils.js";
+import { initKarusell } from "./modules/karusell.js";
 
 if(window.location.pathname === '/' || window.location.pathname === '/index.html') {
     console.log('index.html');
@@ -25,6 +26,9 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
     displayHeader().then(() => {
         isLoggedIn();
     })
+    initKarusell();
+    /* karusell(); */
+    /* handleKarusellClick() */
 } else if(window.location.pathname === '/receipt.html'){
     // displayReceipt();
     displayHeader().then(() => {
