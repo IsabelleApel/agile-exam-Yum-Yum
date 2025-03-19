@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/profile.css" />
+    <script type="module" src="script/components/profile.js"></script>
+    <script type="module" src="script/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/5f2b001e16.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="view-profile-page">
+    <header class="profile__header">
+      <div id="headerContainer"></div>
+    </header>
+    <main class="view-profile-page__content">
+      <section class="profile__user-icon">
+        <img src="assets/avatar user.png" alt="User" />
+      </section>
+      <button
+        id="view-info"
+        class="view-profile-page__button view-profile-page__button--info"
+      >
+        Mina Uppgifter
+      </button>
+      <button
+        id="edit-info"
+        class="view-profile-page__button view-profile-page__button--edit"
+      >
+        Ändra Mina Uppgifter
+      </button>
+      <button
+        id="view-orders"
+        class="view-profile-page__button view-profile-page__button--orders"
+      >
+        Mina Beställningar
+      </button>
+    </main>
+
+    <footer class="view-profile-page__footer">
+      <button id="logout" class="view-profile-page__logout">Logga Ut</button>
+    </footer>
+  </body>
+</html>

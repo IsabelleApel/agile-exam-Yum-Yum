@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles/login.css">
-  <script type="module" src="script/script.js"></script>
-  <script src="https://kit.fontawesome.com/5f2b001e16.js" crossorigin="anonymous"></script>
-  <title>Logga in - Yum Yum Gimmie Sum</title>
-</head>
-<body class="login-page">
-  <header>
-    <div id="headerContainer"></div>
-  </header>
-  <main>
-    <div class="login-container">
-      <div class="user-icon">
-        <i class="fa-regular fa-circle-user"></i>
-      </div>
-      <!-- LOGGA IN rubrik -->
-      <h1 class="login-title">LOGGA IN</h1>
-      <p id="errorMsg" class="registration__error-msg"></p>
-      <!-- Användarnamn -->
-      <div class="input-group">
-        <label for="username">användarnamn</label>
-        <div class="input-container">
-          <i class="fa-regular fa-user"></i>
-          <input type="text" id="username" placeholder="Ange användarnamn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/login.css" />
+    <script type="module" src="script/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/5f2b001e16.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Logga in - Yum Yum Gimmie Sum</title>
+  </head>
+  <body class="login-page">
+    <header>
+      <div id="headerContainer"></div>
+    </header>
+    <main>
+      <div class="login-container">
+        <div class="user-icon">
+          <i class="fa-regular fa-circle-user"></i>
         </div>
-      </div>
-      
-      <!-- Lösenord -->
-      <div class="input-group">
-        <label for="password">lösenord</label>
-        <div class="input-container">
-          <i class="fa-solid fa-lock"></i>
-          <input type="password" id="password" placeholder="Ange lösenord">
+        <!-- LOGGA IN rubrik -->
+        <h1 class="login-title">LOGGA IN</h1>
+        <p id="errorMsg" class="registration__error-msg"></p>
+        <!-- Användarnamn -->
+        <div class="input-group">
+          <label for="username">användarnamn</label>
+          <div class="input-container">
+            <i class="fa-regular fa-user"></i>
+            <input type="text" id="username" placeholder="Ange användarnamn" />
+          </div>
         </div>
+
+        <!-- Lösenord -->
+        <div class="input-group">
+          <label for="password">lösenord</label>
+          <div class="input-container">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="password" placeholder="Ange lösenord" />
+          </div>
+        </div>
+
+        <!-- Logga in knapp -->
+        <button class="login-btn" id="loginBtn">logga in</button>
+
+        <!-- Registrera dig knapp -->
+        <button
+          class="register-btn"
+          id="registerBtn"
+          onclick="location.href='registerNewUser.html'"
+        >
+          registrera dig
+        </button>
       </div>
-      
-      <!-- Logga in knapp -->
-      <button class="login-btn" id="loginBtn">logga in</button>
-      
-      <!-- Registrera dig knapp -->
-<button class="register-btn" id="registerBtn" onclick="location.href='registerNewUser.html'">registrera dig</button>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
 </html>
