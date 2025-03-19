@@ -22,10 +22,10 @@ body {
   min-height: 100vh;
 }
 
-header {
+/* header {
   text-align: center;
   padding: 20px;
-}
+} */
 
 .content {
   display: flex;
@@ -153,13 +153,13 @@ header {
 
 /* Responsiva anpassningar */
 @media screen and (max-width: 390px) {
-  header {
+  /* header {
     padding: 10px;
   }
 
   .header-logo img {
     max-width: 150px;
-  }
+  } */
 
   .content {
     padding: 10px;
@@ -179,3 +179,4 @@ header {
     padding: 10px;
     font-size: 1em;
   } */
+}

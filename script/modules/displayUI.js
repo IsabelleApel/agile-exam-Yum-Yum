@@ -2,7 +2,7 @@ import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard, create
 import { fetchMenu } from "./api.js";
 import { randomNum, randomString } from "../Utils/utils.js";
 import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
-import { buttonClick, menuToggle, cartButton, submitRegistration } from "./eventHandlers.js";
+import { resetButtonClick, buttonClick, menuToggle, cartButton, submitRegistration, submitLogin } from "./eventHandlers.js";
 import { oData } from "../data/data.js";
 import { loadHeader } from "../components/header.js";
 
@@ -64,14 +64,23 @@ export async function displayMenu() {
 
 export function displayOrderConfirmation() {
   getETA();
-  getOrderNum();
-  buttonClick("#newOrder", "./menu.html");
+  displayOrderNum();
+  resetButtonClick("#newOrder", "./menu.html");
   buttonClick("#receipt", "./receipt.html");
   displayHeader().then(() => {
     hideHeaderElement('.menu-icon');
     hideHeaderElement('.header-shopping-bag');
     isLoggedIn();
 })
+}
+
+function displayOrderNum(){
+  let ordersRef = JSON.parse(localStorage.getItem('orderHistory'));
+  let orderNumRef = getElement('#orderConfirmationNum'); 
+
+  if (orderNumRef) { 
+      orderNumRef.textContent = `#${ordersRef[0].id}`; 
+  }
 }
 
 // export function displayReceipt(){
@@ -96,6 +105,14 @@ export function displayRegistration(){
   submitRegistration();
 }
 
+export function displayLogin(){
+  displayHeader().then(() => {
+    hideHeaderElement('.header-shopping-bag');
+    isLoggedIn();
+});
+  submitLogin();
+}
+
 export function displayCartPage(){
     displayCart();
     displayTotalPrice();
@@ -106,7 +123,7 @@ export function displayCartPage(){
         removeClass(shoppingIcon, 'fa-basket-shopping');
         isLoggedIn();
     })
-    buttonClick('.pay-button', './orderConfirmation.html'); 
+    // buttonClick('.pay-button', './orderConfirmation.html'); 
     paymentButton();
 }
 
@@ -124,7 +141,7 @@ export async function displayHeader(){
         cartButton();
         initCartCount();
     });
-  
+
 }
 
 // vet inte riktigt vart det är passande att ha getETA(), getOrderNum() och isLoggedIn(vilken script-fil)
@@ -136,12 +153,6 @@ function getETA(){
 
 export function getOrderNum() {
   let orderNumber = randomString(11); 
-  let orderNumRef = document.querySelector('#orderConfirmationNum'); 
-
-  if (orderNumRef) { 
-      orderNumRef.textContent = `#${orderNumber}`; 
-  }
-
   return orderNumber; 
 }
 
@@ -168,7 +179,7 @@ export function isLoggedIn(){
   const menuBtnProfileRef = getElement('.menu-btn--profile');
   const menuBtnLoginRef = getElement('.menu-btn--login');
 
-  let loggedIn = localStorage.getItem('loggedIn') === 'true';
+  let loggedIn = localStorage.getItem('loggedIn') !== null;
   console.log(loggedIn);
 
   if(loggedIn){
