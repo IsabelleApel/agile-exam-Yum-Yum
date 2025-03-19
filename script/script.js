@@ -16,6 +16,7 @@ import {
   displayLandingPage,
   hideHeaderElement,
   displayOrderHistory,
+  displayAdminPage,
 } from "./modules/displayUI.js";
 import { importUsers } from "./modules/validation.js";
 import { addClass, getElement, removeClass } from "./Utils/domUtils.js";
@@ -70,5 +71,10 @@ if (
   displayHeader().then(() => {
     hideHeaderElement(".header - shopping - bag");
     isLoggedIn();
+  });
+} else if (window.location.pathname === "/adminPage.html") {
+  displayAdminPage();
+  displayHeader().then(() => {
+    hideHeaderElement(".header-shopping-bag");
   });
 }

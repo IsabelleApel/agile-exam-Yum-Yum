@@ -4,6 +4,7 @@ import {
   createDrinkMenu,
   createFoodtruckCard,
   createOrderHistory,
+  createAdminPage,
 } from "../components/itemCard.js";
 import { fetchMenu } from "./api.js";
 import { randomNum, randomString } from "../Utils/utils.js";
@@ -204,4 +205,28 @@ export function isLoggedIn() {
 }
 export function logOut() {
   localStorage.setItem("loggedIn", null);
+}
+
+export function displayAdminPage() {
+  let orderHistory = JSON.parse(localStorage.getItem("orderHistory")) || [];
+  let adminPageContainer = getElement("#adminPageContainer");
+
+  adminPageContainer.innerHTML = "";
+
+  orderHistory.forEach((order) => {
+    let adminPageCard = createAdminPage(order);
+    adminPageContainer.appendChild(adminPageCard);
+  });
+}
+
+export function displayAdminPage() {
+  let orderHistory = JSON.parse(localStorage.getItem("orderHistory")) || [];
+  let adminPageContainer = getElement("#adminPageContainer");
+
+  adminPageContainer.innerHTML = "";
+
+  orderHistory.forEach((order) => {
+    let adminPageCard = createAdminPage(order);
+    adminPageContainer.appendChild(adminPageCard);
+  });
 }
