@@ -1,4 +1,4 @@
-import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard, createOrderHistory } from "../components/itemCard.js";
+import { createMenu, createDipMenu, createDrinkMenu, createFoodtruckCard, createOrderHistory, createAdminPage } from "../components/itemCard.js";
 import { fetchMenu } from "./api.js";
 import { randomNum, randomString } from "../Utils/utils.js";
 import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
@@ -180,3 +180,15 @@ export function isLoggedIn(){
   }
 }
 
+
+export function displayAdminPage() {
+  let orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+  let adminPageContainer = getElement('#adminPageContainer');
+
+  adminPageContainer.innerHTML = "";
+
+  orderHistory.forEach(order => {
+    let adminPageCard = createAdminPage(order);
+    adminPageContainer.appendChild(adminPageCard);
+  });
+}
