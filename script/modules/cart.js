@@ -1,6 +1,7 @@
 /* localStorage.clear(); */
 
 import { getElement } from "../Utils/domUtils.js";
+import { fetchUsers } from "./api.js";
 import { getOrderNum } from "./displayUI.js";
 
 //lägga till i localstorage

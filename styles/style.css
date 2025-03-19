@@ -480,3 +480,57 @@
 .order-history-card__date {
   color: var(--mid-grey);
 }
+
+/* Admin sida */
+.admin-page__background {
+  position: fixed;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  top: 0;
+}
+
+.admin-page__wrapper {
+  font-family: "Fira Sans", sans-serif;
+  position: relative;
+  width: 350px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.admin-page__title {
+  color: var(--text-white);
+  background-color: var(--darkest-grey);
+  padding: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.admin-page__container {
+  background-color: var(--dark-grey);
+}
+
+.admin-page-card {
+  color: var(--text-white);
+  padding: 1rem;
+  border-bottom: 1px dotted var(--mid-grey);
+}
+
+.admin-page-card--first-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.admin-page-card__items {
+  margin-bottom: 0.3rem;
+}
+
+.admin-page-card__date {
+  color: var(--mid-grey);
+}
