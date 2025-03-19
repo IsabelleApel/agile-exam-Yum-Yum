@@ -497,7 +497,7 @@
   width: 350px;
   margin: 0 auto;
   margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 
 .admin-page__title {
@@ -525,6 +525,11 @@
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+}
+
+.admin-page-card__user {
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
 }
 
 .admin-page-card__items {

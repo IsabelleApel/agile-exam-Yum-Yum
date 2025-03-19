@@ -55,7 +55,13 @@ export function validateLogin(){
             }
         }
         localStorage.setItem('loggedIn', JSON.stringify(user));
-        window.location.href = "/menu.html";
+        
+        if (user.role === 'admin') {
+            window.location.href = "/adminPage.html";
+        } else {
+            window.location.href = "/menu.html";
+        }
+
     } catch (error) {
         errorMsg.textContent = error.message;
         error.nodeRef.focus();
@@ -113,6 +119,7 @@ export function validateForm(){
         localStorage.setItem('users', JSON.stringify(users));
         localStorage.setItem('loggedIn', 'true');
         window.location.href = "/menu.html";
+
     } catch (error) {
         errorMsg.textContent = error.message;
         error.nodeRef.focus();

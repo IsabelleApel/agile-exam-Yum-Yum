@@ -44,9 +44,6 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
     displayOrderHistory();
 } else if(window.location.pathname === '/adminPage.html'){
     displayAdminPage();
-    displayHeader().then(() => {
-        hideHeaderElement('.header-shopping-bag');
-})
 }
 
 
