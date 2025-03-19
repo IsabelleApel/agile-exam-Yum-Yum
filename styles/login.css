@@ -180,6 +180,8 @@ body.login-page {
   cursor: pointer;
   margin-top: 20px;
   transition: background 0.3s ease;
+  font-family: "Fira Sans", sans-serif;
+  text-transform: uppercase;
 }
 
 .login-btn:hover {
@@ -197,6 +199,8 @@ body.login-page {
   cursor: pointer;
   margin-top: 15px;
   transition: background 0.3s ease;
+  font-family: "Fira Sans", sans-serif;
+  text-transform: uppercase;
 }
 
 .register-btn:hover {
