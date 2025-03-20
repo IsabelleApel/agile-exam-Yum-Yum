@@ -101,11 +101,13 @@ function displayOrderNum() {
   }
 }
 
-// export function displayReceipt(){
-//   const orderId = randomString(11);
-//   const totalPrice = orderItems.reduce((total, item) => total + item.price, 0);
-//   receipt(orderItems, totalPrice, orderId);
-// }
+export function displayReceipt() {
+  displayHeader().then(() => {
+    hideHeaderElement(".menu-icon");
+    hideHeaderElement(".header-shopping-bag");
+    isLoggedIn();
+  });
+}
 
 export function displayFoodtruckList() {
   const listRef = getElement("#foodtrucksList");

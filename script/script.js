@@ -3,7 +3,7 @@ import {
   displayTotalPrice,
   initCartCount,
 } from "./modules/cart.js";
-import { cartButton } from "./modules/eventHandlers.js";
+import { cartButton, resetButtonClick } from "./modules/eventHandlers.js";
 import {
   displayLogin,
   isLoggedIn,
@@ -17,6 +17,7 @@ import {
   hideHeaderElement,
   displayOrderHistory,
   displayAdminPage,
+  displayReceipt,
 } from "./modules/displayUI.js";
 import { importUsers } from "./modules/validation.js";
 import { addClass, getElement, removeClass } from "./Utils/domUtils.js";
@@ -46,12 +47,7 @@ if (
     isLoggedIn();
   });
 } else if (window.location.pathname === "/receipt.html") {
-  // displayReceipt();
-  displayHeader().then(() => {
-    hideHeaderElement(".menu-icon");
-    hideHeaderElement(".header-shopping-bag");
-    isLoggedIn();
-  });
+  displayReceipt();
 } else if (window.location.pathname === "/login.html") {
   importUsers();
   displayLogin();
