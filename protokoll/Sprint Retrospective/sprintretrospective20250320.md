@@ -29,9 +29,12 @@ Var och en svarar på frågorna nedan, 1 person antecknar
 * Fortsätta läsa andras kod och förstå sammanhanget mellan filerna
 
 ### Carolina
-* 
-* 
-* 
+* Förbättra namngivningen av brancher så att de blir lättare att förstå för teamet. Jag vill också organisera och rensa mina idéer bättre 
+  innan jag börjar koda, så att jag har en tydlig förståelse av varje uppgift innan jag skriver kod.
+* Sluta fastna i problem utan att be om hjälp. Istället för att vänta för länge på att hitta en lösning vill jag fråga teamet tidigare och 
+  dra nytta av den gemensamma kunskapen.
+* Fortsätta arbeta på att förstå andras kod och dess logiska struktur. Jag vill också fortsätta utveckla min förmåga att strukturera kod 
+  från början av ett projekt, så att den blir tydlig, modulär och lätt att underhålla.
 
 ### Isabel
 * Vill börja skapa brancher utifrån back och sprintlog, och inte hela tiden skapa nya i vs code 
