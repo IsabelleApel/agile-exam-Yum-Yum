@@ -15,6 +15,7 @@ import {
 } from "./modules/displayUI.js";
 import { importUsers } from "./modules/validation.js";
 import { initKarusell } from "./modules/karusell.js";
+/* import {initializeProfile} from "./components/editProfile.js"; */
 
 if (
   window.location.pathname === "/" ||
@@ -65,6 +66,7 @@ if (
     hideHeaderElement(".header-shopping-bag");
     isLoggedIn();
   });
+  /* initializeProfile(); */
 } else if (window.location.pathname === "/adminPage.html") {
   displayAdminPage();
   logOutAdmin();

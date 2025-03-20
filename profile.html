@@ -7,6 +7,7 @@
     <!-- <link rel="stylesheet" href="styles/style.css" /> -->
     <link rel="stylesheet" href="styles/profile.css" />
     <script type="module" src="script/components/profile.js"></script>
+    <!-- <script type="module" src="script/components/editProfile.js"></script> -->
     <script type="module" src="script/script.js"></script>
     <script
       src="https://kit.fontawesome.com/5f2b001e16.js"
@@ -19,8 +20,16 @@
     </header>
     <main class="view-profile-page__content">
       <section class="profile__user-icon">
-        <img src="assets/avatar user.png" alt="User" />
+        <!-- <img src="assets/avatar user.png" alt="User" /> -->
+        <img id="profile-pic" src="" alt="Profile Picture">
       </section>
+      <div id="choose-img" class="d-none">
+        <img src="assets/profile-img/1.png" alt="img1">
+        <img src="assets/profile-img/2.png" alt="img2">
+        <img src="assets/profile-img/3.png" alt="img3">
+        <img src="assets/profile-img/4.png" alt="img4">
+        <img src="assets/profile-img/5.png" alt="img5">
+    </div>
       <button
         id="view-info"
         class="view-profile-page__button view-profile-page__button--info"
