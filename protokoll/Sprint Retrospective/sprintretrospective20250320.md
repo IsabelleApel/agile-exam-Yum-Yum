@@ -20,8 +20,8 @@ Var och en svarar på frågorna nedan, 1 person antecknar
 
 ### Senja
 * Bli bättre på att dela upp koden i moduler, har tidigare gjort allt i samma då det känns enklast 
-* 
-*  
+* Be om hjälp snabbare! Sitter lite för länge och försöker lösa problem själv
+* fortsätta jobba med nya brancher för varje nytt arbetsområde 
 
 ### Belinda
 * Gå igenom en sak i taget istället för att göra fler saker samtidigt  
