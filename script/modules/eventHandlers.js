@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 export function cartButton() {
   const shoppingIcon = document.querySelector("#cartIcon");
-  console.log(shoppingIcon);
   shoppingIcon.addEventListener("click", (e) => {
     e.preventDefault();
 

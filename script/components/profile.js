@@ -46,7 +46,6 @@ function displayProfilePicture() {
   const loggedInUser = JSON.parse(localStorage.getItem("loggedIn"));
 
   if (!loggedInUser || !loggedInUser.profile_image) {
-    console.error("Ingen profilbild hittades.");
     return;
   }
 

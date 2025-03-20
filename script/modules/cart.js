@@ -55,6 +55,7 @@ export function displayCart() {
 
     const dishName = document.createElement("h2");
     showDish.textContent = dish.name;
+    dishName.setAttribute("aria-label", `Maträttens namn: ${dish.name}`);
 
     const showPrice = document.createElement("span");
     showPrice.textContent = `${dish.price} SEK`;
