@@ -12,7 +12,9 @@ export function buttonClick(element, pathname) {
 }
 
 export function resetButtonClick(element, pathname) {
+  console.log("element", element);
   const btnRef = getElement(element);
+  console.log("btnRef", btnRef);
   btnRef.addEventListener("click", (event) => {
     event.preventDefault();
     emptyCart();

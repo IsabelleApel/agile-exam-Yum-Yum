@@ -1,9 +1,19 @@
 import { createReceipt } from "../Utils/domUtils.js";
+import { resetButtonClick } from "../modules/eventHandlers.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   if (window.location.pathname.includes("receipt.html")) {
     //Hämtar cart från local storage
     const cart = JSON.parse(localStorage.getItem("cart"));
+
+    if (!cart) {
+      console.error("No items in the cart.");
+      // Manejar el caso cuando el cart está vacío o no existe
+      document.getElementById("headerContainer").innerText =
+        "No items in the cart.";
+      return;
+    }
+
     //Skapar en grupperad cart, där samma artikel läggs ihop
     const groupedCart = cart.reduce((articles, item) => {
       const existingItem = articles.find((i) => i.id === item.id);
@@ -28,19 +38,3 @@ document.addEventListener("DOMContentLoaded", async () => {
     createReceipt(groupedCart, totalPrice);
   }
 });
-async function saveOrderToProfile(receipt) {
-  try {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    if (!currentUser) {
-      return;
-    }
-
-    const userReceipts = JSON.parse(localStorage.getItem("userReceipts")) || {};
-    userReceipts[currentUser.id] = userReceipts[currentUser.id] || [];
-    userReceipts[currentUser.id].push(receipt);
-
-    localStorage.setItem("userReceipts", JSON.stringify(userReceipts));
-  } catch (error) {
-    console.error("Fel vid sparande av kvitto:", error);
-  }
-}
