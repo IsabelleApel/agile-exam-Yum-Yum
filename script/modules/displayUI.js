@@ -36,6 +36,7 @@ export function displayLandingPage() {
   buttonClick("#loginBtn", "/login.html");
   displayHeader().then(() => {
     isLoggedIn();
+    profileLoginBtn();
   });
 }
 
@@ -202,8 +203,20 @@ export function isLoggedIn() {
     removeClass(menuBtnLoginRef, "d-none");
   }
 }
+
+export function profileLoginBtn(){
+  const btnRef = getElement('#loginBtn');
+
+  let loggedIn = localStorage.getItem("loggedIn") !== null;
+
+  if(loggedIn){
+    btnRef.textContent = 'Profil';
+    buttonClick("#loginBtn", "/profile.html");
+  }
+}
+
 export function logOut() {
-  localStorage.setItem("loggedIn", null);
+  localStorage.removeItem("loggedIn");
 }
 
 export function displayAdminPage() {
