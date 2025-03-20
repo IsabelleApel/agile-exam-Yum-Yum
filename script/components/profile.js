@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if (viewOrdersBtn) {
     viewOrdersBtn.addEventListener("click", function () {
-      window.location.href = "view-orders.html";
+      window.location.href = "orderHistory.html";
     });
   }
   if (logoutBtn) {
@@ -35,7 +35,7 @@ async function checkUserAuth() {
     return;
   }
 }
-async function logoutUser() {
+export async function logoutUser() {
   logOut();
   window.location.href = "login.html";
 }

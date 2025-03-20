@@ -1,9 +1,4 @@
-import {
-  displayCart,
-  displayTotalPrice,
-  initCartCount,
-} from "./modules/cart.js";
-import { cartButton, resetButtonClick } from "./modules/eventHandlers.js";
+import { logOutAdmin } from "./modules/eventHandlers.js";
 import {
   displayLogin,
   isLoggedIn,
@@ -17,10 +12,9 @@ import {
   hideHeaderElement,
   displayOrderHistory,
   displayAdminPage,
-  displayReceipt,
 } from "./modules/displayUI.js";
 import { importUsers } from "./modules/validation.js";
-import { addClass, getElement, removeClass } from "./Utils/domUtils.js";
+import { initKarusell } from "./modules/karusell.js";
 
 if (
   window.location.pathname === "/" ||
@@ -46,6 +40,7 @@ if (
   displayHeader().then(() => {
     isLoggedIn();
   });
+  initKarusell();
 } else if (window.location.pathname === "/receipt.html") {
   displayReceipt();
 } else if (window.location.pathname === "/login.html") {
@@ -56,7 +51,9 @@ if (
   importUsers();
   displayRegistration();
 } else if (window.location.pathname === "/orderHistory.html") {
-  displayHeader();
+  displayHeader().then(() => {
+    isLoggedIn();
+  });
   displayOrderHistory();
 } else if (window.location.pathname === "/profile.html") {
   displayHeader().then(() => {
@@ -70,7 +67,5 @@ if (
   });
 } else if (window.location.pathname === "/adminPage.html") {
   displayAdminPage();
-  displayHeader().then(() => {
-    hideHeaderElement(".header-shopping-bag");
-  });
+  logOutAdmin();
 }

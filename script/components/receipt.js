@@ -35,6 +35,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     //Räknar ut totalpriset
     let totalPrice = cart.reduce((total, item) => total + item.price, 0);
     //Skapar kvitto
-    createReceipt(groupedCart, totalPrice, "111");
+    createReceipt(groupedCart, totalPrice);
   }
 });

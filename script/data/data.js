@@ -42,5 +42,12 @@ export const oData = {
         '3.png',
         '4.png',
         '5.png',
-    ]
+    ],
+    karusellImages : [
+        'assets/karusell/food.jpg',
+        'assets/karusell/foodtruckimg.jpg',
+        'assets/karusell/menu.jpg',
+        'assets/karusell/people.jpg',
+        'assets/karusell/wonton.jpg',
+    ],
 }

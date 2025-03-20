@@ -1,6 +1,7 @@
 import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
 import { validateLogin, validateForm } from "./validation.js";
 import { emptyCart } from "./cart.js";
+import { logoutUser } from "../components/profile.js";
 
 export function buttonClick(element, pathname) {
   const btnRef = getElement(element);
@@ -90,8 +91,16 @@ export function submitLogin() {
   loginBtnRef.addEventListener("click", (event) => {
     event.preventDefault();
     if (validateLogin()) {
-      window.location.href = "/menu.html";
+      const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+      // Kolla om användaren är admin eller vanlig user
+      if (loggedInUser?.role === 'admin') {
+        window.location.href = '/adminPage.html';
+      } else {
+        window.location.href = '/menu.html';
+      }
     }
+    
   });
 }
 
@@ -110,6 +119,15 @@ export function menuToggle() {
     }
   });
 }
+
+export function logOutAdmin(){
+  const logoutBtn = document.getElementById("logout");
+
+  logoutBtn.addEventListener('click', (event) => {
+    logoutUser();
+  })
+ }
+
 
 // const saveButton = getElement("#saveOrder");
 // saveButton.addEventListener("click", async () => {
