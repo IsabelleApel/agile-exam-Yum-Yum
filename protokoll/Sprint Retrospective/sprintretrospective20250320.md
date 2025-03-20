@@ -37,9 +37,9 @@ Var och en svarar på frågorna nedan, 1 person antecknar
   från början av ett projekt, så att den blir tydlig, modulär och lätt att underhålla.
 
 ### Isabel
-* Vill börja skapa brancher utifrån back och sprintlog, och inte hela tiden skapa nya i vs code 
-* 
-* 
+* Vill bli bättre på att skapa brancher utifrån back- och sprintlog, samt få bättre förståelse för moduler  
+* Sluta/minska på att skapa brancher lokalt och istället skapa en user story så att mina teammedlemmar vet vad jag håller på med
+* Jag vill fortsätta upprätthålla mitt engagemang i olika projekt jag tar mig an, samt forsätta försöka strukturera min kod på ett tydligt sätt
 
 ### Övrig diskussion
 Har ni diskuterat någonting mer?
