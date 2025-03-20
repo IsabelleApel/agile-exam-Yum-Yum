@@ -3,6 +3,7 @@ import { validateForm } from "../modules/validation.js";
 document.addEventListener("DOMContentLoaded", () => {
   let user = JSON.parse(localStorage.getItem("loggedIn"));
   let userName = document.querySelector("#username");
+  console.log(user);
   userName.value = user.username;
 
   let email = document.querySelector("#email");
@@ -52,44 +53,46 @@ function updateUser() {
 function currentProfilePicture() {
   const users = JSON.parse(localStorage.getItem("users"));
   const loggedInUser = localStorage.getItem("loggedInUser");
-  
-  const currentUser = users.find(user => user.username === loggedInUser);
+
+  const currentUser = users.find((user) => user.username === loggedInUser);
   if (currentUser) {
-    const currentPic = document.querySelector('#current-profile-pic');
+    const currentPic = document.querySelector("#current-profile-pic");
     currentPic.src = currentUser.profile_image;
   } else {
     console.error("Ingen användare hittades med det användarnamnet.");
   }
-  
+
   /* const currentPic = document.querySelector('#current-profile-pic');
+
+  
   currentPic.src = currentUser.profile_image; */
 }
 
 currentProfilePicture();
 
 export function toggleImageOptions() {
-  const imageOptions = document.querySelector('#choose-img');
-  imageOptions.classList.toggle('d-none');
+  const imageOptions = document.querySelector("#choose-img");
+  imageOptions.classList.toggle("d-none");
 }
 
 export function selectImage(imagePath) {
   console.log("Vald bild:", imagePath);
-  const currentPic = document.querySelector('#current-profile-pic');
+  const currentPic = document.querySelector("#current-profile-pic");
   currentPic.src = imagePath;
   toggleImageOptions();
 }
 
 export function changePictureButton() {
-  const changePicture = document.querySelector('#current-profile-pic');
-  changePicture.addEventListener('click', toggleImageOptions);
+  const changePicture = document.querySelector("#current-profile-pic");
+  changePicture.addEventListener("click", toggleImageOptions);
 }
 
 changePictureButton();
 
 export function addPictureButton() {
-  const images = document.querySelectorAll('#choose-img img');
+  const images = document.querySelectorAll("#choose-img img");
   images.forEach((img) => {
-      img.addEventListener('click', () => selectImage(img.src));
+    img.addEventListener("click", () => selectImage(img.src));
   });
 }
 
