@@ -1,7 +1,7 @@
-import { validateForm } from "../modules/validation.js";
-
 document.addEventListener("DOMContentLoaded", () => {
   let user = JSON.parse(localStorage.getItem("loggedIn"));
+  console.log("Hämtad användare:", user);
+
   let userName = document.querySelector("#username");
   userName.value = user.username;
 
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let password = document.querySelector("#password");
   password.value = user.password;
-
+  
   let saveBtn = document.querySelector(".profile__save-btn");
   saveBtn.addEventListener("click", function () {
     updateUser();
@@ -20,10 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
 function updateUser() {
   let email = document.querySelector("#email").value.trim();
   let password = document.querySelector("#password").value.trim();
+  let profileImage = document.querySelector("#current-profile-pic").src;
 
   let storedUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-  let currentUser = localStorage.getItem("loggedIn");
+  let currentUser = JSON.parse(localStorage.getItem("loggedIn"));
 
   if (!currentUser) {
     return;
@@ -35,14 +36,18 @@ function updateUser() {
 
   if (userIndex !== -1) {
     storedUsers[userIndex] = {
+      username: currentUser.username,
       email: email,
       password: password,
+      profile_image: profileImage,
     };
     localStorage.setItem("users", JSON.stringify(storedUsers));
 
     let updatedUser = {
+      username: currentUser.username,
       email: email,
       password: password,
+      profile_image: profileImage,
     };
     localStorage.setItem("loggedIn", JSON.stringify(updatedUser));
   }
@@ -50,22 +55,31 @@ function updateUser() {
 
 //kod för att uppdatera profilbilden
 function currentProfilePicture() {
-  const users = JSON.parse(localStorage.getItem("users"));
-  const loggedInUser = localStorage.getItem("loggedInUser");
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const loggedInUser = JSON.parse(localStorage.getItem("loggedIn"));
   
-  const currentUser = users.find(user => user.username === loggedInUser);
-  if (currentUser) {
-    const currentPic = document.querySelector('#current-profile-pic');
-    currentPic.src = currentUser.profile_image;
-  } else {
-    console.error("Ingen användare hittades med det användarnamnet.");
+  if (!loggedInUser) {
+    console.error("Ingen användare är inloggad.");
+    return;
   }
   
-  /* const currentPic = document.querySelector('#current-profile-pic');
-  currentPic.src = currentUser.profile_image; */
+  const currentUser = users.find(user => user.username === loggedInUser.username);
+  
+  const currentPic = document.querySelector('#current-profile-pic');
+  if (!currentPic) {
+    console.error("Elementet #current-profile-pic hittades inte.");
+    return;
+  }
+
+  if (currentUser && currentUser.profile_image) {
+    currentPic.src = currentUser.profile_image;
+  } else {
+    console.error("Ingen profilbild hittades.");
+  }
 }
 
-currentProfilePicture();
+document.addEventListener("DOMContentLoaded", currentProfilePicture);
+
 
 export function toggleImageOptions() {
   const imageOptions = document.querySelector('#choose-img');

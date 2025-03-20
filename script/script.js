@@ -2,6 +2,7 @@ import { logOutAdmin } from "./modules/eventHandlers.js";
 import { displayLogin, isLoggedIn, displayRegistration, displayOrderConfirmation, displayFoodtruckList, displayHeader, displayMenu, displayCartPage, displayLandingPage, hideHeaderElement, displayOrderHistory, displayAdminPage } from "./modules/displayUI.js";
 import { importUsers } from "./modules/validation.js";
 import { initKarusell } from "./modules/karusell.js";
+/* import {initializeProfile} from "./components/editProfile.js"; */
 
 if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
   console.log("index.html");
@@ -54,6 +55,7 @@ if (window.location.pathname === "/" || window.location.pathname === "/index.htm
     hideHeaderElement(".header-shopping-bag");
     isLoggedIn();
   });
+  /* initializeProfile(); */
 } else if (window.location.pathname === "/adminPage.html") {
   displayAdminPage();
   logOutAdmin()
