@@ -25,7 +25,7 @@ body.login-page {
 
 /* --------------- HEADER --------------- */
 
-.header-container {
+/* .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -81,7 +81,7 @@ body.login-page {
 
 .header-shopping-bag i {
   color: var(--dark-grey);
-}
+} */
 
 .menu {
 
@@ -144,6 +144,7 @@ body.login-page {
   display: block;
   margin-bottom: 5px;
   font-size: 1rem;
+  text-transform: capitalize;
 }
 
 .input-container {
@@ -152,24 +153,26 @@ body.login-page {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 5px;
   padding: 10px;
+  background-color: var(--text-white);
 }
 
 .input-container i {
   margin-right: 10px;
   font-size: 1.2rem;
+  color: var(--darkest-grey);
 }
 
 .input-container input {
   flex: 1;
   border: none;
   background: transparent;
-  color: var(--text-white);
+  color: var(--darkest-grey);
   font-size: 1rem;
   outline: none;
   padding: 10px 0;
 }
 
-.login-btn {
+/* .login-btn {
   width: 100%;
   padding: 15px;
   background-color: var(--darkest-grey);
@@ -205,11 +208,34 @@ body.login-page {
 
 .register-btn:hover {
   background: rgba(255, 255, 255, 0.8);
+} */
+
+.register-btn, .login-btn {
+  font-family: Fira Sans;
+  font-weight: bold;
+  width: 350px;
+  height: 70px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: none;
+  text-transform: uppercase;
+}
+
+.login-btn{
+  background-color: var(--darkest-grey);
+  color: var(--text-white);
+  margin-top: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+.register-btn{
+  background-color: #c2c1c1;
+  color: var(--darkest-grey);
 }
 
 /* --------------- RESPONSIVITET --------------- */
 
-@media screen and (max-width: 390px) {
+/* @media screen and (max-width: 390px) {
   .header-logo img {
     max-width: 150px;
   }
@@ -248,4 +274,4 @@ body.login-page {
   .login-title {
     font-size: 1.5rem;
   }
-}
+} */

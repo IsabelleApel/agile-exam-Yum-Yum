@@ -1,6 +1,7 @@
 import { getElement, removeClass, addClass } from "../Utils/domUtils.js";
 import { validateLogin, validateForm } from "./validation.js";
 import { emptyCart } from "./cart.js";
+import { logoutUser } from "../components/profile.js";
 
 export function buttonClick(element, pathname) {
   const btnRef = getElement(element);
@@ -116,6 +117,15 @@ export function menuToggle() {
     }
   });
 }
+
+export function logOutAdmin(){
+  const logoutBtn = document.getElementById("logout");
+
+  logoutBtn.addEventListener('click', (event) => {
+    logoutUser();
+  })
+ }
+
 
 // const saveButton = getElement("#saveOrder");
 // saveButton.addEventListener("click", async () => {

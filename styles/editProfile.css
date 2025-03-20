@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+
 body {
     background: url('../assets/bakgrund.png') repeat;
     flex-direction: column;
     align-items: center;
     height: 100vh;
     margin: 0;
+    font-family: fira sans;
 }
 
 /* Conteiner */
@@ -14,7 +17,7 @@ body {
     justify-content: center;
     flex-direction: column;
     padding: 20px;
-    margin: 40px auto 0;
+    /* margin: 40px auto 0; */
 }
 
 /* user card  */
@@ -99,6 +102,8 @@ body {
     border-radius: 5px;
     cursor: pointer;
     border: 2px solid white;
+    font-family: fira sans;
+    margin-top: 10px;
 
 }
 
@@ -112,7 +117,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-top: 10px;
+    margin: 10px 0 20px;
 }
 
 #choose-img img {
@@ -131,7 +136,7 @@ body {
     margin: 0 auto;
 }
 
-@media only screen and (max-width: 390px) {
+/* @media only screen and (max-width: 390px) {
     .profile__container {
         flex-direction: space-between;
         align-content: center;
@@ -159,4 +164,4 @@ body {
         padding: 20px;
 
     }
-}
+} */

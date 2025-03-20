@@ -52,6 +52,7 @@ function updateUser() {
 function currentProfilePicture() {
   const users = JSON.parse(localStorage.getItem("users"));
   const loggedInUser = localStorage.getItem("loggedInUser");
+  
   const currentUser = users.find(user => user.username === loggedInUser);
   if (currentUser) {
     const currentPic = document.querySelector('#current-profile-pic');
