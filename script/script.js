@@ -42,7 +42,9 @@ if (window.location.pathname === "/" || window.location.pathname === "/index.htm
   importUsers();
   displayRegistration();
 } else if (window.location.pathname === "/orderHistory.html") {
-  displayHeader();
+  displayHeader().then(() => {
+    isLoggedIn();
+  });
   displayOrderHistory();
 } else if (window.location.pathname === "/profile.html") {
   displayHeader().then(() => {
