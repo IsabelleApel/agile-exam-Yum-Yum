@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
  :root {
      --dark-grey: #605858;
      --darkest-grey: #353131;
@@ -107,8 +108,8 @@
 
  .receipt__total-tax {
      display: block;
-     font-size: 14px;
-     color: #555;
+     font-size: 16px;
+     color: var(--darkest-grey);
  }
 
 

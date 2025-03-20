@@ -13,6 +13,7 @@ export function karusell(karusellImages) {
     karusellImages.forEach((image, index) => {
         const imgElement = document.createElement('img');
         imgElement.src = image;
+        imgElement.alt = `karusellbild${index+1}`
         if (index === 0) imgElement.classList.add('active');
         karusellContainer.appendChild(imgElement);
     })

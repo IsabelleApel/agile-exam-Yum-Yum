@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   let user = JSON.parse(localStorage.getItem("loggedIn"));
-  console.log("Hämtad användare:", user);
 
   let userName = document.querySelector("#username");
-  console.log(user);
   userName.value = user.username;
 
   let email = document.querySelector("#email");
