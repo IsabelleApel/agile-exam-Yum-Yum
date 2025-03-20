@@ -1,4 +1,4 @@
-# Mötesprotokoll 20240314
+# Mötesprotokoll 20250314
 
 ## Närvarande
 * Isabel
