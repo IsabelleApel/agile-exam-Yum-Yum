@@ -19,9 +19,9 @@ Var och en svarar på frågorna nedan, 1 person antecknar
 * Fortsätta kommunicera på ett bra sätt 
 
 ### Senja
-* Bli duktigare att hålla koll på user stories, både för att se vad andra ska göra och vad man själv ska göra
+* Skapa mer nya branches för ett bättre och tydligare arbetsflöde
 * Sluta göra allt på samma branch
-* Fortsätta kommunicera på ett bra sätt 
+* Fortsätta kommunicera på ett bra sätt
 
 ### Belinda
 * Bli bättre på att kunna läsa andras kod 
