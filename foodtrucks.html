@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR3wQOw76shzeVJ0LiHRNu1qI0KaylGLA&loading=async&libraries=marker&v=beta&solution_channel=GMP_CCS_complexmarkers_v3" defer></script>
+    <script type="module" src="script/script.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/5f2b001e16.js" crossorigin="anonymous"></script>
+    <title>Foodtrucks</title>
+</head>
+<body class="foodtrucks">
+    <header class="foodtrucks__header">
+        <div id="headerContainer"></div>
+    </header>
+    <main class="foodtrucks__main">
+        <h1 class="foodtrucks__heading">KARTA FOODTRUCKS</h1>
+        <div class="foodtrucks__map-container">
+            <gmp-map center="59.322935, 18.071012" zoom="13" map-id="DEMO_MAP_ID">
+                <gmp-advanced-marker position="59.312148, 18.075221" title="Katarina Bangata"></gmp-advanced-marker>
+                <gmp-advanced-marker position="59.318193, 18.062265" title="Mariatorget"></gmp-advanced-marker>
+                <gmp-advanced-marker position="59.325262, 18.076310" title="Skeppsbrokajen"></gmp-advanced-marker>
+                <gmp-advanced-marker position="59.331175, 18.072590" title="Kungsträdgården"></gmp-advanced-marker>
+                <gmp-advanced-marker position="59.327205, 18.053538" title="Stadshuset"></gmp-advanced-marker>
+            </gmp-map>
+        </div>
+        <h2 class="foodtrucks__list-heading">NÄR, VAR OCH HUR LÄNGE?</h2>
+        <section class="foodtrucks__list" id="foodtrucksList">
+        </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+ :root {
+     --dark-grey: #605858;
+     --darkest-grey: #353131;
+     --light-grey: #EEEEEE;
+     --mid-grey: #C2C1C1;
+     --text-white: #F4F3F1;
+     --mid-dark-grey: #837C7C;
+ }
+
+ body {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Fira Sans', sans-serif;
+     background-color: var(--dark-grey);
+ }
+
+
+
+
+ /* Vista del carrito */
+ .cart-view {
+     width: 100vw;
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding-top: 90px;
+ }
+
+
+ .cart-view__receipt {
+     background-color: var(--text-white);
+     padding: 15px;
+     border-radius: 10px;
+     width: 90%;
+     max-width: 400px;
+     text-align: center;
+ }
+
+ .cart-view__logo {
+     justify-content: center;
+     align-items: center;
+     transition: transform 0.4s ease, box-shadow 0.4s ease;
+ }
+
+ .cart-view__logo:hover {
+     transform: scale(1.15);
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+     opacity: 0.9;
+
+ }
+
+ .receipt__item-text {
+     display: flex;
+     flex-direction: column
+ }
+
+ .receipt__item-name,
+ .receipt__item-price {
+     font-size: 18px;
+     color: #353131;
+ }
+
+ .receipt__title {
+     font-size: 24px;
+     font-weight: bold;
+ }
+
+ .receipt__order-id {
+     font-size: 14px;
+     color: #555;
+ }
+
+ .receipt__items {
+     list-style: none;
+     padding: 0;
+ }
+
+ .receipt__item {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     font-size: 18px;
+     padding: 10px 0;
+ }
+
+ .receipt__total {
+     margin-top: 15px;
+     padding: 10px;
+     background-color: #C2C1C1;
+     border-radius: 5px;
+     text-align: center;
+ }
+
+ .receipt__total-label {
+     font-weight: bold;
+     font-size: 18px;
+     color: #353131;
+ }
+
+ .receipt__total-amount {
+     font-size: 22px;
+     font-weight: bold;
+     color: #353131;
+ }
+
+ .receipt__total-tax {
+     display: block;
+     font-size: 16px;
+     color: var(--darkest-grey);
+ }
+
+
+ .button-cart-container {
+     position: fixed;
+     bottom: 20px;
+     left: 50%;
+     transform: translateX(-50%);
+     width: auto;
+ }
+
+
+ .pay-button {
+     background-color: #353131;
+     color: #F4F3F1;
+     font-weight: bold;
+     width: 350px;
+     height: 70px;
+     border-radius: 5px;
+     font-size: 20px;
+     border: none;
+ }
+
+
+ .receipt__new-order {
+     width: auto;
+     font-family: Fira Sans;
+     font-weight: bold;
+     width: 399px;
+     padding: 20px;
+     border-radius: 5px;
+     font-size: 20px;
+     border: none;
+     margin-top: 25px;
+     color: var(--text-white);
+     background-color: var(--darkest-grey);
+
+ }
+
+ .receipt__new-order:hover {
+     background-color: #555151;
+     color: #fff;
+     transform: scale(1.02);
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ }
+
+ .receipt__item-qty {
+     font-size: 14px;
+     color: #353131;
+     text-align: left;
+ }
+
+ .price-connector {
+     flex-grow: 1;
+     border-bottom: 2px dotted #353131;
+     margin: 0 15px;
+ }
+
+ .receipt__footer {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: #605858;
+ }
+
+ @media (max-width: 390px) {
+     .cart-view {
+         padding-top: 40px;
+     }
+
+     .cart-view__receipt {
+         margin: 20px;
+     }
+
+     .header-logo,
+     .menu-icon {
+         margin-top: 15px;
+     }
+
+     .price-connector {
+         flex-grow: 1;
+         border-bottom: 2px dotted #353131;
+         margin: 0 10px;
+     }
+
+     .receipt__item-price {
+         text-align: right;
+         font-size: 16px;
+     }
+
+     .receipt__total {
+         font-size: 16px;
+         padding: 8px;
+     }
+
+     .receipt__new-order {
+         width: 90%;
+         height: auto;
+         font-size: 16px;
+         padding: 20px;
+         position: fixed;
+         bottom: 20px;
+         left: 50%;
+         transform: translateX(-50%);
+     }
+
+ }

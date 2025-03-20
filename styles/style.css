@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --dark-grey: #605858;
+    --darkest-grey: #353131;
+    --light-grey: #EEEEEE;
+    --mid-grey: #C2C1C1;
+    --text-white: #F4F3F1;
+    --mid-dark-grey: #837C7C;
+}
+
+/* Styling för meny */
+.menu-background-img {
+    position: fixed;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    top: 0;
+}
+
+.menu-wrapper {
+    position: relative;
+    background-color: var(--dark-grey);
+    color: var(--text-white);
+    width: 350px;
+    margin: 0 auto;
+    font-family: "Fira Sans", sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border-radius: 5px;
+}
+
+.menu-title {
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.menu-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px dotted var(--mid-grey);
+}
+
+.menu-card--firstrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.menu-card__ingredients {
+    font-size: 0.8rem;
+}
+
+.dip-button, .drink-button {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 0.8rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: var(--darkest-grey);
+    color: var(--text-white);
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem;
+    margin: 0.4rem;
+}
+
+.dip-button:hover, .drink-button:hover {
+    background-color: var(--light-grey);
+    color: var(--darkest-grey);
+
+}
+
+
+/* Filterfunktion i meny */
+#filterSelect {
+    background-color: var(--light-grey);
+    color: var(--darkest-grey);
+    font-family: "Fira Sans", sans-serif;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    margin-left: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 0.5rem;
+}
+
+/* Syling för header */
+/* .menu-header {
+
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+  font-size: 30px;
+}  */
+
+/* .cart-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-count {
+  position: absolute;
+  top: 20px;
+  right: 17px;
+  background-color: red;
+  color: #F4F3F1;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 16px;
+} */
+
+/* styling för foodtrucks */
+
+.foodtrucks{
+    background-color: var(--dark-grey);
+    font-family: "Fira Sans", sans-serif;
+}
+
+.foodtrucks__main{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    color: var(--text-white);
+}
+
+.foodtrucks__heading{
+    align-self: center;
+    padding: 0 0 1rem 0;
+    font-size: 2.2rem;
+}
+
+.foodtrucks__map-container{
+    width: 100%;
+    height: 400px;
+}
+
+.foodtrucks__list-heading{
+    padding: 1.5rem 0;
+}
+
+.foodtrucks__list{
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.3rem;
+    gap: 1rem;
+}
+
+.foodtrucks__list-item{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--darkest-grey);
+    padding-bottom: 0.5rem;
+}
+
+.foodtrucks__list-item-right{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: end;
+}
+
+/* styling för orderConfirmation */
+
+.order-confirmation{
+    background-color: var(--dark-grey);
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-confirmation__main{
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    font-family: "Fira Sans", sans-serif;
+    color: var(--text-white);
+}
+
+.order-confirmation__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-confirmation__heading{
+    text-align: center;
+    padding: 0 3rem 1rem;
+}
+
+.order-confirmation__ETA{
+    margin-bottom: 0.6rem;
+}
+
+.order-confirmation__bottom{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    /* display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 20px; */
+}
+
+.order-confirmation__btn{
+    font-family: Fira Sans;
+    font-weight: bold;
+    width: 350px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    color: var(--text-white);
+}
+
+.order-confirmation__btn--new-order{
+    margin-bottom: 1rem;
+    background-color: var(--darkest-grey); 
+}
+
+.order-confirmation__btn--receipt{
+    background-color: var(--dark-grey);
+    border: 2px solid var(--light-grey);
+}
+
+.registration{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark-grey);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.registration__main{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: auto;
+}
+
+.registration__top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-white);
+  font-family: Fira Sans;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.user-icon {
+  font-size: 5rem;
+  margin-bottom: .6rem;
+}
+
+.input-wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper label{
+  color: var(--text-white);
+  font-family: Fira Sans;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1rem 0 .5rem 0;
+}
+
+.input{
+  padding-left: 40px;
+  width: 350px;
+  height: 70px;
+  font-family: Fira Sans;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.register__icon{
+  position: absolute;
+  left: 10px;
+  bottom: 35px;
+  transform: translateY(-50%);
+  color: var(--darkest-grey);
+}
+
+.registration__error-msg{
+  font-family: Fira Sans;
+  font-weight: bold;
+  color: red;
+}
+
+.registration__btn{
+    font-family: Fira Sans;
+    font-weight: bold;
+    width: 350px;
+    height: 70px;
+    margin-top: 3rem;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    color: var(--text-white);
+    background-color: var(--darkest-grey); 
+}
+
+.registration__login-link{
+  font-family: Fira Sans;
+  font-weight: bold;
+  color: var(--text-white);
+  margin-bottom: 2rem;
+}
+
+.registration__login-link a{
+  color: var(--text-white);
+}
+
+/* styling för index */
+/*   
+  .index-page {
+    background: url("../assets/bakgrund.png") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Fira Sans', sans-serif;
+    color: var(--text-white);
+    min-height: 100vh;
+  }
+  
+  .index-page header {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .index-page .header-logo {
+    max-width: 300px;
+    height: auto;
+  }
+  
+  .index-page .content {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+  
+  .index-page .box-img {
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .index-page .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .index-page .btn {
+    background-color: var(--darkest-grey);
+    color: var(--text-white);
+    border: none;
+    padding: 20px;      
+    font-size: 1.3em;    
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .index-page .btn:hover {
+    background-color: var(--darkest-grey);
+  }
+  
+  /* Mobile styles only for index.html */
+  /* @media screen and (max-width: 390px) {
+    .index-page header {
+      padding: 10px;
+    }
+    
+    .index-page .header-logo {
+      max-width: 150px;
+    }
+    
+    .index-page .content {
+      padding: 10px;
+    }
+    
+    .index-page .box-img {
+      max-width: 100%;
+      margin-bottom: 15px;
+    }
+    
+    .index-page .button-container {
+      gap: 10px;
+      max-width: 250px;
+    }
+    
+    .index-page .btn {
+      padding: 10px;
+      font-size: 1em;
+    }
+  }   */
+
+.d-none {
+    display: none;
+}
+
+.v-hidden{
+    visibility: hidden;
+}
+
+ /* Orderhistorik */
+ .order-history__background {
+  position: fixed;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  top: 0;
+}
+
+.order-history__wrapper {
+  font-family: "Fira Sans", sans-serif;
+  position: relative;
+  width: 350px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.order-history__title {
+  color: var(--text-white);
+  background-color: var(--darkest-grey);
+  padding: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.order-history__container {
+  background-color: var(--dark-grey);
+}
+
+.order-history-card {
+  color: var(--text-white);
+  padding: 1rem;
+  border-bottom: 1px dotted var(--mid-grey);
+}
+
+.order-history-card--first-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.order-history-card__items {
+  margin-bottom: 0.3rem;
+}
+
+.order-history-card__date {
+  color: var(--text-white);
+}
+
+/* Admin sida */
+.admin-page__background {
+  position: fixed;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  top: 0;
+}
+
+.admin-page__logout {
+  font-family: Fira Sans;
+  font-weight: bold;
+  width: 350px;
+  height: 70px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: none;
+  color: var(--darkest-grey);
+  background-color: var(--light-grey); 
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.admin-page__wrapper {
+  font-family: "Fira Sans", sans-serif;
+  position: relative;
+  width: 350px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+}
+
+.admin-page__title {
+  color: var(--text-white);
+  background-color: var(--darkest-grey);
+  padding: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.admin-page__container {
+  background-color: var(--dark-grey);
+}
+
+.admin-page-card {
+  color: var(--text-white);
+  padding: 1rem;
+  border-bottom: 1px dotted var(--mid-grey);
+}
+
+.admin-page-card--first-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.admin-page-card__user {
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+}
+
+.admin-page-card__items {
+  margin-bottom: 0.3rem;
+}
+
+.admin-page-card__date {
+  color: var(--text-white);
+}
