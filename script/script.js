@@ -1,8 +1,6 @@
-import { displayCart, displayTotalPrice, initCartCount } from "./modules/cart.js";
-import { cartButton } from "./modules/eventHandlers.js";
+import { logOutAdmin } from "./modules/eventHandlers.js";
 import { displayLogin, isLoggedIn, displayRegistration, displayOrderConfirmation, displayFoodtruckList, displayHeader, displayMenu, displayCartPage, displayLandingPage, hideHeaderElement, displayOrderHistory, displayAdminPage } from "./modules/displayUI.js";
 import { importUsers } from "./modules/validation.js";
-import { addClass, getElement, removeClass } from "./Utils/domUtils.js";
 import { initKarusell } from "./modules/karusell.js";
 
 if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
@@ -58,4 +56,5 @@ if (window.location.pathname === "/" || window.location.pathname === "/index.htm
   });
 } else if (window.location.pathname === "/adminPage.html") {
   displayAdminPage();
+  logOutAdmin()
 }

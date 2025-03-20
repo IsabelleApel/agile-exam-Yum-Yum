@@ -18,7 +18,7 @@ export function removeClass(element, className) {
   return element.classList.remove(className);
 }
 
-export async function createReceipt(orderItems, totalPrice, orderId) {
+export async function createReceipt(orderItems, totalPrice) {
   //Hämtar html elementet där kvittot ska visas
   const receiptContainer = getElement("#receiptContainer");
   //Rensar innehållet först
@@ -28,7 +28,7 @@ export async function createReceipt(orderItems, totalPrice, orderId) {
    <article class="cart-view__receipt">
         <img class="cart-view__logo" src="assets/logga_kvitto.png" alt="Yum Yum Gimmie Sum Logo" />
         <h2 class="receipt__title">KVITTO</h2>
-        <p class="receipt__order-id">#${orderId}</p>
+        <p class="receipt__order-id">#${getOrderNumb()}</p>
         <ul class="receipt__items">
             ${orderItems
               .map(
@@ -56,4 +56,11 @@ export async function createReceipt(orderItems, totalPrice, orderId) {
     `;
 
   receiptContainer.innerHTML = receiptHTML;
+}
+
+function getOrderNumb(){
+  let ordersRef = JSON.parse(localStorage.getItem("orderHistory"));
+  let orderNumRef = ordersRef[0].id
+
+   return orderNumRef
 }

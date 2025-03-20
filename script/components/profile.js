@@ -35,7 +35,7 @@ async function checkUserAuth() {
     return;
   }
 }
-async function logoutUser() {
+export async function logoutUser() {
   logOut();
   window.location.href = "login.html";
 }

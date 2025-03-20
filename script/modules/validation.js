@@ -61,7 +61,7 @@ export function validateLogin() {
         } else {
             window.location.href = "/menu.html";
         }
-
+        localStorage.setItem("loggedInUser", usernameRef.value); 
     } catch (error) {
         errorMsg.textContent = error.message;
         error.nodeRef.focus();
@@ -119,8 +119,7 @@ export function validateForm() {
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
 
-    localStorage.setItem("loggedIn", "true");
-    /* localStorage.setItem("loggedInUser", usernameRef.value); */
+    localStorage.setItem("loggedInUser", usernameRef.value); 
 
     localStorage.setItem("loggedIn", JSON.stringify(newUser));
 

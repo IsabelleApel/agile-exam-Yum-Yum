@@ -491,6 +491,20 @@
   top: 0;
 }
 
+.admin-page__logout {
+  font-family: Fira Sans;
+  font-weight: bold;
+  width: 350px;
+  height: 70px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: none;
+  color: var(--darkest-grey);
+  background-color: var(--light-grey); 
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
 .admin-page__wrapper {
   font-family: "Fira Sans", sans-serif;
   position: relative;
